@@ -1,4 +1,3 @@
-import pygame
 from useful_functions import *
 
 
@@ -6,10 +5,8 @@ class GardenSpace:
 
     def __init__(self, game_space, plot_size, garden_offset, tile_size):
         self.game_space = game_space
-        self.plot_size_x = plot_size[0]
-        self.plot_size_y = plot_size[1]
-        self.offset_x = garden_offset[0]
-        self.offset_y = garden_offset[1]
+        self.plot_size_x, self.plot_size_y = plot_size
+        self.offset_x, self.offset_y = garden_offset
         self.tile_size = tile_size
 
     def draw_base_garden(self):
@@ -28,13 +25,13 @@ class GardenSpace:
 
             if pygame.mouse.get_pressed()[0]:
                 pygame.draw.rect(self.game_space, WHITE, (self.offset_x + grid_x * self.tile_size,
-                                                       self.offset_y + grid_y * self.tile_size,
-                                                       self.tile_size, self.tile_size), 4)
+                                                          self.offset_y + grid_y * self.tile_size,
+                                                          self.tile_size, self.tile_size), 4)
                 return grid_x, grid_y
             else:
                 pygame.draw.rect(self.game_space, GREY, (self.offset_x + grid_x * self.tile_size,
-                                                          self.offset_y + grid_y * self.tile_size,
-                                                          self.tile_size, self.tile_size), 2)
+                                                         self.offset_y + grid_y * self.tile_size,
+                                                         self.tile_size, self.tile_size), 2)
 
     # garden plot control via array
     def test_overlay(self, grid_data):
@@ -45,7 +42,6 @@ class GardenSpace:
             for x in y:
                 test_xcoord += 1
                 x = clamp(x * 5, 100, 0)
-                pygame.draw.rect(self.game_space, BROWN, (self.offset_x + test_xcoord * self.tile_size + 50 - x/2,
-                                                         self.offset_y + test_ycoord * self.tile_size + 50 - x/2,
-                                                         x, x))
-
+                pygame.draw.rect(self.game_space, BROWN, (self.offset_x + test_xcoord * self.tile_size + 50 - x / 2,
+                                                          self.offset_y + test_ycoord * self.tile_size + 50 - x / 2,
+                                                          x, x))
