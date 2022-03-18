@@ -32,6 +32,7 @@ class GardenSpace:
                 pygame.draw.rect(self.game_space, GREY, (self.offset_x + grid_x * self.tile_size,
                                                          self.offset_y + grid_y * self.tile_size,
                                                          self.tile_size, self.tile_size), 2)
+        return None
 
     # garden plot control via array
     def test_overlay(self, grid_data):
