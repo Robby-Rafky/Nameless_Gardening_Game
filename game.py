@@ -1,6 +1,8 @@
+import pygame
+
 from useful_functions import *
 from garden import GardenSpace
-from button import Button
+from menuHandler import MenuHandler
 from upperUI import MenuSwitcher
 
 
@@ -16,7 +18,7 @@ class Game:
         self.garden_offset = (60, 150)
         self.garden_size = (18, 8)
         self.garden_tile_size = 100
-        self.garden_contents = [[0 for ix in range(self.garden_size[0])] for _ in range(self.garden_size[1])]
+        self.garden_contents = [[0 for _ in range(self.garden_size[0])] for _ in range(self.garden_size[1])]
         # ----------------------------------
         self.game_clock = pygame.time.Clock()
         self.base_background_colour = GREEN
@@ -26,10 +28,12 @@ class Game:
         self.plot_clicked = (0, 0)
 
         self.base_garden = GardenSpace(self.game_space, self.garden_size, self.garden_offset, self.garden_tile_size)
+        self.menu_selector = MenuSwitcher(self)
+        self.menu_handler = MenuHandler(self)
+
         self.testing_stuff()
 
     def testing_stuff(self):
-        self.test = MenuSwitcher()
         pass
 
     def screen_layering(self):
@@ -40,17 +44,25 @@ class Game:
 
         self.plot_clicked = self.base_garden.draw_overlay_garden(self.mouse_position)
 
-        self.game_space.blit(self.test.surface, (60, 10))
-
+        self.menu_selector.draw_buttons()
+        self.menu_handler.show_current_menu()
 
     def event_checking(self):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 self.running = False
+
             if event.type == pygame.MOUSEBUTTONUP:
-                if self.plot_clicked is not None:
+                if self.plot_clicked is not None and self.menu_handler.current_menu is None:
                     self.garden_contents[self.plot_clicked[1]][self.plot_clicked[0]] += 1
 
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                self.menu_handler.current_menu = self.menu_selector.menu_switching()
+                self.menu_handler.current_menu_event_check()
+
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE:
+                    self.menu_handler.close_current_menu()
 
     def game_loop(self):
         self.mouse_position = pygame.mouse.get_pos()
