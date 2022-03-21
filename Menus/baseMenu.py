@@ -14,7 +14,7 @@ class Menu:
         self.surface.fill(self.background_colour)
         pygame.draw.rect(self.surface, BLACK, (0, 0, 1800, 800), 4)
         self.draw_buttons()
-        self.game.game_space.blit(self.surface, self.game.garden_offset)
+        self.game.game_space.blit(self.surface, (60, 150))
 
     def handle_events(self):
         pass

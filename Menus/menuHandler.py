@@ -1,9 +1,9 @@
 from useful_functions import *
-from Menus.Menu1 import InventoryMenu
-from Menus.Menu2 import ShopMenu
-from Menus.Menu3 import SkillTreeMenu
+from Menus.InventoryMenu import InventoryMenu
+from Menus.ShopMenu import ShopMenu
+from Menus.SkillsMenu import SkillTreeMenu
 from Menus.Menu4 import Menu4
-from Menus.Menu5 import StatsMenu
+from Menus.StatsMenu import StatsMenu
 
 
 class MenuHandler:

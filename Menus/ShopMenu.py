@@ -1,4 +1,4 @@
-from baseMenu import Menu
+from Menus.baseMenu import Menu
 from button import Button
 from useful_functions import *
 

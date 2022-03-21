@@ -1,4 +1,4 @@
-from baseMenu import Menu
+from Menus.baseMenu import Menu
 from button import Button
 from useful_functions import *
 
@@ -15,9 +15,12 @@ class InventoryMenu(Menu):
     def inventory_menu_events(self):
         if self.buttons[0].button_event_check(self.game.mouse_position):
             print("inv menu option1")
+            self.game.currently_placing = "plant1"
         if self.buttons[1].button_event_check(self.game.mouse_position):
             print("inv menu option2")
+            self.game.currently_placing = "plant2"
         if self.buttons[2].button_event_check(self.game.mouse_position):
             print("inv menu option3")
+            self.game.currently_placing = "plant3"
         if self.buttons[3].button_event_check(self.game.mouse_position):
             print("inv menu option4")
