@@ -1,5 +1,3 @@
-import pygame
-
 from Menus.baseMenu import Menu
 from button import Button
 from useful_functions import *
@@ -84,7 +82,6 @@ class InventoryMenu(Menu):
                 self.mouse_valid = False
         else:
             self.mouse_valid = False
-
 
     def draw_inv_information(self):
         self.inv_information_surface.fill(MENU_GREY)
