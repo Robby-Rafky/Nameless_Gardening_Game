@@ -16,8 +16,8 @@ class GardenSpace:
                                                                self.offset_y + y * 100,
                                                                100, 100), 2)
 
-    def draw_overlay_garden(self, mouse_valid):
-        if mouse_valid:
+    def draw_overlay_garden(self):
+        if self.game.garden_handler.mouse_valid:
             if pygame.mouse.get_pressed()[0] and self.game.menu_handler.current_menu is None:
                 pygame.draw.rect(self.game.game_space, WHITE, (self.offset_x + self.grid_x * 100,
                                                                self.offset_y + self.grid_y * 100,

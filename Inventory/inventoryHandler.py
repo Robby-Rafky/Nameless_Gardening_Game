@@ -8,14 +8,19 @@ class InventoryHandler:
 
     def __init__(self, game):
         self.game = game
-        self.inventory = [Item1(), Item2(), Item3()]
-        # update this
-        self.inventory_size = len(self.inventory)
+        self.inventory = [Item1() for _ in range(133)]
+
+        self.inventory_size = None
+        self.visible_size_full = None
+        self.visible_size_limit = None
+
+        self.update_inventory()
 
     def update_inventory(self):
         self.inventory_size = len(self.inventory)
+        self.visible_size_full = clamp(math.ceil(self.inventory_size / 11) * 100, 700, 0)
+        self.visible_size_limit = 100 * (self.inventory_size % 11)
 
-    def mouse_within_inventory_limits(self):
-        if 110 <= self.game.mouse_position[0] <= 1210 and 200 <= self.game.mouse_position[1] <= 900:
-            # many clamps + add scroll offset to gridx/y
-            pass
+
+
+

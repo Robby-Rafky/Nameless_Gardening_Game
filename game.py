@@ -44,10 +44,9 @@ class Game:
     def screen_layering(self):
         self.game_space.fill(GREEN)
 
-        self.garden_handler.mouse_within_garden_limits(self.mouse_position)
+        self.garden_handler.mouse_within_garden_limits()
         self.garden_handler.draw_garden()
 
-        self.inventory_handler.mouse_within_inventory_limits()
 
         self.menu_selector.draw_buttons()
         self.menu_handler.show_current_menu()

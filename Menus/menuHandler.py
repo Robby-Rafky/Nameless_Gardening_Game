@@ -20,7 +20,7 @@ class MenuHandler:
     def current_menu_event_check(self):
         # event checking in each specific menu
         if self.current_menu == "Inventory":
-            self.inventory_menu.inventory_menu_events()
+            self.inventory_menu.inv_menu_events()
         if self.current_menu == "Shop":
             self.shop_menu.shop_menu_events()
         if self.current_menu == "SkillTree":
@@ -36,8 +36,9 @@ class MenuHandler:
     def show_current_menu(self):
         if self.current_menu == "Inventory":
             self.inventory_menu.surface.fill(self.inventory_menu.background_colour)
-            self.inventory_menu.draw_inventory()
-            self.inventory_menu.draw_inventory_information()
+            self.inventory_menu.mouse_within_inv_limits()
+            self.inventory_menu.draw_inv()
+            self.inventory_menu.draw_inv_information()
             self.inventory_menu.show_menu()
         if self.current_menu == "Shop":
             self.shop_menu.surface.fill(self.shop_menu.background_colour)
@@ -55,7 +56,7 @@ class MenuHandler:
     def scroll_menu(self, scroll):
         if self.current_menu == "Inventory":
             if self.game.inventory_handler.inventory_size >= 77:
-                scroll_max = -int(math.ceil(self.game.inventory_handler.inventory_size/11) - 7) * 100 + 10
+                scroll_max = -(math.ceil(self.game.inventory_handler.inventory_size/11) - 7) * 100 + 10
 
                 self.inventory_menu.scroll_offset += scroll * 20
                 self.inventory_menu.scroll_offset = clamp(self.inventory_menu.scroll_offset, 10, scroll_max)

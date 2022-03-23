@@ -9,6 +9,6 @@ class BaseItem:
         self.buy_price = 0
         self.colour = RED
 
-    def draw_item(self, pos_x, pos_y, surface):
-        pygame.draw.circle(surface, self.colour, (pos_x, pos_y), 30)
+    def draw_item(self, pos_x, pos_y, surface, size):
+        pygame.draw.circle(surface, self.colour, (pos_x, pos_y), 30 * size)
 
