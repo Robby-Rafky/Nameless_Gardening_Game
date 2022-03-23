@@ -3,24 +3,26 @@ from useful_functions import *
 
 class Button:
 
-    def __init__(self, text, position, size, offset, outline, font_size, colour=GREY, clicked_text=""):
-        self.rect, self.surface = None, None
+    def __init__(self, text, position, size, offset, outline, centered, font_size, colour=GREY):
+        self.rect, self.text_visual = None, None
         self.x, self.y = position
         self.offset_x, self.offset_y = offset
         self.size = size
         self.font = pygame.font.SysFont("Arial", font_size)
         self.outline = outline
+        self.centered = centered
         self.text = text
-        if clicked_text == "":
-            self.clicked_text = text
-        else:
-            self.clicked_text = clicked_text
+        self.surface = pygame.Surface(self.size)
         self.update_button(text, colour)
 
     def update_button(self, text="", colour=WHITE):
-        self.surface = pygame.Surface(self.size)
         self.surface.fill(colour)
-        self.surface.blit(self.font.render(text, True, BLACK), (10, 10))
+        self.text_visual = self.font.render(text, True, BLACK)
+        if self.centered:
+            self.surface.blit(self.text_visual, (self.size[0]/2 - self.text_visual.get_width()/2,
+                                                 self.size[1]/2 - self.text_visual.get_height()/2))
+        else:
+            self.surface.blit(self.text_visual, (10, 10))
         if self.outline:
             pygame.draw.rect(self.surface, BLACK, (0, 0, self.size[0], self.size[1]), 2)
         self.rect = pygame.Rect(self.x + self.offset_x, self.y + self.offset_y, self.size[0], self.size[1])
@@ -32,8 +34,8 @@ class Button:
                 pass
             return False
 
-    def pack_button(self, game_space):
-        game_space.blit(self.surface, (self.x, self.y))
+    def pack_button(self, surface):
+        surface.blit(self.surface, (self.x, self.y))
 
 
 

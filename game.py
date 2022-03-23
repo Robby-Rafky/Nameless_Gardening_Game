@@ -1,7 +1,10 @@
+import pygame
+
 from useful_functions import *
 from Garden.gardenHandler import GardenHandler
 from Menus.menuHandler import MenuHandler
 from upperUI import MenuSwitcher
+from Inventory.inventoryHandler import InventoryHandler
 
 
 class Game:
@@ -24,6 +27,7 @@ class Game:
         self.garden_handler = GardenHandler(self)
         self.menu_selector = MenuSwitcher(self)
         self.menu_handler = MenuHandler(self)
+        self.inventory_handler = InventoryHandler(self)
 
         #test stuff
         self.sizetestx = 1
@@ -40,8 +44,10 @@ class Game:
     def screen_layering(self):
         self.game_space.fill(GREEN)
 
-        self.garden_handler.mouse_within_limits(self.mouse_position)
+        self.garden_handler.mouse_within_garden_limits(self.mouse_position)
         self.garden_handler.draw_garden()
+
+        self.inventory_handler.mouse_within_inventory_limits()
 
         self.menu_selector.draw_buttons()
         self.menu_handler.show_current_menu()
@@ -58,9 +64,13 @@ class Game:
                 if self.menu_handler.current_menu is None:
                     if pygame.mouse.get_pressed()[0]:
                         self.garden_handler.place_plant()
+                        print(self.garden_handler.garden_contents)
                     if pygame.mouse.get_pressed()[2]:
                         self.garden_handler.kill_plant()
-                    print(self.garden_handler.garden_contents)
+                        print(self.garden_handler.garden_contents)
+
+            if event.type == pygame.MOUSEWHEEL:
+                self.menu_handler.scroll_menu(event.y)
 
             if event.type == pygame.MOUSEBUTTONDOWN:
                 self.menu_handler.current_menu = self.menu_selector.menu_switching()

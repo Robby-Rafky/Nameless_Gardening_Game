@@ -26,7 +26,7 @@ class GardenHandler:
             self.garden_contents[x].append(None)
         self.garden_contents.append([None for _ in range(self.garden.plot_size_y)])
 
-    def mouse_within_limits(self, mouse_coordinates):
+    def mouse_within_garden_limits(self, mouse_coordinates):
         if (self.garden.offset_x <= mouse_coordinates[0] <= (self.garden.offset_x +
                                                              100 * self.garden.plot_size_x)) and (
                 self.garden.offset_y <= mouse_coordinates[1] <= (self.garden.offset_y +

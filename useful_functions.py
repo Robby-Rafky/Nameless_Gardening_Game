@@ -1,11 +1,12 @@
 # All external libraries
+import math
 import pygame
 
 # Colour definitions
 BLACK = (0, 0, 0)
 BLUE = (4, 18, 105)
 GREY = (105, 105, 105)
-LIGHT_GREY = (199, 199, 199)
+LIGHT_GREY = (160, 160, 160)
 GREEN = (40, 87, 23)
 BROWN = (51, 30, 4)
 WHITE = (255, 255, 255)

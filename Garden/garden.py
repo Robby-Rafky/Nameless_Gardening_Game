@@ -1,5 +1,5 @@
 from useful_functions import *
-from Garden.Plants.basePlant import Plant
+
 
 class GardenSpace:
 
@@ -8,8 +8,6 @@ class GardenSpace:
         self.offset_x, self.offset_y = None, None
         self.grid_x, self.grid_y = None, None
         self.game = game
-        # temp
-        self.garden_contents = []
 
     def draw_base_garden(self):
         for x in range(self.plot_size_x):
