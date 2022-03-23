@@ -15,6 +15,7 @@ class InventoryMenu(Menu):
         self.item_view = Button(" ", (10, 10), (500, 580), (1300, 190), True, False, 20, MENU_GREY)
         self.inventory_surface = pygame.Surface((1150, 720))
         self.inventory_information_surface = pygame.Surface((520, 720))
+        self.font = pygame.font.SysFont("Arial", 20)
         self.scroll_offset = 10
         self.scroll_percentage = 0
 
@@ -38,6 +39,9 @@ class InventoryMenu(Menu):
                 pygame.draw.rect(self.inventory_surface, GREY, (10 + x * 100,
                                                                 self.scroll_offset + y * 100,
                                                                 100, 100), 2)
+                stack_counter = self.font.render(str(item.stack_size), True, BLACK)
+                self.inventory_surface.blit(stack_counter, (105 - stack_counter.get_width() + x * 100,
+                                                     100 - stack_counter.get_height() + self.scroll_offset + y * 100))
                 item.draw_item(60 + x * 100, 50 + self.scroll_offset + y * 100, self.inventory_surface)
         pygame.draw.rect(self.inventory_surface, BLACK, (0, 0, 1150, 720), 4)
 

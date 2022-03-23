@@ -7,4 +7,4 @@ class Item3(BaseItem):
     def __init__(self):
         BaseItem.__init__(self)
         self.colour = BLUE
-
+        self.stack_size = 13
