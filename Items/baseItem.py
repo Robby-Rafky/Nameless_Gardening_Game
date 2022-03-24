@@ -7,7 +7,9 @@ class BaseItem:
         self.stack_size = 0
         self.sell_price = 0
         self.buy_price = 0
+        self.item_ID = None
         self.colour = RED
+        self.item_description = " "
 
     def draw_item(self, pos_x, pos_y, surface, size):
         pygame.draw.circle(surface, self.colour, (pos_x, pos_y), 30 * size)
