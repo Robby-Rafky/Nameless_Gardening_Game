@@ -7,18 +7,18 @@ class MenuSwitcher:
         self.game = game
         self.surface = None
         self.top_buttons = []
-        self.top_buttons.append(Button("Inventory", (0, 0), (300, 70), (60, 10), True, True, 30, LIGHT_ORANGE))
-        self.top_buttons.append(Button("Shop", (375, 0), (300, 70), (60, 10), True, True, 30, LIGHT_ORANGE))
-        self.top_buttons.append(Button("Skill Tree", (750, 0), (300, 70), (60, 10), True, True, 30, LIGHT_ORANGE))
-        self.top_buttons.append(Button("4", (1125, 0), (300, 70), (60, 10), True, True, 30, LIGHT_ORANGE))
-        self.top_buttons.append(Button("Stats", (1500, 0), (300, 70), (60, 10), True, True, 30, LIGHT_ORANGE))
+        self.top_buttons.append(Button("Inventory", (0, 0), (300, 70), (60, 10), True, True, 30, L_ORANGE))
+        self.top_buttons.append(Button("Shop", (375, 0), (300, 70), (60, 10), True, True, 30, L_ORANGE))
+        self.top_buttons.append(Button("Skill Tree", (750, 0), (300, 70), (60, 10), True, True, 30, L_ORANGE))
+        self.top_buttons.append(Button("4", (1125, 0), (300, 70), (60, 10), True, True, 30, L_ORANGE))
+        self.top_buttons.append(Button("Stats", (1500, 0), (300, 70), (60, 10), True, True, 30, L_ORANGE))
 
     def draw_buttons(self):
         self.surface = pygame.Surface((1800, 70))
         self.surface.fill(GREEN)
         for button in self.top_buttons:
             button.pack_button(self.surface)
-            button.update_button(button.text, LIGHT_ORANGE)
+            button.update_button(button.text, L_ORANGE)
         if self.game.menu_handler.current_menu == "Inventory":
             self.top_buttons[0].update_button(self.top_buttons[0].text, MENU_GREY)
         if self.game.menu_handler.current_menu == "Shop":
