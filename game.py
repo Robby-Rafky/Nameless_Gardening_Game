@@ -1,10 +1,10 @@
-import pygame
-
 from useful_functions import *
 from Garden.gardenHandler import GardenHandler
 from Menus.menuHandler import MenuHandler
 from upperUI import MenuSwitcher
 from Inventory.inventoryHandler import InventoryHandler
+
+from Items.plantItem import PlantItem
 
 
 class Game:
@@ -37,7 +37,9 @@ class Game:
     def testing_stuff(self):
         self.sizetestx += 1
         self.sizetesty += 1
-        self.garden_handler.change_plot_size(self.sizetestx, self.sizetesty)
+        #self.garden_handler.change_plot_size(self.sizetestx, self.sizetesty)
+        self.inventory_handler.add_item(PlantItem(1, 1, 9, 3, 5, "verdant"))
+        #self.inventory_handler.inventory[1].stack_size -= 1
 
         pass
 
