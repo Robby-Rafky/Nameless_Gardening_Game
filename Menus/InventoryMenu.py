@@ -1,5 +1,3 @@
-import pygame.key
-
 from Menus.baseMenu import Menu
 from button import Button
 from useful_functions import *
