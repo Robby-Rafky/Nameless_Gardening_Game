@@ -15,7 +15,7 @@ class Button:
         self.surface = pygame.Surface(self.size)
         self.update_button(text, colour)
 
-    def update_button(self, text="", colour=WHITE):
+    def update_button(self, text, colour=WHITE):
         self.surface.fill(colour)
         self.text_visual = self.font.render(text, True, BLACK)
         if self.centered:
@@ -26,6 +26,22 @@ class Button:
         if self.outline:
             pygame.draw.rect(self.surface, BLACK, (0, 0, self.size[0], self.size[1]), 2)
         self.rect = pygame.Rect(self.x + self.offset_x, self.y + self.offset_y, self.size[0], self.size[1])
+
+    def update_button_multiline(self, text, colour=WHITE):
+        self.surface.fill(colour)
+        for x in range(len(text)):
+            self.text_visual = self.font.render(text[x], True, BLACK)
+            if self.centered:
+                self.surface.blit(self.text_visual, (self.size[0] / 2 - self.text_visual.get_width() / 2,
+                                                     self.size[1] / 2 - self.text_visual.get_height() / 2
+                                                     + self.text_visual.get_height() * x))
+            else:
+                self.surface.blit(self.text_visual, (10, 10 + self.text_visual.get_height() * x))
+            if self.outline:
+                pygame.draw.rect(self.surface, BLACK, (0, 0, self.size[0], self.size[1]), 2)
+        self.rect = pygame.Rect(self.x + self.offset_x, self.y + self.offset_y, self.size[0], self.size[1])
+
+
 
     def button_event_check(self, mouse_coordinates):
         if pygame.mouse.get_pressed()[0]:
