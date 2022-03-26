@@ -35,12 +35,10 @@ class Game:
         self.currently_placing = None
 
     def testing_stuff(self):
-        self.sizetestx += 1
+        self.sizetestx += 2
         self.sizetesty += 1
-        #self.garden_handler.change_plot_size(self.sizetestx, self.sizetesty)
-        self.inventory_handler.add_item(PlantItem(1, 1, 9, 3, 5, "verdant"))
-        #self.inventory_handler.inventory[1].stack_size -= 1
-
+        print(self.sizetestx, self.sizetesty)
+        self.garden_handler.change_plot_size(15, 9)
         pass
 
     def screen_layering(self):
@@ -48,7 +46,6 @@ class Game:
 
         self.garden_handler.mouse_within_garden_limits()
         self.garden_handler.draw_garden()
-
 
         self.menu_selector.draw_buttons()
         self.menu_handler.show_current_menu()

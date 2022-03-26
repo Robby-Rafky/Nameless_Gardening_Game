@@ -15,12 +15,14 @@ class GardenHandler:
         self.mouse_valid = False
         self.change_plot_size(1, 1)
 
+
     def change_plot_size(self, x_size, y_size):
         self.garden.plot_size_x, self.garden.plot_size_y = x_size, y_size
-        self.additional_offset = [(100 * (18 - self.garden.plot_size_x)) / 2, (100 * (8 - self.garden.plot_size_x)) / 2]
+        self.additional_offset = [(100 * (15 - self.garden.plot_size_x)) / 2,
+                                  (50 * (8 - self.garden.plot_size_x)) / 2]
 
         self.garden.offset_x = int(self.additional_offset[0]) + 60
-        self.garden.offset_y = int(self.additional_offset[1]) + 150
+        self.garden.offset_y = int(self.additional_offset[1]) + 300
 
         for x in range(len(self.garden_contents)):
             self.garden_contents[x].append(None)
