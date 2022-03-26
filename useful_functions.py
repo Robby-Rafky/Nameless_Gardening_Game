@@ -14,8 +14,8 @@ WHITE = (255, 255, 255)
 RED = (117, 13, 13)
 L_ORANGE = (235, 169, 94)
 MENU_GREY = (194, 194, 194)
-
-
+# Fonts
+PIXEL_FONT = "pixelFont.ttf"
 # Global use functions
 
 
