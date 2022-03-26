@@ -1,24 +1,31 @@
 from useful_functions import *
 from Items.plantItem import PlantItem
+from Items.plantSpecies import *
 from Items.item2 import Item2
-from Items.item3 import Item3
-
 
 class InventoryHandler:
 
     def __init__(self, game):
         self.game = game
-        self.inventory = [Item2() for _ in range(120)]
+        self.inventory = []
 
         self.inventory_size = None
         self.visible_size_full = None
         self.visible_size_limit = None
-        self.inventory.append(PlantItem(4, 0, 9, 3, 5, "crimson"))
-        self.inventory.append(PlantItem(1, 0, 9, 3, 5, "verdant"))
-        self.inventory.append(PlantItem(2, 0, 3, 3, 5, "crystalline"))
-        self.inventory.append(PlantItem(2, 0, 9, 3, 3, "decaying"))
 
+        self.starting_inventory()
         self.update_inventory()
+
+    # test stuff
+    def starting_inventory(self):
+        self.inventory.append(PlantItem(0, 0, 0, 0, 0, "Verdant", "Verdant"))
+        self.inventory.append(PlantItem(4, 0, 9, 3, 5, "Crimson", "Crystalline"))
+        self.inventory.append(PlantItem(1, 0, 9, 3, 5, "Verdant", "Radioactive"))
+        self.inventory.append(PlantItem(2, 1, 3, 3, 5, "Crystalline", "Explosive"))
+        self.inventory.append(PlantItem(3, 0, 9, 4, 3, "Decaying", "Programmed"))
+        self.inventory.append(PlantItem(2, 3, 6, 3, 9, "Eternal", "Deadly"))
+        self.inventory.append(PlantItem(4, 3, 5, 9, 3, "Steel", "Hollow"))
+        self.inventory.append(PlantItem(2, 3, 4, 3, 3, "Endothermic", "Exothermic"))
 
     def update_inventory(self):
         self.inventory_size = len(self.inventory)
@@ -41,7 +48,21 @@ class InventoryHandler:
             self.game.menu_handler.inventory_menu.clicked_inv_item = None
         self.update_inventory()
 
+    def get_item_description_1(self, item_index):
+        if isinstance(self.inventory[item_index], PlantItem):
+            return species_primary[self.inventory[item_index].plant_type_1]
+        else:
+            return [" "]
 
+    def get_item_description_2(self, item_index):
+        if isinstance(self.inventory[item_index], PlantItem):
+            return species_secondary[self.inventory[item_index].plant_type_2]
+        else:
+            return [" "]
 
-
+    def get_item_description_3(self, item_index):
+        if isinstance(self.inventory[item_index], PlantItem):
+            return self.inventory[item_index].item_stats_description
+        else:
+            return [" "]
 
