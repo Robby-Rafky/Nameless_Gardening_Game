@@ -6,9 +6,10 @@ class Plant:
         self.plant_age = 0
         self.adult_age = 1
         self.decay_age = 1
+        self.tick_rate = 1
 
     def tick_plant(self):
-        self.plant_age += 1
+        self.plant_age += self.tick_rate
         if self.plant_age >= self.decay_age:
             return True
 
