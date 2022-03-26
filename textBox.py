@@ -36,5 +36,8 @@ class TextBox:
                                                      + self.text_visual.get_height() * x))
             else:
                 self.surface.blit(self.text_visual, (10, 10 + self.text_visual.get_height() * x))
-            if self.outline:
-                pygame.draw.rect(self.surface, BLACK, (0, 0, self.size[0], self.size[1]), 2)
+        if self.outline:
+            pygame.draw.rect(self.surface, BLACK, (0, 0, self.size[0], self.size[1]), 2)
+
+    def draw_on_surface(self, surface):
+        surface.blit(self.surface, (self.x, self.y))

@@ -16,8 +16,6 @@ class Button(TextBox):
         self.update_textbox_multiline(text, colour)
         self.rect = pygame.Rect(self.x + self.offset_x, self.y + self.offset_y, self.size[0], self.size[1])
 
-
-
     def button_event_check(self, mouse_coordinates):
         if pygame.mouse.get_pressed()[0]:
             if self.rect.collidepoint(mouse_coordinates):
@@ -25,8 +23,7 @@ class Button(TextBox):
                 pass
             return False
 
-    def pack_button(self, surface):
-        surface.blit(self.surface, (self.x, self.y))
+
 
 
 
