@@ -24,15 +24,12 @@ class Game:
         self.base_background_colour = GREEN
         self.mouse_position = [0, 0]
         # all menu references go here.
-        self.current_menu = None
 
         self.garden_handler = GardenHandler(self)
         self.menu_selector = MenuSwitcher(self)
         self.menu_handler = MenuHandler(self)
         self.inventory_handler = InventoryHandler(self)
 
-        #test stuff
-        self.currently_placing = None
 
     def testing_stuff(self):
         self.garden_handler.update_plot_size()
@@ -54,37 +51,29 @@ class Game:
 
             if event.type == self.tick_time:
                 self.garden_handler.tick_garden()
+                pass
 
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if self.menu_handler.current_menu is None:
-                    if pygame.mouse.get_pressed()[0]:
-                        self.garden_handler.place_plant()
-                        print(self.garden_handler.garden_contents)
-                    if pygame.mouse.get_pressed()[2]:
-                        self.garden_handler.kill_plant()
-                        print(self.garden_handler.garden_contents)
+                    if pygame.mouse.get_pressed()[0] and self.garden_handler.mouse_valid:
+                        self.garden_handler.place_on_garden_tile()
+                self.menu_handler.current_menu = self.menu_selector.menu_switching()
+                self.menu_handler.current_menu_event_check()
 
             if event.type == pygame.MOUSEWHEEL:
                 self.menu_handler.scroll_menu(event.y)
 
-            if event.type == pygame.MOUSEBUTTONDOWN:
-                self.menu_handler.current_menu = self.menu_selector.menu_switching()
-                self.menu_handler.current_menu_event_check()
-
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
                     self.menu_handler.close_current_menu()
+                    self.garden_handler.currently_placing = None
+                    self.garden_handler.garden.currently_clicked_index = None
+                    self.garden_handler.garden.currently_clicked = None
 
                 if event.key == pygame.K_SPACE:
                     self.testing_stuff()
 
-                if event.key == pygame.K_q:
-                    self.garden_handler.expand_horizontal()
-                    print(self.garden_handler.garden_contents)
 
-                if event.key == pygame.K_e:
-                    self.garden_handler.expand_vertical()
-                    print(self.garden_handler.garden_contents)
 
     def game_loop(self):
         self.mouse_position = pygame.mouse.get_pos()
