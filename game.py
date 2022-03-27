@@ -1,3 +1,5 @@
+import pygame
+
 from useful_functions import *
 from Garden.gardenHandler import GardenHandler
 from Menus.menuHandler import MenuHandler
@@ -30,15 +32,10 @@ class Game:
         self.inventory_handler = InventoryHandler(self)
 
         #test stuff
-        self.sizetestx = 1
-        self.sizetesty = 1
         self.currently_placing = None
 
     def testing_stuff(self):
-        self.sizetestx += 2
-        self.sizetesty += 1
-        print(self.sizetestx, self.sizetesty)
-        self.garden_handler.change_plot_size(15, 9)
+        self.garden_handler.update_plot_size()
         pass
 
     def screen_layering(self):
@@ -80,6 +77,14 @@ class Game:
 
                 if event.key == pygame.K_SPACE:
                     self.testing_stuff()
+
+                if event.key == pygame.K_q:
+                    self.garden_handler.expand_horizontal()
+                    print(self.garden_handler.garden_contents)
+
+                if event.key == pygame.K_e:
+                    self.garden_handler.expand_vertical()
+                    print(self.garden_handler.garden_contents)
 
     def game_loop(self):
         self.mouse_position = pygame.mouse.get_pos()

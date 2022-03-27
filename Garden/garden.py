@@ -4,7 +4,7 @@ from useful_functions import *
 class GardenSpace:
 
     def __init__(self, game):
-        self.plot_size_x, self.plot_size_y = None, None
+        self.plot_size_x, self.plot_size_y = 1, 1
         self.offset_x, self.offset_y = None, None
         self.grid_x, self.grid_y = None, None
         self.game = game

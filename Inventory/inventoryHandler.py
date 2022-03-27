@@ -18,7 +18,7 @@ class InventoryHandler:
 
     # test stuff
     def starting_inventory(self):
-        self.inventory.append(PlantItem(0, 0, 0, 0, 0, "Verdant", "Verdant"))
+        self.inventory.append(PlantItem(0, 0, 0, 0, 0, "Verdant", "Programmed"))
         self.inventory.append(PlantItem(4, 0, 9, 3, 5, "Crimson", "Crystalline"))
         self.inventory.append(PlantItem(1, 0, 9, 3, 5, "Verdant", "Radioactive"))
         self.inventory.append(PlantItem(2, 1, 3, 3, 5, "Crystalline", "Explosive"))

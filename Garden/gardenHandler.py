@@ -11,22 +11,26 @@ class GardenHandler:
         self.garden = GardenSpace(game)
         self.additional_offset = None
         self.game = game
-        self.garden_contents = []
+        self.garden_contents = [[None]]
         self.mouse_valid = False
-        self.change_plot_size(1, 1)
+        self.update_plot_size()
 
-
-    def change_plot_size(self, x_size, y_size):
-        self.garden.plot_size_x, self.garden.plot_size_y = x_size, y_size
+    def update_plot_size(self):
+        self.garden.plot_size_x, self.garden.plot_size_y = len(self.garden_contents[0]), len(self.garden_contents)
         self.additional_offset = [(100 * (15 - self.garden.plot_size_x)) / 2,
-                                  (50 * (8 - self.garden.plot_size_x)) / 2]
+                                  (100 * (8 - self.garden.plot_size_y)) / 2]
 
         self.garden.offset_x = int(self.additional_offset[0]) + 60
-        self.garden.offset_y = int(self.additional_offset[1]) + 300
+        self.garden.offset_y = int(self.additional_offset[1]) + 170
 
-        for x in range(len(self.garden_contents)):
-            self.garden_contents[x].append(None)
-        self.garden_contents.append([None for _ in range(self.garden.plot_size_y)])
+    def expand_horizontal(self):
+        for row in range(len(self.garden_contents)):
+            self.garden_contents[row].append(None)
+        self.update_plot_size()
+
+    def expand_vertical(self):
+        self.garden_contents.append([None for _ in range(len(self.garden_contents[0]))])
+        self.update_plot_size()
 
     def mouse_within_garden_limits(self):
         if (self.garden.offset_x <= self.game.mouse_position[0] <= (self.garden.offset_x +
