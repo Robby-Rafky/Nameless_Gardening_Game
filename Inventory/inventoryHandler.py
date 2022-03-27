@@ -48,6 +48,10 @@ class InventoryHandler:
             self.game.menu_handler.inventory_menu.clicked_inv_item = None
         self.update_inventory()
 
+    def get_item_title(self, item_index):
+        # pull a title for each item
+        return "Item info"
+
     def get_item_description_1(self, item_index):
         if isinstance(self.inventory[item_index], PlantItem):
             return species_primary[self.inventory[item_index].plant_type_1]
