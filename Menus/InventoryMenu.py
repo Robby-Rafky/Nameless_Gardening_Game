@@ -10,6 +10,7 @@ class InventoryMenu(Menu):
         Menu.__init__(self, game, MENU_GREY)
         self.place_item_button = Button("Place", (20, 650), (200, 50), (1300, 190), True, True, 30, GREY)
         self.sell_item_button = Button("Sell", (300, 650), (200, 50), (1300, 190), True, True, 30, GREY)
+        self.item_title = TextBox(" ", (10, 10), (500, 40), (1300, 190), True, True, 26, MENU_GREY)
         self.item_view_1 = TextBox(" ", (10, 200), (500, 140), (1300, 190), True, False, 24, MENU_GREY)
         self.item_view_2 = TextBox(" ", (10, 350), (500, 140), (1300, 190), True, False, 24, MENU_GREY)
         self.item_view_3 = TextBox(" ", (10, 500), (500, 140), (1300, 190), True, False, 24, MENU_GREY)
@@ -27,7 +28,10 @@ class InventoryMenu(Menu):
     def inv_menu_events(self):
         if self.clicked_inv_item is not None:
             if self.place_item_button.button_event_check(self.game.mouse_position):
-                self.game.inventory_handler.add_item(self.clicked_inv_item)
+                self.game.garden_handler.currently_placing = self.clicked_inv_item
+                self.game.garden_handler.garden.currently_clicked = None
+                self.game.menu_handler.current_menu = None
+                self.game.garden_handler.garden.currently_clicked_index = None
             if self.sell_item_button.button_event_check(self.game.mouse_position):
                 self.game.inventory_handler.remove_item(self.clicked_inv_item)
 
@@ -96,11 +100,15 @@ class InventoryMenu(Menu):
             self.mouse_valid = False
 
     def side_inventory_panel(self):
+        self.clicked_inv_item.draw_item(260, 120, self.inv_information_surface, 1)
         self.place_item_button.update_button(self.place_item_button.text, GREY)
         self.place_item_button.draw_on_surface(self.inv_information_surface)
 
         self.sell_item_button.update_button(self.sell_item_button.text, GREY)
         self.sell_item_button.draw_on_surface(self.inv_information_surface)
+
+        self.item_title.update_textbox(self.game.inventory_handler.get_item_title(self.clicked_index), MENU_GREY)
+        self.item_title.draw_on_surface(self.inv_information_surface)
 
         self.item_view_1.update_textbox_multiline(
             self.game.inventory_handler.get_item_description_1(self.clicked_index), MENU_GREY)
