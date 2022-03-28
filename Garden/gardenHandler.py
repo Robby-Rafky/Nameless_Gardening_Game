@@ -29,10 +29,6 @@ class GardenHandler:
         self.garden.offset_x = int(self.additional_offset[0]) + 30
         self.garden.offset_y = int(self.additional_offset[1]) + 130
 
-        print(" ")
-        for row in self.garden_contents:
-            print(row)
-
     def expand_horizontal(self):
         if self.garden.plot_size_x < 15:
             for row in range(len(self.garden_contents)):
@@ -78,9 +74,18 @@ class GardenHandler:
             )
         return True
 
-    def harvest_plant(self):
-        if self.garden_contents[self.garden.grid_y][self.garden.grid_x] is not None:
-            self.garden_contents[self.garden.grid_y][self.garden.grid_x] = None
+    # some plants might give extra stuff when harvested (crystalline -> valuable crystals to sell)
+    def harvest_plant(self, plant, garden_index):
+        self.game.inventory_handler.add_item(PlantItem(
+                plant.stat_growth,
+                plant.stat_mutation,
+                plant.stat_yield,
+                plant.stat_lifespan,
+                plant.stat_value,
+                plant.plant_type_1,
+                plant.plant_type_2,
+        ))
+        self.garden_contents[garden_index[1]][garden_index[0]] = None
 
     def draw_plants(self):
         for y in range(len(self.garden_contents)):

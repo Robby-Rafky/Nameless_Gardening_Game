@@ -59,6 +59,7 @@ class Game:
                         self.garden_handler.place_on_garden_tile()
                 self.menu_handler.current_menu = self.menu_selector.menu_switching()
                 self.menu_handler.current_menu_event_check()
+                self.garden_handler.garden.garden_button_events()
 
             if event.type == pygame.MOUSEWHEEL:
                 self.menu_handler.scroll_menu(event.y)

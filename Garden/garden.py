@@ -42,6 +42,13 @@ class GardenSpace:
                                                            self.offset_y + self.currently_clicked_index[1] * 100,
                                                            100, 100), 3)
 
+    def garden_button_events(self):
+        if self.harvest_button.button_event_check(self.game.mouse_position):
+            if self.currently_clicked is not None:
+                if self.currently_clicked.is_adult():
+                    self.game.garden_handler.harvest_plant(self.currently_clicked, self.currently_clicked_index)
+                    self.currently_clicked = None
+
     def draw_side_garden_info(self):
         self.side_surface.fill(GREEN)
         if self.game.garden_handler.currently_placing is not None:
