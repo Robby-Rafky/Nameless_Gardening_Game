@@ -27,12 +27,12 @@ class InventoryMenu(Menu):
 
     def inv_menu_events(self):
         if self.clicked_inv_item is not None:
-            if self.place_item_button.button_event_check(self.game.mouse_position):
-                self.game.garden_handler.currently_placing = self.clicked_inv_item
-                self.game.garden_handler.garden.currently_clicked = None
+            if self.place_item_button.button_event(self.game.mouse_position):
+                self.game.garden_handler.planting = self.clicked_inv_item
+                self.game.garden_handler.garden.clicked_plot = None
                 self.game.menu_handler.current_menu = None
-                self.game.garden_handler.garden.currently_clicked_index = None
-            if self.sell_item_button.button_event_check(self.game.mouse_position):
+                self.game.garden_handler.garden.clicked_plot_index = None
+            if self.sell_item_button.button_event(self.game.mouse_position):
                 self.game.inventory_handler.remove_item(self.clicked_inv_item)
 
     def draw_inv(self):

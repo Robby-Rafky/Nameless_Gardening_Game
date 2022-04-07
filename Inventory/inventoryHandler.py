@@ -26,6 +26,8 @@ class InventoryHandler:
         self.inventory.append(PlantItem(2, 3, 6, 3, 9, "Eternal", "Deadly"))
         self.inventory.append(PlantItem(4, 3, 5, 9, 3, "Steel", "Hollow"))
         self.inventory.append(PlantItem(2, 3, 4, 3, 3, "Endothermic", "Exothermic"))
+        # for _ in range(200):
+        #     self.inventory.append(PlantItem(0,0,0,0,0, "Verdant", "Verdant"))
 
     def update_inventory(self):
         self.inventory_size = len(self.inventory)
