@@ -42,6 +42,7 @@ class MenuHandler:
             self.inventory_menu.show_menu()
         if self.current_menu == "Shop":
             self.shop_menu.surface.fill(self.shop_menu.background_colour)
+            self.shop_menu.draw_shop_items()
             self.shop_menu.show_menu()
         if self.current_menu == "SkillTree":
             self.skill_tree_menu.surface.fill(self.skill_tree_menu.background_colour)
