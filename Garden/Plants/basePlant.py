@@ -15,7 +15,7 @@ class Plant:
         self.plant_type_1 = plant_type_1
         self.plant_type_2 = plant_type_2
         self.plant_description = description
-        #test
+        # test
         self.colour = L_ORANGE
 
     def tick_plant(self):

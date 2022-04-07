@@ -9,42 +9,42 @@ class GardenHandler:
     def __init__(self, game):
         self.garden = GardenSpace(game)
         self.additional_offset = None
-        self.currently_placing = None
+        self.planting = None
         self.game = game
         self.garden_contents = [[None]]
         self.mouse_valid = False
         self.update_plot_size()
 
-        #test
-        for _ in range(14):
-            self.expand_horizontal()
-        for _ in range(8):
-            self.expand_vertical()
+        # test
+        # for _ in range(14):
+        #     self.expand_horizontal()
+        # for _ in range(8):
+        #     self.expand_vertical()
 
     def update_plot_size(self):
-        self.garden.plot_size_x, self.garden.plot_size_y = len(self.garden_contents[0]), len(self.garden_contents)
-        self.additional_offset = [(100 * (15 - self.garden.plot_size_x)) / 2,
-                                  (100 * (9 - self.garden.plot_size_y)) / 2]
+        self.garden.size_x, self.garden.size_y = len(self.garden_contents[0]), len(self.garden_contents)
+        self.additional_offset = [(100 * (15 - self.garden.size_x)) / 2,
+                                  (100 * (9 - self.garden.size_y)) / 2]
 
         self.garden.offset_x = int(self.additional_offset[0]) + 30
         self.garden.offset_y = int(self.additional_offset[1]) + 130
 
     def expand_horizontal(self):
-        if self.garden.plot_size_x < 15:
+        if self.garden.size_x < 15:
             for row in range(len(self.garden_contents)):
                 self.garden_contents[row].append(None)
             self.update_plot_size()
 
     def expand_vertical(self):
-        if self.garden.plot_size_y < 9:
+        if self.garden.size_y < 9:
             self.garden_contents.append([None for _ in range(len(self.garden_contents[0]))])
             self.update_plot_size()
 
     def mouse_within_garden_limits(self):
         if (self.garden.offset_x <= self.game.mouse_position[0] <= (self.garden.offset_x +
-                                                                    100 * self.garden.plot_size_x)) and (
+                                                                    100 * self.garden.size_x)) and (
                 self.garden.offset_y <= self.game.mouse_position[1] <= (self.garden.offset_y +
-                                                                        100 * self.garden.plot_size_y)):
+                                                                        100 * self.garden.size_y)):
 
             self.garden.grid_x = int((self.game.mouse_position[0] - self.garden.offset_x - 1) / 100)
             self.garden.grid_y = int((self.game.mouse_position[1] - self.garden.offset_y - 1) / 100)
@@ -55,10 +55,10 @@ class GardenHandler:
 
     def place_on_garden_tile(self):
         if self.mouse_valid:
-            if isinstance(self.currently_placing, PlantItem):
-                if self.place_plant(self.currently_placing):
-                    self.game.inventory_handler.remove_item(self.currently_placing)
-                    self.currently_placing = None
+            if isinstance(self.planting, PlantItem):
+                if self.place_plant(self.planting):
+                    self.game.inventory_handler.remove_item(self.planting)
+                    self.planting = None
 
     def place_plant(self, plant_item):
         if self.garden_contents[self.garden.grid_y][self.garden.grid_x] is None:
@@ -72,7 +72,9 @@ class GardenHandler:
                 plant_item.plant_type_2,
                 plant_item.item_stats_description
             )
-        return True
+            return True
+        else:
+            return False
 
     # some plants might give extra stuff when harvested (crystalline -> valuable crystals to sell)
     def harvest_plant(self, plant, garden_index):
@@ -99,8 +101,8 @@ class GardenHandler:
             for x in range(len(self.garden_contents[0])):
                 if self.garden_contents[y][x] is not None:
                     if self.garden_contents[y][x].tick_plant():
-                        if self.garden.currently_clicked == self.garden_contents[y][x]:
-                            self.garden.currently_clicked = None
+                        if self.garden.clicked_plot == self.garden_contents[y][x]:
+                            self.garden.clicked_plot = None
                         self.garden_contents[y][x] = None
 
     def draw_garden(self):

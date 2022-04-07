@@ -5,6 +5,7 @@ from Garden.gardenHandler import GardenHandler
 from Menus.menuHandler import MenuHandler
 from upperUI import MenuSwitcher
 from Inventory.inventoryHandler import InventoryHandler
+from user import User
 
 from Items.plantItem import PlantItem
 
@@ -23,6 +24,7 @@ class Game:
         self.game_clock = pygame.time.Clock()
         self.base_background_colour = GREEN
         self.mouse_position = [0, 0]
+        self.user = User()
         # all menu references go here.
 
         self.garden_handler = GardenHandler(self)
@@ -32,7 +34,8 @@ class Game:
 
 
     def testing_stuff(self):
-        self.garden_handler.update_plot_size()
+        self.garden_handler.expand_vertical()
+        self.garden_handler.expand_horizontal()
         pass
 
     def screen_layering(self):
@@ -67,9 +70,9 @@ class Game:
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
                     self.menu_handler.close_current_menu()
-                    self.garden_handler.currently_placing = None
-                    self.garden_handler.garden.currently_clicked_index = None
-                    self.garden_handler.garden.currently_clicked = None
+                    self.garden_handler.planting = None
+                    self.garden_handler.garden.clicked_plot_index = None
+                    self.garden_handler.garden.clicked_plot = None
 
                 if event.key == pygame.K_SPACE:
                     self.testing_stuff()
