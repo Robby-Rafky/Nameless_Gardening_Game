@@ -32,15 +32,15 @@ class MenuSwitcher:
         self.game.game_space.blit(self.surface, (60, 10))
 
     def menu_switching(self):
-        if self.top_buttons[0].button_event_check(self.game.mouse_position):
+        if self.top_buttons[0].button_event(self.game.mouse_position):
             return "Inventory"
-        if self.top_buttons[1].button_event_check(self.game.mouse_position):
+        if self.top_buttons[1].button_event(self.game.mouse_position):
             return "Shop"
-        if self.top_buttons[2].button_event_check(self.game.mouse_position):
+        if self.top_buttons[2].button_event(self.game.mouse_position):
             return "SkillTree"
-        if self.top_buttons[3].button_event_check(self.game.mouse_position):
+        if self.top_buttons[3].button_event(self.game.mouse_position):
             return "4"
-        if self.top_buttons[4].button_event_check(self.game.mouse_position):
+        if self.top_buttons[4].button_event(self.game.mouse_position):
             return "Stats"
         if 60 <= self.game.mouse_position[0] <= 1860:
             if 150 <= self.game.mouse_position[1] <= 950:

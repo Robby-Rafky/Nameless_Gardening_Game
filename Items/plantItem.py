@@ -16,7 +16,7 @@ class PlantItem(BaseItem):
         self.plant_type_2 = plant_type_2
         self.item_ID = (self.plant_type_1 + str(self.stat_growth) + str(self.stat_mutation) + str(
             self.stat_yield) + str(self.stat_lifespan) + str(self.stat_value) + self.plant_type_2)
-        self.stack_size = 5
+        self.stack_size = 1
         self.item_stats_description = ["   Growth Rate: " + str(self.stat_growth),
                                        " Mutation Rate: " + str(self.stat_mutation),
                                        "         Yield: " + str(self.stat_yield),
