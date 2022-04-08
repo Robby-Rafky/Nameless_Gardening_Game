@@ -28,6 +28,7 @@ class TextBox:
 
     def update_textbox_multiline(self, text, colour=WHITE):
         self.surface.fill(colour)
+        self.text = text
         for x in range(len(text)):
             self.text_visual = self.font.render(text[x], True, BLACK)
             if self.centered:

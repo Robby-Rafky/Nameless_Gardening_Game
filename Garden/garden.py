@@ -58,7 +58,7 @@ class GardenSpace:
         self.side_surface.fill(GREEN)
         if self.game.garden_handler.planting is not None:
             item = self.game.garden_handler.planting
-            item.draw_item(170, 170, self.side_surface, 1)
+            item.draw_seed(130, 130, self.side_surface)
             pygame.draw.rect(self.side_surface, BLACK, (0, 0, 340, 920), 2)
             self.action_box.update_textbox("Currently Placing", MENU_GREY)
             self.stats_box.update_textbox_multiline(item.item_stats_description, MENU_GREY)

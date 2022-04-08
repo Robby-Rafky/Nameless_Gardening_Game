@@ -1,13 +1,9 @@
-import pygame
-
 from useful_functions import *
 from Garden.gardenHandler import GardenHandler
 from Menus.menuHandler import MenuHandler
 from upperUI import MenuSwitcher
-from Inventory.inventoryHandler import InventoryHandler
-from user import User
-
-from Items.plantItem import PlantItem
+from UserData.inventoryHandler import InventoryHandler
+from UserData.user import User
 
 
 class Game:
@@ -31,7 +27,6 @@ class Game:
         self.menu_selector = MenuSwitcher(self)
         self.menu_handler = MenuHandler(self)
         self.inventory_handler = InventoryHandler(self)
-
 
     def testing_stuff(self):
         self.garden_handler.expand_vertical()
