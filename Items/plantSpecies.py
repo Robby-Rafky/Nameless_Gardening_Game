@@ -70,3 +70,4 @@ species_secondary = {
     "Unstable": [""],
     "Vital": [""],
 }
+# replace with dict of classes with: primary info, secondary info, methods, colours and base stats/multi

@@ -1,0 +1,19 @@
+Pure plants (secondary == primary) unless stated otherwise.
+
+Eternal = 8x Vital
+Deadly = 2x Crimson
+Decaying = Deadly + Vital
+Unstable = Exothermic + Endothermic
+Celestial =  Solar + Lunar
+Dirty = 2x Verdant
+Rocky = 2x Dirty + 2x Verdant
+Explosive = Unstable + Tectonic
+Tectonic = 8x Rocky
+Magmatic = Tectonic + Solar
+Blizzard =  2x Endothermic + 2x Azure
+Necrotic = Deadly + Temporal
+Temporal = 4x Haste + 4x Unstable
+Vital = something
+
+
+Fertilizer for +30% remaining time to adult. (better ones possibly byproduct from plants)
