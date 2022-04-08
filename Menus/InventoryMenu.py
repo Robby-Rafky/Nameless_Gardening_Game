@@ -53,7 +53,7 @@ class InventoryMenu(Menu):
                                                           self.scroll_offset + y * 100,
                                                           100, 100), 2)
                 stack = self.font.render(str(item.stack_size), True, BLACK)
-                item.draw_item(60 + x * 100, 50 + self.scroll_offset + y * 100, self.inv_surface, 1)
+                item.draw_seed(20 + x * 100, 10 + self.scroll_offset + y * 100, self.inv_surface)
                 self.inv_surface.blit(stack, (105 - stack.get_width() + x * 100,
                                               100 - stack.get_height() +
                                               self.scroll_offset + y * 100))
@@ -74,9 +74,9 @@ class InventoryMenu(Menu):
             pygame.draw.rect(self.inv_surface, BLACK, (self.inv_cursor_x * 100,
                                                        self.scroll_offset + self.inv_cursor_y * 100 - 10,
                                                        120, 120), 2)
-            self.game.inventory_handler.inventory[self.inv_index].draw_item(60 + self.inv_cursor_x * 100,
-                                                                            50 + self.scroll_offset + self.inv_cursor_y
-                                                                            * 100, self.inv_surface, 1.2)
+            self.game.inventory_handler.inventory[self.inv_index].draw_seed(20 + self.inv_cursor_x * 100,
+                                                                            10 + self.scroll_offset + self.inv_cursor_y
+                                                                            * 100, self.inv_surface)
             stack = self.font.render(str(self.game.inventory_handler.inventory[self.inv_index].stack_size), True, BLACK)
             self.inv_surface.blit(stack, (115 - stack.get_width() + self.inv_cursor_x * 100,
                                           110 - stack.get_height() + self.scroll_offset + self.inv_cursor_y * 100))
@@ -100,7 +100,7 @@ class InventoryMenu(Menu):
             self.mouse_valid = False
 
     def side_inventory_panel(self):
-        self.clicked_inv_item.draw_item(260, 120, self.inv_information_surface, 1)
+        self.clicked_inv_item.draw_seed(220, 70, self.inv_information_surface)
         self.place_item_button.update_button(self.place_item_button.text, GREY)
         self.place_item_button.draw_on_surface(self.inv_information_surface)
 
