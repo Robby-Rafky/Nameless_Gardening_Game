@@ -11,5 +11,4 @@ class User:
             return False
         else:
             self.cash -= cost
-            print(self.cash)
             return True

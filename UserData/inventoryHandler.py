@@ -1,10 +1,12 @@
+import random
+
 from useful_functions import *
 from Items.plantItem import PlantItem
 from Items.plantSpecies import *
 from Items.item2 import Item2
 
-class InventoryHandler:
 
+class InventoryHandler:
     def __init__(self, game):
         self.game = game
         self.inventory = []
