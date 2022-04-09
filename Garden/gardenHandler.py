@@ -41,13 +41,13 @@ class GardenHandler:
             self.update_plot_size()
 
     def mouse_within_garden_limits(self):
-        if (self.garden.offset_x <= self.game.mouse_position[0] <= (self.garden.offset_x +
-                                                                    100 * self.garden.size_x)) and (
-                self.garden.offset_y <= self.game.mouse_position[1] <= (self.garden.offset_y +
-                                                                        100 * self.garden.size_y)):
+        if (self.garden.offset_x <= self.game.mouse_pos[0] <= (self.garden.offset_x +
+                                                               100 * self.garden.size_x)) and (
+                self.garden.offset_y <= self.game.mouse_pos[1] <= (self.garden.offset_y +
+                                                                   100 * self.garden.size_y)):
 
-            self.garden.grid_x = int((self.game.mouse_position[0] - self.garden.offset_x - 1) / 100)
-            self.garden.grid_y = int((self.game.mouse_position[1] - self.garden.offset_y - 1) / 100)
+            self.garden.grid_x = int((self.game.mouse_pos[0] - self.garden.offset_x - 1) / 100)
+            self.garden.grid_y = int((self.game.mouse_pos[1] - self.garden.offset_y - 1) / 100)
 
             self.mouse_valid = True
         else:

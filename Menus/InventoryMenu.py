@@ -27,12 +27,12 @@ class InventoryMenu(Menu):
 
     def inv_menu_events(self):
         if self.clicked_inv_item is not None:
-            if self.place_item_button.button_event(self.game.mouse_position):
+            if self.place_item_button.button_event(self.game.mouse_pos):
                 self.game.garden_handler.planting = self.clicked_inv_item
                 self.game.garden_handler.garden.clicked_plot = None
                 self.game.menu_handler.current_menu = None
                 self.game.garden_handler.garden.clicked_plot_index = None
-            if self.sell_item_button.button_event(self.game.mouse_position):
+            if self.sell_item_button.button_event(self.game.mouse_pos):
                 self.game.inventory_handler.remove_item(self.clicked_inv_item)
 
     def draw_inv(self):
@@ -82,10 +82,10 @@ class InventoryMenu(Menu):
                                           110 - stack.get_height() + self.scroll_offset + self.inv_cursor_y * 100))
 
     def mouse_within_inv_limits(self):
-        if (0 <= self.game.mouse_position[0] - 110 <= 1100 and
-                1 <= self.game.mouse_position[1] - 200 <= self.game.inventory_handler.visible_size_full):
-            self.inv_cursor_x = int((self.game.mouse_position[0] - 111) / 100)
-            self.inv_cursor_y = int((self.game.mouse_position[1] - 191 - self.scroll_offset) / 100)
+        if (0 <= self.game.mouse_pos[0] - 110 <= 1100 and
+                1 <= self.game.mouse_pos[1] - 200 <= self.game.inventory_handler.visible_size_full):
+            self.inv_cursor_x = int((self.game.mouse_pos[0] - 111) / 100)
+            self.inv_cursor_y = int((self.game.mouse_pos[1] - 191 - self.scroll_offset) / 100)
             self.inv_index = self.inv_cursor_x + self.inv_cursor_y * 11
             if self.inv_index < self.game.inventory_handler.inventory_size:
                 if pygame.mouse.get_pressed()[0]:

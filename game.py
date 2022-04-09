@@ -19,7 +19,7 @@ class Game:
 
         self.game_clock = pygame.time.Clock()
         self.base_background_colour = GREEN
-        self.mouse_position = [0, 0]
+        self.mouse_pos = [0, 0]
         self.user = User()
         # all menu references go here.
 
@@ -75,7 +75,7 @@ class Game:
 
 
     def game_loop(self):
-        self.mouse_position = pygame.mouse.get_pos()
+        self.mouse_pos = pygame.mouse.get_pos()
 
         self.event_checking()
         self.screen_layering()

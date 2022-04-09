@@ -25,7 +25,7 @@ class ShopMenu(Menu):
         self.surface_mutate = pygame.Surface((880, 200))
 
     def shop_menu_events(self):
-        if self.buy_expand_garden_v.button_event(self.game.mouse_position) and self.game.garden_handler.garden.size_y < 9:
+        if self.buy_expand_garden_v.button_event(self.game.mouse_pos) and self.game.garden_handler.garden.size_y < 9:
             if self.game.user.purchase_check(self.buy_expand_garden_v.price):
                 self.game.garden_handler.expand_vertical()
                 self.buy_expand_garden_h.update_price(self.game.garden_handler.garden.size_y
@@ -34,7 +34,7 @@ class ShopMenu(Menu):
                                                       * self.game.garden_handler.garden.size_x * 100)
         elif self.game.garden_handler.garden.size_y == 9:
             self.buy_expand_garden_v.update_price()
-        if self.buy_expand_garden_h.button_event(self.game.mouse_position) and self.game.garden_handler.garden.size_x < 15:
+        if self.buy_expand_garden_h.button_event(self.game.mouse_pos) and self.game.garden_handler.garden.size_x < 15:
             if self.game.user.purchase_check(self.buy_expand_garden_h.price):
                 self.game.garden_handler.expand_horizontal()
                 self.buy_expand_garden_h.update_price(self.game.garden_handler.garden.size_y
@@ -44,7 +44,7 @@ class ShopMenu(Menu):
         elif self.game.garden_handler.garden.size_x == 15:
             self.buy_expand_garden_h.update_price()
 
-        if self.buy_verdant_seed.button_event(self.game.mouse_position):
+        if self.buy_verdant_seed.button_event(self.game.mouse_pos):
             if self.game.user.purchase_check(self.buy_verdant_seed.price):
                 self.game.inventory_handler.add_item(self.buy_verdant_seed.item)
 

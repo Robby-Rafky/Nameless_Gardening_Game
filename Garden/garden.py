@@ -48,7 +48,7 @@ class GardenSpace:
                                                            100, 100), 3)
 
     def garden_button_events(self):
-        if self.harvest_button.button_event(self.game.mouse_position):
+        if self.harvest_button.button_event(self.game.mouse_pos):
             if self.clicked_plot is not None:
                 if self.clicked_plot.is_adult():
                     self.game.garden_handler.harvest_plant(self.clicked_plot, self.clicked_plot_index)
