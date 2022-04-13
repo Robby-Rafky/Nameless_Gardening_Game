@@ -3,10 +3,9 @@ from useful_functions import *
 
 class TextBox:
 
-    def __init__(self, text, position, size, offset, outline, centered, font_size, colour=GREY):
+    def __init__(self, text, position, size, outline, centered, font_size, colour=GREY):
         self.text_visual = None
         self.x, self.y = position
-        self.offset_x, self.offset_y = offset
         self.size = size
         self.font = pygame.font.Font(PIXEL_FONT, font_size)
         self.outline = outline
