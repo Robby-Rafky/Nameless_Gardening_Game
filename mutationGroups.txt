@@ -17,3 +17,5 @@ Vital = something
 
 
 Fertilizer for +30% remaining time to adult. (better ones possibly byproduct from plants)
+Plants gain resistance to fertilizer spammed on it (per type of plant)
+resistance resets over time (faster when mutating and creating new seeds of that type)
