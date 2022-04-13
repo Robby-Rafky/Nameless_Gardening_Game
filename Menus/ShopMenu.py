@@ -9,13 +9,13 @@ class ShopMenu(Menu):
 
     def __init__(self, game):
         Menu.__init__(self, game, MENU_GREY)
-        self.currency_text = TextBox(" ", (725, 760), (350, 40), (60, 150), True, True, 22, MENU_GREY)
+        self.currency_text = TextBox(" ", (725, 760), (350, 40), True, True, 22, MENU_GREY)
 
-        self.garden_shop_text = TextBox("Garden Shop", (10, 10), (860, 40), (70, 160), True, True, 26, LIME_GREEN)
+        self.garden_shop_text = TextBox("Garden Shop", (10, 10), (860, 40), True, True, 26, LIME_GREEN)
         self.buy_expand_garden_v = ShopItem("Add row", (20, 60), (380, 40), (70, 160), 100)
         self.buy_expand_garden_h = ShopItem("Add column", (480, 60), (380, 40), (70, 160), 100)
 
-        self.seed_shop_text = TextBox("Seeds Shop", (10, 10), (1760, 40), (70, 370), True, True, 26, LIME_GREEN)
+        self.seed_shop_text = TextBox("Seeds Shop", (10, 10), (1760, 40), True, True, 26, LIME_GREEN)
         self.buy_verdant_seed = ShopItem("Verdant Seed", (10, 170), (260, 40), (70, 370), 0,
                                          PlantItem(0, 0, 0, 0, 0, "Verdant", "Verdant"))
 

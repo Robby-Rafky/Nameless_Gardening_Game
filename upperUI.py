@@ -10,8 +10,8 @@ class MenuSwitcher:
         self.top_buttons.append(Button("Inventory", (0, 0), (300, 70), (60, 10), True, True, 25, L_ORANGE))
         self.top_buttons.append(Button("Shop", (375, 0), (300, 70), (60, 10), True, True, 25, L_ORANGE))
         self.top_buttons.append(Button("Skill Tree", (750, 0), (300, 70), (60, 10), True, True, 25, L_ORANGE))
-        self.top_buttons.append(Button("4", (1125, 0), (300, 70), (60, 10), True, True, 25, L_ORANGE))
-        self.top_buttons.append(Button("Stats", (1500, 0), (300, 70), (60, 10), True, True, 25, L_ORANGE))
+        self.top_buttons.append(Button("Crafting", (1125, 0), (300, 70), (60, 10), True, True, 25, L_ORANGE))
+        self.top_buttons.append(Button("Plants", (1500, 0), (300, 70), (60, 10), True, True, 25, L_ORANGE))
 
     def draw_buttons(self):
         self.surface = pygame.Surface((1800, 70))

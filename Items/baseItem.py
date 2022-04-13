@@ -1,7 +1,5 @@
 from useful_functions import *
 
-
-
 class BaseItem:
 
     def __init__(self):

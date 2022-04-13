@@ -72,8 +72,6 @@ class Game:
                 if event.key == pygame.K_SPACE:
                     self.testing_stuff()
 
-
-
     def game_loop(self):
         self.mouse_pos = pygame.mouse.get_pos()
 

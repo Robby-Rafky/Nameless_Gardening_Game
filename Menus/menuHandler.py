@@ -52,7 +52,11 @@ class MenuHandler:
             self.menu_4.show_menu()
         if self.current_menu == "Stats":
             self.stats_menu.surface.fill(self.stats_menu.background_colour)
+            self.stats_menu.draw_plant_type_info()
+            self.stats_menu.draw_plant_types()
             self.stats_menu.show_menu()
+        if self.current_menu is not None:
+            self.game.garden_handler.planting = None
 
     def scroll_menu(self, scroll):
         if self.current_menu == "Inventory":
@@ -71,4 +75,5 @@ class MenuHandler:
         if self.current_menu == "4":
             pass
         if self.current_menu == "Stats":
-            pass
+            self.stats_menu.scroll_offset -= scroll * 20
+            self.stats_menu.scroll_offset = clamp(self.stats_menu.scroll_offset, self.stats_menu.scroll_max, 0)

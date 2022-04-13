@@ -2,8 +2,7 @@ import random
 
 from useful_functions import *
 from Items.plantItem import PlantItem
-from Items.plantSpecies import *
-from Items.item2 import Item2
+from Garden.Plants.plantSpecies import plant_species
 
 
 class InventoryHandler:
@@ -28,8 +27,8 @@ class InventoryHandler:
         self.inventory.append(PlantItem(2, 3, 6, 3, 9, "Eternal", "Deadly"))
         self.inventory.append(PlantItem(4, 3, 5, 9, 3, "Steel", "Hollow"))
         self.inventory.append(PlantItem(2, 3, 4, 3, 3, "Endothermic", "Exothermic"))
-        # for _ in range(200):
-        #     self.inventory.append(PlantItem(0,0,0,0,0, "Verdant", "Verdant"))
+        for _ in range(200):
+            self.inventory.append(PlantItem(0,0,0,0,0, "Verdant", "Verdant"))
 
     def update_inventory(self):
         self.inventory_size = len(self.inventory)
@@ -58,13 +57,13 @@ class InventoryHandler:
 
     def get_item_description_1(self, item_index):
         if isinstance(self.inventory[item_index], PlantItem):
-            return species_primary[self.inventory[item_index].plant_type_1]
+            return plant_species[self.inventory[item_index].plant_type_1].primary_desc
         else:
             return [" "]
 
     def get_item_description_2(self, item_index):
         if isinstance(self.inventory[item_index], PlantItem):
-            return species_secondary[self.inventory[item_index].plant_type_2]
+            return plant_species[self.inventory[item_index].plant_type_2].secondary_desc
         else:
             return [" "]
 

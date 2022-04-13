@@ -11,10 +11,10 @@ class GardenSpace:
         self.grid_x, self.grid_y = None, None
         self.clicked_plot = None
         self.clicked_plot_index = None
-        self.action_box = TextBox(" ", (10, 10), (320, 40), (1560, 120), True, True, 26, MENU_GREY)
-        self.timers_box = TextBox(" ", (10, 300), (320, 50), (1560, 120), True, True, 20, MENU_GREY)
-        self.types_box = TextBox(" ", (10, 360), (320, 70), (1560, 120), True, False, 24, MENU_GREY)
-        self.stats_box = TextBox(" ", (10, 440), (320, 140), (1560, 120), True, False, 24, MENU_GREY)
+        self.action_box = TextBox(" ", (10, 10), (320, 40), True, True, 26, MENU_GREY)
+        self.timers_box = TextBox(" ", (10, 300), (320, 50), True, True, 20, MENU_GREY)
+        self.types_box = TextBox(" ", (10, 360), (320, 70), True, False, 24, MENU_GREY)
+        self.stats_box = TextBox(" ", (10, 440), (320, 140), True, False, 24, MENU_GREY)
         self.harvest_button = Button("Growing", (10, 600), (170, 40), (1560, 120), True, True, 26, RED)
         self.game = game
         self.side_surface = pygame.Surface((340, 920))

@@ -1,6 +1,7 @@
 from useful_functions import *
 from datetime import timedelta
 
+
 class Plant:
     def __init__(self, growth, mutation, seed_yield, lifespan, value, plant_type_1, plant_type_2, description):
         self.plant_age = 0
