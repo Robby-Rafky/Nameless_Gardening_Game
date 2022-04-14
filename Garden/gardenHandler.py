@@ -91,13 +91,20 @@ class GardenHandler:
                                                           (self.garden.offset_y + y * 100))
 
     def tick_garden(self):
+        garden_update = []
         for y in range(len(self.garden_contents)):
             for x in range(len(self.garden_contents[0])):
                 if self.garden_contents[y][x] is not None:
-                    if self.garden_contents[y][x].tick_plant():
+                    action = self.garden_contents[y][x].tick_plant()
+                    if action == 0:
+                        garden_update.append((y, x))
+                    elif action == 1:
                         if self.garden.clicked_plot == self.garden_contents[y][x]:
                             self.garden.clicked_plot = None
                         self.garden_contents[y][x] = None
+                        garden_update.append((y, x))
+        if len(garden_update) != 0:
+            pygame.event.post(pygame.event.Event(self.game.plant_state_changed, message=garden_update))
 
     def draw_garden(self):
         self.draw_plants()

@@ -11,6 +11,10 @@ class Game:
     def __init__(self):
         pygame.init()
         self.tick_time = pygame.USEREVENT
+        self.planted = pygame.USEREVENT + 1
+        self.plant_state_changed = pygame.USEREVENT + 2
+
+
         pygame.time.set_timer(self.tick_time, 1000)
         self.running = True
         self.DISPLAY_WIDTH, self.DISPLAY_HEIGHT = 1920, 1080
@@ -44,12 +48,17 @@ class Game:
 
     def event_checking(self):
         for event in pygame.event.get():
+            # when the user quits out of the program
             if event.type == pygame.QUIT:
                 self.running = False
 
+            # every real world second
             if event.type == self.tick_time:
                 self.garden_handler.tick_garden()
-                pass
+
+            # when any plant in the garden becomes an adult or dies
+            if event.type == self.plant_state_changed:
+                print(event.message)
 
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if self.menu_handler.current_menu is None:
@@ -71,6 +80,7 @@ class Game:
 
                 if event.key == pygame.K_SPACE:
                     self.testing_stuff()
+
 
     def game_loop(self):
         self.mouse_pos = pygame.mouse.get_pos()
