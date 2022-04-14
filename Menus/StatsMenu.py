@@ -23,6 +23,9 @@ class StatsMenu(Menu):
         self.recipe_details = TextBox(" ", (10, 100), (220, 220), True, False, 26)
         self.error_text = TextBox(" ", (500, 550), (450, 80), False, True, 38)
         self.unlock_details = TextBox(" ", (500, 630), (450, 40), False, True, 26)
+        self.mutation_info = TextBox(" ", (240, 540), (1220, 40), True, False, 26, MENU_GREY)
+        self.res_title = TextBox("Resistance", (10, 690), (300, 40), False, False, 26, MENU_GREY)
+        self.font = pygame.font.Font(PIXEL_FONT, 24)
         self.scroll_offset = 0
         self.button_collection = []
         self.type_list_surface = pygame.Surface((300, 780))
@@ -45,6 +48,7 @@ class StatsMenu(Menu):
 
     def draw_primary_info(self):
         self.primary_desc.update_textbox_multiline(self.clicked_item.primary_desc, MENU_GREY)
+
         adult_age = str(timedelta(seconds=self.clicked_item.base_adult_age[0]))
         adult_mult = str(self.clicked_item.mult_adult_age[0])
         death_age = str(timedelta(seconds=self.clicked_item.base_death_age[0]))
@@ -54,15 +58,15 @@ class StatsMenu(Menu):
         yield_base = str(1 + int(self.clicked_item.base_yield[0] / 100))
         yield_add = str(self.clicked_item.base_yield[0] % 100)
         yield_mult = str(self.clicked_item.mult_yield[0])
+        a_eff = str(self.clicked_item.ability_eff[0])
 
         self.primary_info.update_textbox_multiline(["Adult age time: " + adult_age + "(x" + adult_mult + ")",
                                                     "Death age time: " + death_age + "(x" + death_mult + ")",
                                                     "Growth rate: x" + str(self.clicked_item.mult_growth_speed[0]),
-                                                    "Mutation chance: " + str(
-                                                        self.clicked_item.mutation_chance[0]) + "%",
                                                     "Yields: " + yield_base + "(x" + yield_mult + ") seeds",
                                                     yield_add + "% chance to gain an additional seed",
-                                                    "Seeds sell for: $" + value + "(x" + value_mult + ")"],
+                                                    "Seeds sell for: $" + value + "(x" + value_mult + ")",
+                                                    "Ability Effectiveness: " + a_eff + "%"],
                                                    MENU_GREY)
 
         self.primary_info.draw_on_surface(self.type_information_surface)
@@ -71,6 +75,7 @@ class StatsMenu(Menu):
 
     def draw_secondary_info(self):
         self.secondary_desc.update_textbox_multiline(self.clicked_item.secondary_desc, MENU_GREY)
+
         adult_age = str(timedelta(seconds=self.clicked_item.base_adult_age[1]))
         adult_mult = str(self.clicked_item.mult_adult_age[1])
         death_age = str(timedelta(seconds=self.clicked_item.base_death_age[1]))
@@ -80,23 +85,40 @@ class StatsMenu(Menu):
         yield_base = str(1 + int(self.clicked_item.base_yield[1] / 100))
         yield_add = str(self.clicked_item.base_yield[1] % 100)
         yield_mult = str(self.clicked_item.mult_yield[1])
+        a_eff = str(self.clicked_item.ability_eff[1])
 
         self.secondary_info.update_textbox_multiline(["Adult age time: " + adult_age + "(x" + adult_mult + ")",
                                                       "Death age time: " + death_age + "(x" + death_mult + ")",
                                                       "Growth rate: x" + str(self.clicked_item.mult_growth_speed[0]),
-                                                      "Mutation chance: " + str(
-                                                          self.clicked_item.mutation_chance[0]) + "%",
                                                       "Yields: " + yield_base + "(x" + yield_mult + ") seeds",
                                                       yield_add + "% chance to gain an additional seed",
-                                                      "Seeds sell for: $" + value + "(x" + value_mult + ")"],
+                                                      "Seeds sell for: $" + value + "(x" + value_mult + ")",
+                                                      "Ability Effectiveness: " + a_eff + "%"],
                                                      MENU_GREY)
 
         self.secondary_info.draw_on_surface(self.type_information_surface)
         self.secondary_desc.draw_on_surface(self.type_information_surface)
         self.secondary_title.draw_on_surface(self.type_information_surface)
 
-    def draw_misc_info(self):
-        if self.clicked_item.recipe[0] is not None:
+    def draw_resistance_info(self):
+        self.res_title.draw_on_surface(self.type_information_surface)
+        res_clamp = clamp(self.clicked_item.res, self.clicked_item.res_cap, 0)
+        res_info = self.font.render(str(res_clamp) + "/" + str(self.clicked_item.res_cap), True, BLACK)
+        pygame.draw.rect(self.type_information_surface, L_BLUE,
+                         (10, 730, 1450 * res_clamp / self.clicked_item.res_cap, 40))
+        pygame.draw.rect(self.type_information_surface, BLACK, (10, 730, 1450, 40), 2)
+        self.type_information_surface.blit(res_info, (735 - res_info.get_width(), 740,
+                                                      res_info.get_width(), res_info.get_height()))
+
+    def draw_image_info(self):
+        self.clicked_item.draw_seed(80, 370, self.type_information_surface)
+        self.seed_title.draw_on_surface(self.type_information_surface)
+        pygame.draw.rect(self.type_information_surface, BLACK, (30, 330, 180, 140), 2)
+        self.plant_title.draw_on_surface(self.type_information_surface)
+        pygame.draw.rect(self.type_information_surface, BLACK, (30, 480, 180, 140), 2)
+
+    def draw_recipe_info(self):
+        if len(self.clicked_item.recipe) != 0:
             self.recipe_details.update_textbox_multiline(self.clicked_item.recipe, MENU_GREY)
             self.recipe_title.update_textbox("Recipe", MENU_GREY)
         else:
@@ -106,12 +128,9 @@ class StatsMenu(Menu):
         self.recipe_title.draw_on_surface(self.type_information_surface)
         self.recipe_details.draw_on_surface(self.type_information_surface)
 
-        self.clicked_item.draw_seed(80, 370, self.type_information_surface)
-        self.seed_title.draw_on_surface(self.type_information_surface)
-        pygame.draw.rect(self.type_information_surface, BLACK, (30, 330, 180, 140), 2)
-
-        self.plant_title.draw_on_surface(self.type_information_surface)
-        pygame.draw.rect(self.type_information_surface, BLACK, (30, 480, 180, 140), 2)
+    def draw_misc_info(self):
+        self.mutation_info.update_textbox("Mutation Chance: " + str(self.clicked_item.mutation_chance) + "%", MENU_GREY)
+        self.mutation_info.draw_on_surface(self.type_information_surface)
 
     def draw_plant_type_info(self):
         self.type_information_surface.fill(MENU_GREY)
@@ -122,6 +141,9 @@ class StatsMenu(Menu):
                 self.draw_primary_info()
                 self.draw_secondary_info()
                 self.draw_misc_info()
+                self.draw_recipe_info()
+                self.draw_resistance_info()
+                self.draw_image_info()
 
                 self.type_title.draw_on_surface(self.type_information_surface)
             else:
