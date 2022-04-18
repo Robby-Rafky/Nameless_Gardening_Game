@@ -1,7 +1,7 @@
 from useful_functions import *
 
 garden_global = {
-    "stat_magnitude": 100,
+    "stat_magnitude": 1,
 
     "flat_fertiliser": 0,
     "mult_fertiliser": 0,
@@ -54,7 +54,7 @@ def divide_stat(stat, value):
 
 
 def update_totals(stat):
-    if stat is not "fertiliser":
+    if stat != "fertiliser":
         garden_global["total_"+stat] = garden_global["skill_tree_"+stat] * garden_global["garden_global_"+stat]
     else:
         garden_global["total_" + stat] = garden_global["flat_" + stat] * garden_global["mult_" + stat]
