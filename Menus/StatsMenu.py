@@ -10,20 +10,20 @@ class StatsMenu(Menu):
 
     def __init__(self, game):
         Menu.__init__(self, game, MENU_GREY)
-        self.primary_title = TextBox("Primary", (240, 60), (1220, 40), True, False, 26)
-        self.primary_info = TextBox(" ", (750, 110), (710, 180), True, False, 24)
-        self.primary_desc = TextBox(" ", (240, 110), (500, 180), True, False, 24)
-        self.secondary_title = TextBox("Secondary", (240, 300), (1220, 40), True, False, 26)
-        self.secondary_info = TextBox(" ", (750, 350), (710, 180), True, False, 24)
-        self.secondary_desc = TextBox(" ", (240, 350), (500, 180), True, False, 24)
-        self.seed_title = TextBox("Pure Seed", (40, 330), (160, 40), False, True, 24, MENU_GREY)
-        self.plant_title = TextBox("Pure Plant", (40, 480), (160, 40), False, True, 24, MENU_GREY)
+        self.primary_title = TextBox("Primary", (300, 60), (1160, 40), True, False, 26)
+        self.primary_info = TextBox(" ", (890, 110), (570, 180), True, False, 24)
+        self.primary_desc = TextBox(" ", (300, 110), (580, 180), True, False, 24)
+        self.secondary_title = TextBox("Secondary", (300, 300), (1160, 40), True, False, 26)
+        self.secondary_info = TextBox(" ", (890, 350), (570, 180), True, False, 24)
+        self.secondary_desc = TextBox(" ", (300, 350), (580, 180), True, False, 24)
+        self.seed_title = TextBox("Pure Seed", (70, 320), (160, 40), False, True, 24, MENU_GREY)
+        self.plant_title = TextBox("Pure Plant", (70, 470), (160, 40), False, True, 24, MENU_GREY)
         self.type_title = TextBox(" ", (10, 10), (1450, 40), True, False, 26)
-        self.recipe_title = TextBox(" ", (10, 60), (220, 40), True, False, 26)
-        self.recipe_details = TextBox(" ", (10, 100), (220, 220), True, False, 26)
+        self.recipe_title = TextBox(" ", (10, 60), (280, 40), True, False, 26)
+        self.recipe_details = TextBox(" ", (10, 100), (280, 210), True, False, 24)
         self.error_text = TextBox(" ", (500, 550), (450, 80), False, True, 38)
         self.unlock_details = TextBox(" ", (500, 630), (450, 40), False, True, 26)
-        self.mutation_info = TextBox(" ", (240, 540), (1220, 40), True, False, 26, MENU_GREY)
+        self.mutation_info = TextBox(" ", (300, 540), (1160, 40), True, False, 26, MENU_GREY)
         self.res_title = TextBox("Resistance", (10, 690), (300, 40), False, False, 26, MENU_GREY)
         self.font = pygame.font.Font(PIXEL_FONT, 24)
         self.scroll_offset = 0
@@ -49,10 +49,10 @@ class StatsMenu(Menu):
     def draw_primary_info(self):
         self.primary_desc.update_textbox_multiline(self.clicked_item.primary_desc, MENU_GREY)
 
-        adult_age = str(timedelta(seconds=self.clicked_item.base_adult_age[0]))
-        adult_mult = str(self.clicked_item.mult_adult_age[0])
-        death_age = str(timedelta(seconds=self.clicked_item.base_death_age[0]))
-        death_mult = str(self.clicked_item.mult_death_age[0])
+        adult_age = str(timedelta(seconds=self.clicked_item.base_adult[0]))
+        adult_mult = str(self.clicked_item.mult_adult[0])
+        death_age = str(timedelta(seconds=self.clicked_item.base_death[0]))
+        death_mult = str(self.clicked_item.mult_death[0])
         value = str(self.clicked_item.base_value[0])
         value_mult = str(self.clicked_item.mult_value[0])
         yield_base = str(1 + int(self.clicked_item.base_yield[0] / 100))
@@ -60,12 +60,12 @@ class StatsMenu(Menu):
         yield_mult = str(self.clicked_item.mult_yield[0])
         a_eff = str(self.clicked_item.ability_eff[0])
 
-        self.primary_info.update_textbox_multiline(["Adult age time: " + adult_age + "(x" + adult_mult + ")",
-                                                    "Death age time: " + death_age + "(x" + death_mult + ")",
-                                                    "Growth rate: x" + str(self.clicked_item.mult_growth_speed[0]),
-                                                    "Yields: " + yield_base + "(x" + yield_mult + ") seeds",
+        self.primary_info.update_textbox_multiline(["Adult age time: " + adult_age + "[x" + adult_mult + "]",
+                                                    "Death age time: " + death_age + "[x" + death_mult + "]",
+                                                    "Growth rate: x" + str(self.clicked_item.mult_rate[0]),
+                                                    "Yields: " + yield_base + "[x" + yield_mult + "] seeds",
                                                     yield_add + "% chance to gain an additional seed",
-                                                    "Seeds sell for: $" + value + "(x" + value_mult + ")",
+                                                    "Seeds sell for: $" + value + "[x" + value_mult + "]",
                                                     "Ability Effectiveness: " + a_eff + "%"],
                                                    MENU_GREY)
 
@@ -76,10 +76,10 @@ class StatsMenu(Menu):
     def draw_secondary_info(self):
         self.secondary_desc.update_textbox_multiline(self.clicked_item.secondary_desc, MENU_GREY)
 
-        adult_age = str(timedelta(seconds=self.clicked_item.base_adult_age[1]))
-        adult_mult = str(self.clicked_item.mult_adult_age[1])
-        death_age = str(timedelta(seconds=self.clicked_item.base_death_age[1]))
-        death_mult = str(self.clicked_item.mult_death_age[1])
+        adult_age = str(timedelta(seconds=self.clicked_item.base_adult[1]))
+        adult_mult = str(self.clicked_item.mult_adult[1])
+        death_age = str(timedelta(seconds=self.clicked_item.base_death[1]))
+        death_mult = str(self.clicked_item.mult_death[1])
         value = str(self.clicked_item.base_value[1])
         value_mult = str(self.clicked_item.mult_value[1])
         yield_base = str(1 + int(self.clicked_item.base_yield[1] / 100))
@@ -87,12 +87,12 @@ class StatsMenu(Menu):
         yield_mult = str(self.clicked_item.mult_yield[1])
         a_eff = str(self.clicked_item.ability_eff[1])
 
-        self.secondary_info.update_textbox_multiline(["Adult age time: " + adult_age + "(x" + adult_mult + ")",
-                                                      "Death age time: " + death_age + "(x" + death_mult + ")",
-                                                      "Growth rate: x" + str(self.clicked_item.mult_growth_speed[0]),
-                                                      "Yields: " + yield_base + "(x" + yield_mult + ") seeds",
+        self.secondary_info.update_textbox_multiline(["Adult age time: " + adult_age + "[x" + adult_mult + "]",
+                                                      "Death age time: " + death_age + "[x" + death_mult + "]",
+                                                      "Growth rate: x" + str(self.clicked_item.mult_rate[0]),
+                                                      "Yields: " + yield_base + "[x" + yield_mult + "] seeds",
                                                       yield_add + "% chance to gain an additional seed",
-                                                      "Seeds sell for: $" + value + "(x" + value_mult + ")",
+                                                      "Seeds sell for: $" + value + "[x" + value_mult + "]",
                                                       "Ability Effectiveness: " + a_eff + "%"],
                                                      MENU_GREY)
 
@@ -104,18 +104,18 @@ class StatsMenu(Menu):
         self.res_title.draw_on_surface(self.type_information_surface)
         res_clamp = clamp(self.clicked_item.res, self.clicked_item.res_cap, 0)
         res_info = self.font.render(str(res_clamp) + "/" + str(self.clicked_item.res_cap), True, BLACK)
-        pygame.draw.rect(self.type_information_surface, L_BLUE,
+        pygame.draw.rect(self.type_information_surface, RES_COLOUR,
                          (10, 730, 1450 * res_clamp / self.clicked_item.res_cap, 40))
         pygame.draw.rect(self.type_information_surface, BLACK, (10, 730, 1450, 40), 2)
         self.type_information_surface.blit(res_info, (735 - res_info.get_width(), 740,
                                                       res_info.get_width(), res_info.get_height()))
 
     def draw_image_info(self):
-        self.clicked_item.draw_seed(80, 370, self.type_information_surface)
+        self.clicked_item.draw_seed(110, 370, self.type_information_surface)
         self.seed_title.draw_on_surface(self.type_information_surface)
-        pygame.draw.rect(self.type_information_surface, BLACK, (30, 330, 180, 140), 2)
+        pygame.draw.rect(self.type_information_surface, BLACK, (60, 320, 180, 140), 2)
         self.plant_title.draw_on_surface(self.type_information_surface)
-        pygame.draw.rect(self.type_information_surface, BLACK, (30, 480, 180, 140), 2)
+        pygame.draw.rect(self.type_information_surface, BLACK, (60, 470, 180, 140), 2)
 
     def draw_recipe_info(self):
         if len(self.clicked_item.recipe) != 0:

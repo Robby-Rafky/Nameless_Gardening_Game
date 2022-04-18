@@ -17,7 +17,7 @@ class ShopMenu(Menu):
 
         self.seed_shop_text = TextBox("Seeds Shop", (10, 10), (1760, 40), True, True, 26, LIME_GREEN)
         self.buy_verdant_seed = ShopItem("Verdant Seed", (10, 170), (260, 40), (70, 370), 0,
-                                         PlantItem(0, 0, 0, 0, 0, "Verdant", "Verdant"))
+                                         PlantItem(0, 0, 0, 0, "Verdant", "Verdant"))
 
         # find a better way to store price info
         self.surface_garden = pygame.Surface((880, 200))

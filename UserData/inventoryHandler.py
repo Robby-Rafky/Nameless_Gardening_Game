@@ -19,16 +19,25 @@ class InventoryHandler:
 
     # test stuff
     def starting_inventory(self):
-        self.inventory.append(PlantItem(0, 0, 0, 0, 0, "Verdant", "Programmed"))
-        self.inventory.append(PlantItem(4, 0, 9, 3, 5, "Crimson", "Crystalline"))
-        self.inventory.append(PlantItem(1, 0, 9, 3, 5, "Verdant", "Radioactive"))
-        self.inventory.append(PlantItem(2, 1, 3, 3, 5, "Crystalline", "Explosive"))
-        self.inventory.append(PlantItem(3, 0, 9, 4, 3, "Decaying", "Programmed"))
-        self.inventory.append(PlantItem(2, 3, 6, 3, 9, "Eternal", "Deadly"))
-        self.inventory.append(PlantItem(4, 3, 5, 9, 3, "Steel", "Hollow"))
-        self.inventory.append(PlantItem(2, 3, 4, 3, 3, "Endothermic", "Exothermic"))
-        for _ in range(200):
-            self.inventory.append(PlantItem(0,0,0,0,0, "Verdant", "Verdant"))
+        self.inventory.append(PlantItem(0, 0, 0, 0, "Verdant", "Verdant"))
+        self.inventory.append(PlantItem(10, 10, 10, 10, "Verdant", "Verdant"))
+        self.inventory.append(PlantItem(20, 20, 20, 20, "Verdant", "Verdant"))
+        self.inventory.append(PlantItem(30, 30, 30, 30, "Verdant", "Verdant"))
+        self.inventory.append(PlantItem(40, 40, 40, 40, "Verdant", "Verdant"))
+        self.inventory.append(PlantItem(50, 50, 50, 50, "Verdant", "Verdant"))
+        self.inventory.append(PlantItem(60, 60, 60, 60, "Verdant", "Verdant"))
+        self.inventory.append(PlantItem(70, 70, 70, 70, "Verdant", "Verdant"))
+        self.inventory.append(PlantItem(80, 80, 80, 80, "Verdant", "Verdant"))
+        self.inventory.append(PlantItem(90, 90, 90, 90, "Verdant", "Verdant"))
+        self.inventory.append(PlantItem(100,100,100,100, "Verdant", "Verdant"))
+
+
+        # self.inventory.append(PlantItem(10, 90, 10, 90, "Crystalline", "Explosive"))
+        # self.inventory.append(PlantItem(17, 12, 12, 12, "Decaying", "Programmed"))
+        # self.inventory.append(PlantItem(100, 100, 100, 100, "Exothermic", "Endothermic"))
+        # for _ in range(200):
+        #     self.inventory.append(PlantItem(0, 0, 0, 0, "Verdant", "Verdant"))
+        pass
 
     def update_inventory(self):
         self.inventory_size = len(self.inventory)
@@ -48,28 +57,9 @@ class InventoryHandler:
         item.stack_size -= 1
         if item.stack_size == 0:
             self.inventory.remove(item)
-            self.game.menu_handler.inventory_menu.clicked_inv_item = None
+            self.game.menu_handler.inventory_menu.clicked_item = None
         self.update_inventory()
 
     def get_item_title(self, item_index):
         # pull a title for each item
         return "Item info"
-
-    def get_item_description_1(self, item_index):
-        if isinstance(self.inventory[item_index], PlantItem):
-            return plant_species[self.inventory[item_index].plant_type_1].primary_desc
-        else:
-            return [" "]
-
-    def get_item_description_2(self, item_index):
-        if isinstance(self.inventory[item_index], PlantItem):
-            return plant_species[self.inventory[item_index].plant_type_2].secondary_desc
-        else:
-            return [" "]
-
-    def get_item_description_3(self, item_index):
-        if isinstance(self.inventory[item_index], PlantItem):
-            return self.inventory[item_index].item_stats_description
-        else:
-            return [" "]
-

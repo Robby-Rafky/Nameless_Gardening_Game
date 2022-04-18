@@ -1,4 +1,6 @@
 import pygame
+from useful_functions import *
+from Garden.gardenGlobals import *
 
 
 class User:
@@ -12,3 +14,4 @@ class User:
         else:
             self.cash -= cost
             return True
+

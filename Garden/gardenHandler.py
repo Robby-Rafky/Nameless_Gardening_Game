@@ -58,13 +58,13 @@ class GardenHandler:
         if self.garden_contents[self.garden.grid_y][self.garden.grid_x] is None:
             self.garden_contents[self.garden.grid_y][self.garden.grid_x] = Plant(
                 plant_item.stat_growth,
-                plant_item.stat_mutation,
                 plant_item.stat_yield,
                 plant_item.stat_lifespan,
                 plant_item.stat_value,
-                plant_item.plant_type_1,
-                plant_item.plant_type_2,
-                plant_item.item_stats_description
+                self.garden.grid_x,
+                self.garden.grid_y,
+                plant_item.type1,
+                plant_item.type2,
             )
             return True
         else:
@@ -74,12 +74,11 @@ class GardenHandler:
     def harvest_plant(self, plant, garden_index):
         self.game.inventory_handler.add_item(PlantItem(
                 plant.stat_growth,
-                plant.stat_mutation,
                 plant.stat_yield,
                 plant.stat_lifespan,
                 plant.stat_value,
-                plant.plant_type_1,
-                plant.plant_type_2,
+                plant.type1,
+                plant.type2,
         ))
         self.garden_contents[garden_index[1]][garden_index[0]] = None
 
@@ -105,6 +104,15 @@ class GardenHandler:
                         garden_update.append((y, x))
         if len(garden_update) != 0:
             pygame.event.post(pygame.event.Event(self.game.plant_state_changed, message=garden_update))
+
+    def update_plant_stats(self):
+        for y in range(len(self.garden_contents)):
+            for x in range(len(self.garden_contents[0])):
+                if self.garden_contents[y][x] is not None:
+                    self.garden_contents[y][x].update_final_values()
+
+    def update_non_plants(self, x, y):
+        pass
 
     def draw_garden(self):
         self.draw_plants()

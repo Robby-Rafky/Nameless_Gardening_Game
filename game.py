@@ -4,6 +4,7 @@ from Menus.menuHandler import MenuHandler
 from upperUI import MenuSwitcher
 from UserData.inventoryHandler import InventoryHandler
 from UserData.user import User
+from Garden.gardenGlobals import *
 
 
 class Game:
@@ -13,8 +14,6 @@ class Game:
         self.tick_time = pygame.USEREVENT
         self.planted = pygame.USEREVENT + 1
         self.plant_state_changed = pygame.USEREVENT + 2
-
-
         pygame.time.set_timer(self.tick_time, 1000)
         self.running = True
         self.DISPLAY_WIDTH, self.DISPLAY_HEIGHT = 1920, 1080
@@ -33,8 +32,9 @@ class Game:
         self.inventory_handler = InventoryHandler(self)
 
     def testing_stuff(self):
-        self.garden_handler.expand_vertical()
-        self.garden_handler.expand_horizontal()
+        add_stat("garden_global_value", 1)
+        add_stat("skill_tree_value", 1)
+        self.garden_handler.update_plant_stats()
         pass
 
     def screen_layering(self):
@@ -56,9 +56,11 @@ class Game:
             if event.type == self.tick_time:
                 self.garden_handler.tick_garden()
 
+
             # when any plant in the garden becomes an adult or dies
             if event.type == self.plant_state_changed:
-                print(event.message)
+                for item in event.message:
+                    self.garden_handler.update_non_plants(item[0], item[1])
 
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if self.menu_handler.current_menu is None:
