@@ -60,13 +60,14 @@ class MenuHandler:
 
     def scroll_menu(self, scroll):
         if self.current_menu == "Inventory":
-            if self.game.inventory_handler.inventory_size >= 77:
-                scroll_max = -(math.ceil(self.game.inventory_handler.inventory_size/11) - 7) * 100 + 10
+            if 110 <= self.game.mouse_pos[0] <= 1250:
+                if self.game.inventory_handler.inventory_size >= 77:
+                    scroll_max = -(math.ceil(self.game.inventory_handler.inventory_size/11) - 7) * 100 + 10
 
-                self.inventory_menu.scroll_offset += scroll * 20
-                self.inventory_menu.scroll_offset = clamp(self.inventory_menu.scroll_offset, 10, scroll_max)
+                    self.inventory_menu.scroll_offset += scroll * 20
+                    self.inventory_menu.scroll_offset = clamp(self.inventory_menu.scroll_offset, 10, scroll_max)
 
-                self.inventory_menu.scroll_percentage = clamp((self.inventory_menu.scroll_offset/scroll_max), 1, 0)
+                    self.inventory_menu.scroll_percentage = clamp((self.inventory_menu.scroll_offset/scroll_max), 1, 0)
 
         if self.current_menu == "Shop":
             pass
@@ -75,5 +76,6 @@ class MenuHandler:
         if self.current_menu == "4":
             pass
         if self.current_menu == "Stats":
-            self.stats_menu.scroll_offset -= scroll * 20
-            self.stats_menu.scroll_offset = clamp(self.stats_menu.scroll_offset, self.stats_menu.scroll_max, 0)
+            if self.game.mouse_pos[0] <= 370:
+                self.stats_menu.scroll_offset -= scroll * 20
+                self.stats_menu.scroll_offset = clamp(self.stats_menu.scroll_offset, self.stats_menu.scroll_max, 0)
