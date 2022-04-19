@@ -1,6 +1,7 @@
 from useful_functions import *
 from textBox import TextBox
 from button import Button
+from datetime import timedelta
 
 
 class GardenSpace:
@@ -11,11 +12,11 @@ class GardenSpace:
         self.grid_x, self.grid_y = None, None
         self.clicked_plot = None
         self.clicked_plot_index = None
-        self.action_box = TextBox(" ", (10, 10), (320, 40), True, True, 26, MENU_GREY)
-        self.timers_box = TextBox(" ", (10, 300), (320, 50), True, True, 20, MENU_GREY)
-        self.types_box = TextBox(" ", (10, 360), (320, 70), True, False, 24, MENU_GREY)
-        self.stats_box = TextBox(" ", (10, 440), (320, 140), True, False, 24, MENU_GREY)
-        self.harvest_button = Button("Growing", (10, 600), (170, 40), (1560, 120), True, True, 26, RED)
+        self.action_box = TextBox(" ", (10, 10), (320, 40), True, True, 20, MENU_GREY)
+        self.timers_box = TextBox(" ", (10, 190), (320, 60), True, False, 20, MENU_GREY)
+        self.stats_box = TextBox(" ", (10, 420), (320, 120), True, False, 20, MENU_GREY)
+        self.harvest_button = Button("Growing", (180, 550), (150, 40), (1560, 120), True, True, 26, RED)
+        self.font = pygame.font.Font(PIXEL_FONT, 20)
         self.game = game
         self.side_surface = pygame.Surface((340, 920))
 
@@ -50,41 +51,78 @@ class GardenSpace:
     def garden_button_events(self):
         if self.harvest_button.button_event(self.game.mouse_pos):
             if self.clicked_plot is not None:
-                if self.clicked_plot.is_adult():
+                if self.clicked_plot.is_adult:
                     self.game.garden_handler.harvest_plant(self.clicked_plot, self.clicked_plot_index)
                     self.clicked_plot = None
+
+    def draw_plant_timer(self):
+        if self.clicked_plot.is_adult:
+            self.timers_box.update_textbox_multiline(["       Dies in: " + self.clicked_plot.get_time_to_death(),
+                                                      "Effective time: " + self.clicked_plot.get_time_to_death(True)],
+                                                     MENU_GREY)
+            self.harvest_button.update_button("Harvest", LIME_GREEN)
+        else:
+            self.timers_box.update_textbox_multiline(["      Grown in: " + self.clicked_plot.get_time_to_adult(),
+                                                      "Effective time: " + self.clicked_plot.get_time_to_adult(True)],
+                                                     MENU_GREY)
+            self.harvest_button.update_button("Growing", RED)
+        self.timers_box.draw_on_surface(self.side_surface)
+
+    def draw_seed_info(self):
+        pygame.draw.rect(self.side_surface, BLACK, (0, 0, 340, 920), 2)
+        self.game.garden_handler.planting.draw_seed(130, 90, self.side_surface)
+        self.action_box.update_textbox(construct_title(self.game.garden_handler.planting), MENU_GREY)
+        self.timers_box.update_textbox("Currently Placing", MENU_GREY)
+
+        self.timers_box.draw_on_surface(self.side_surface)
+        self.action_box.draw_on_surface(self.side_surface)
+
+    def draw_plant_info(self):
+        self.clicked_plot.draw_plant(self.side_surface, 120, 70)
+        pygame.draw.rect(self.side_surface, BLACK, (0, 0, 340, 920), 2)
+        self.action_box.update_textbox(construct_title(self.clicked_plot), MENU_GREY)
+
+        self.stats_box.update_textbox_multiline([
+            "Growth Rate: " + str(self.clicked_plot.final_rate) + "x",
+            "Sell price: " + str(self.clicked_plot.final_value) + " $",
+            "Ability Potency: " + str(self.clicked_plot.final_ability_eff) + "%",
+            "Yields: " + str(int(self.clicked_plot.final_yield / 100)) + " seeds",
+            str(self.clicked_plot.final_yield % 100) + "% for an extra seed"], MENU_GREY)
+
+        self.harvest_button.draw_on_surface(self.side_surface)
+        self.stats_box.draw_on_surface(self.side_surface)
+        self.action_box.draw_on_surface(self.side_surface)
+
+    def draw_single_stat(self, stat, value, pos_y, colour):
+        pygame.draw.rect(self.side_surface, colour, (10, pos_y, 10 + 310 * value / 100, 30), 0)
+        pygame.draw.rect(self.side_surface, BLACK, (10, pos_y, 10 + 310 * value / 100, 30), 1)
+        self.side_surface.blit(self.font.render(stat, True, BLACK), (20, pos_y + 5))
+        if value == 100:
+            value_text = self.font.render("[Max]", True, BLACK)
+        else:
+            value_text = self.font.render(str(value) + "%", True, BLACK)
+
+        value_text.get_rect().right = 150
+        self.side_surface.blit(value_text, (320 - value_text.get_width(), pos_y + 5))
+
+    def draw_all_stats(self, item):
+        pygame.draw.rect(self.side_surface, MENU_GREY, (10, 260, 320, 150), 0)
+        self.draw_single_stat("Growth", item.stat_growth, 260, GROWTH_COLOUR)
+        self.draw_single_stat("Seed Yield", item.stat_yield, 290, YIELD_COLOUR)
+        self.draw_single_stat("Lifespan", item.stat_lifespan, 320, LIFESPAN_COLOUR)
+        self.draw_single_stat("Value", item.stat_value, 350, VALUE_COLOUR)
+        self.draw_single_stat("Resistivity", int(item.res), 380, RES_COLOUR)
+        pygame.draw.rect(self.side_surface, BLACK, (10, 260, 320, 150), 2)
 
     def draw_side_garden_info(self):
         self.side_surface.fill(GREEN)
         if self.game.garden_handler.planting is not None:
-            item = self.game.garden_handler.planting
-            item.draw_seed(130, 130, self.side_surface)
-            pygame.draw.rect(self.side_surface, BLACK, (0, 0, 340, 920), 2)
-            self.action_box.update_textbox("Currently Placing", MENU_GREY)
-            self.stats_box.update_textbox_multiline(item.item_stats_description, MENU_GREY)
-            self.types_box.update_textbox_multiline([item.plant_type_1, item.plant_type_2], MENU_GREY)
+            self.draw_seed_info()
+            self.draw_all_stats(self.game.garden_handler.planting)
 
-            self.types_box.draw_on_surface(self.side_surface)
-            self.stats_box.draw_on_surface(self.side_surface)
-            self.action_box.draw_on_surface(self.side_surface)
         elif self.clicked_plot is not None:
-            self.clicked_plot.draw_plant(self.side_surface, 120, 120)
-            pygame.draw.rect(self.side_surface, BLACK, (0, 0, 340, 920), 2)
-            self.action_box.update_textbox("Plant Info", MENU_GREY)
-            if self.clicked_plot.is_adult():
-                self.timers_box.update_textbox("Dies in:  " + self.clicked_plot.get_time_to_death(), MENU_GREY)
-                self.harvest_button.update_button("Harvest", LIME_GREEN)
-            else:
-                self.timers_box.update_textbox("Grown in: " + self.clicked_plot.get_time_to_adult(), MENU_GREY)
-                self.harvest_button.update_button("Growing", RED)
-            self.stats_box.update_textbox_multiline(self.clicked_plot.plant_description, MENU_GREY)
-            self.types_box.update_textbox_multiline([self.clicked_plot.plant_type_1,
-                                                     self.clicked_plot.plant_type_2], MENU_GREY)
-
-            self.harvest_button.draw_on_surface(self.side_surface)
-            self.types_box.draw_on_surface(self.side_surface)
-            self.stats_box.draw_on_surface(self.side_surface)
-            self.timers_box.draw_on_surface(self.side_surface)
-            self.action_box.draw_on_surface(self.side_surface)
+            self.draw_plant_timer()
+            self.draw_plant_info()
+            self.draw_all_stats(self.clicked_plot)
 
         self.game.game_space.blit(self.side_surface, (1560, 120))
