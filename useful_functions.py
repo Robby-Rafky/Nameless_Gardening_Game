@@ -1,6 +1,7 @@
 # All external libraries
 import math
 import pygame
+from random import randint
 
 # Colour definitions
 BLACK = (0, 0, 0)
@@ -31,6 +32,10 @@ PIXEL_FONT = "ModernDOS9x16.ttf"
 
 def clamp(n, upper, lower):
     return max(min(upper, n), lower)
+
+
+def chance_to_occur(chance):
+    return randint(0, 99) < chance
 
 
 def construct_title(item):
