@@ -32,18 +32,29 @@ class StatsMenu(Menu):
         self.type_information_surface = pygame.Surface((1470, 780))
         self.clicked_item = None
         counter = 0
+        current_tier = -1
         for item in plant_species:
             # --------------------------------------- TESTING
             plant_species[item].is_unlocked = True
             # ---------------------------------------
-            self.button_collection.append(Button(item, (0, counter * 50), (300, 50), (
-                70, 160), True, True, 26, MENU_GREY))
+            position = (current_tier + 1) * 30 + counter * 50
+            if plant_species[item].tier == current_tier:
+                self.button_collection.append(Button(item, (0, position), (300, 50), (
+                    70, 160), True, True, 26, MENU_GREY))
+            else:
+                current_tier += 1
+                self.button_collection.append(
+                    Button("Tier " + str(current_tier), (0,  position), (300, 30), (70, 160), True, True, 26, BLACK))
+                self.button_collection[counter + current_tier].text_colour = WHITE
+                self.button_collection[counter + current_tier].update_textbox(str(current_tier), BLACK)
+                self.button_collection.append(Button(item, (0, position + 30), (300, 50), (
+                    70, 160), True, True, 26, MENU_GREY))
             counter += 1
-        self.scroll_max = (len(self.button_collection) - 15) * 50 - len(self.button_collection) + 2
+        self.scroll_max = (len(self.button_collection) * 50 - current_tier * 20) - 800
 
     def stats_menu_events(self):
         for item in self.button_collection:
-            if item.button_event(self.game.mouse_pos):
+            if item.button_event(self.game.mouse_pos) and item.text.split()[0] != "Tier":
                 self.clicked_item = plant_species[item.text]
 
     def draw_primary_info(self):
@@ -55,7 +66,7 @@ class StatsMenu(Menu):
         death_mult = str(self.clicked_item.mult_death[0])
         value = str(self.clicked_item.base_value[0])
         value_mult = str(self.clicked_item.mult_value[0])
-        yield_base = str(1 + int(self.clicked_item.base_yield[0] / 100))
+        yield_base = str(int(self.clicked_item.base_yield[0] / 100))
         yield_add = str(self.clicked_item.base_yield[0] % 100)
         yield_mult = str(self.clicked_item.mult_yield[0])
         a_eff = str(self.clicked_item.ability_eff[0])
@@ -66,7 +77,7 @@ class StatsMenu(Menu):
                                                     "Yields: " + yield_base + "[x" + yield_mult + "] seeds",
                                                     yield_add + "% chance to gain an additional seed",
                                                     "Seeds sell for: $" + value + "[x" + value_mult + "]",
-                                                    "Ability Effectiveness: " + a_eff + "%"],
+                                                    "Ability Potency: " + a_eff + "%"],
                                                    MENU_GREY)
 
         self.primary_info.draw_on_surface(self.type_information_surface)
@@ -82,7 +93,7 @@ class StatsMenu(Menu):
         death_mult = str(self.clicked_item.mult_death[1])
         value = str(self.clicked_item.base_value[1])
         value_mult = str(self.clicked_item.mult_value[1])
-        yield_base = str(1 + int(self.clicked_item.base_yield[1] / 100))
+        yield_base = str(int(self.clicked_item.base_yield[1] / 100))
         yield_add = str(self.clicked_item.base_yield[1] % 100)
         yield_mult = str(self.clicked_item.mult_yield[1])
         a_eff = str(self.clicked_item.ability_eff[1])
@@ -93,7 +104,7 @@ class StatsMenu(Menu):
                                                       "Yields: " + yield_base + "[x" + yield_mult + "] seeds",
                                                       yield_add + "% chance to gain an additional seed",
                                                       "Seeds sell for: $" + value + "[x" + value_mult + "]",
-                                                      "Ability Effectiveness: " + a_eff + "%"],
+                                                      "Ability Potency: " + a_eff + "%"],
                                                      MENU_GREY)
 
         self.secondary_info.draw_on_surface(self.type_information_surface)
@@ -137,6 +148,8 @@ class StatsMenu(Menu):
         if self.clicked_item is not None:
             if self.clicked_item.is_unlocked:
                 self.type_title.update_textbox(self.clicked_item.type_name, MENU_GREY)
+                tier_title = self.font.render("Tier " + str(self.clicked_item.tier), True, BLACK)
+                tier_title.get_rect().right = 150
 
                 self.draw_primary_info()
                 self.draw_secondary_info()
@@ -146,6 +159,7 @@ class StatsMenu(Menu):
                 self.draw_image_info()
 
                 self.type_title.draw_on_surface(self.type_information_surface)
+                self.type_information_surface.blit(tier_title, (1450 - tier_title.get_width(), 20))
             else:
                 pygame.draw.rect(self.type_information_surface, GREY, (0, 0, 1470, 780), 0)
                 self.error_text.update_textbox("Locked", GREY)
@@ -162,7 +176,9 @@ class StatsMenu(Menu):
     def draw_plant_types(self):
         self.type_list_surface.fill(MENU_GREY)
         for item in self.button_collection:
-            if plant_species[item.text] == self.clicked_item:
+            if item.text.split()[0] == "Tier":
+                item.update_button_position(item.text, BLACK, item.x, item.y_init - self.scroll_offset)
+            elif plant_species[item.text] == self.clicked_item:
                 item.update_button_position(item.text, GREY, item.x, item.y_init - self.scroll_offset)
             else:
                 item.update_button_position(item.text, MENU_GREY, item.x, item.y_init - self.scroll_offset)
