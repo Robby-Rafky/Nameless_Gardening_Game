@@ -72,14 +72,19 @@ class GardenHandler:
 
     # some plants might give extra stuff when harvested (crystalline -> valuable crystals to sell)
     def harvest_plant(self, plant, garden_index):
-        self.game.inventory_handler.add_item(PlantItem(
-                plant.stat_growth,
-                plant.stat_yield,
-                plant.stat_lifespan,
-                plant.stat_value,
-                plant.type1,
-                plant.type2,
-        ))
+        seed_count = self.garden_contents[garden_index[1]][garden_index[0]].final_yield
+        final_seed_count = int(seed_count/100)
+        if chance_to_occur(seed_count % 100):
+            final_seed_count += 1
+        for _ in range(final_seed_count):
+            self.game.inventory_handler.add_item(PlantItem(
+                    plant.stat_growth,
+                    plant.stat_yield,
+                    plant.stat_lifespan,
+                    plant.stat_value,
+                    plant.type1,
+                    plant.type2,
+            ))
         self.garden_contents[garden_index[1]][garden_index[0]] = None
 
     def draw_plants(self):
