@@ -16,6 +16,9 @@ class Game:
         self.plant_state_changed = pygame.USEREVENT + 2
         pygame.time.set_timer(self.tick_time, 1000)
         self.running = True
+        self.scrolling = False
+
+        self.drag_y = None
         self.DISPLAY_WIDTH, self.DISPLAY_HEIGHT = 1920, 1080
         self.game_space = pygame.Surface((self.DISPLAY_WIDTH, self.DISPLAY_HEIGHT))
         self.game_window = pygame.display.set_mode((self.DISPLAY_WIDTH, self.DISPLAY_HEIGHT))
@@ -32,9 +35,6 @@ class Game:
         self.inventory_handler = InventoryHandler(self)
 
     def testing_stuff(self):
-        add_stat("garden_global_value", 1)
-        add_stat("skill_tree_value", 1)
-        self.garden_handler.update_plant_stats()
         pass
 
     def screen_layering(self):
@@ -56,19 +56,31 @@ class Game:
             if event.type == self.tick_time:
                 self.garden_handler.tick_garden()
 
-
             # when any plant in the garden becomes an adult or dies
             if event.type == self.plant_state_changed:
                 for item in event.message:
                     self.garden_handler.update_non_plants(item[0], item[1])
 
             if event.type == pygame.MOUSEBUTTONDOWN:
+                if event.button == 1:
+                    self.scrolling = True
+                    self.drag_y = self.mouse_pos[1]
                 if self.menu_handler.current_menu is None:
                     if pygame.mouse.get_pressed()[0] and self.garden_handler.mouse_valid:
                         self.garden_handler.place_on_garden_tile()
                 self.menu_handler.current_menu = self.menu_selector.menu_switching()
                 self.menu_handler.current_menu_event_check()
                 self.garden_handler.garden.garden_button_events()
+
+            if event.type == pygame.MOUSEBUTTONUP:
+                if event.button == 1:
+                    self.scrolling = False
+
+            if event.type == pygame.MOUSEMOTION:
+                if self.scrolling:
+                    mouse_x, mouse_y = event.pos
+                    self.menu_handler.scroll_menu((mouse_y - self.drag_y)/20)
+                    self.drag_y = mouse_y
 
             if event.type == pygame.MOUSEWHEEL:
                 self.menu_handler.scroll_menu(event.y)
