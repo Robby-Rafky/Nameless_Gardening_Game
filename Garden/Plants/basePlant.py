@@ -7,9 +7,8 @@ from Garden.gardenGlobals import garden_global as gs
 class Plant:
     def __init__(self, growth, seed_yield, lifespan, value, x, y, plant_type_1, plant_type_2):
         self.plant_age = 0
-        self.adult_age = 5
-        self.decay_age = 20
-        self.tick_rate = 1
+        self.adult_age = None
+        self.decay_age = None
 
         self.final_adult = None
         self.final_death = None
@@ -58,13 +57,13 @@ class Plant:
 
         self.calc_static_values()
         self.update_final_values()
-
+        self.assign_static_values()
 
         # test
         self.colour = ps[plant_type_1].colour
 
     def tick_plant(self):
-        self.plant_age += self.tick_rate
+        self.plant_age += self.final_rate
         if not self.is_adult and self.plant_age >= self.adult_age:
             self.is_adult = True
             return 0
@@ -77,12 +76,18 @@ class Plant:
         size = clamp((self.plant_age / self.adult_age)*100, 100, 0)
         pygame.draw.rect(surface, self.colour, (pos_x + 50 - size/2, pos_y + 50 - size/2, size, size))
 
-    def get_time_to_adult(self):
-        time = self.adult_age - self.plant_age
+    def get_time_to_adult(self, eff=False):
+        if eff:
+            time = int((self.adult_age - self.plant_age) / self.final_rate)
+        else:
+            time = int(self.adult_age - self.plant_age)
         return str(timedelta(seconds=time))
 
-    def get_time_to_death(self):
-        time = self.decay_age - self.plant_age
+    def get_time_to_death(self, eff=False):
+        if eff:
+            time = int((self.decay_age - self.plant_age)/self.final_rate)
+        else:
+            time = int(self.decay_age - self.plant_age)
         return str(timedelta(seconds=time))
 
     def calc_static_values(self):
@@ -129,5 +134,9 @@ class Plant:
         self.final_yield = round(self.final_yield, 1)
         self.final_ability_eff = int(self.final_ability_eff)
         self.final_death = int(self.final_death)
-        self.final_rate = round(self.final_rate, 2)
+        self.final_rate = 20 * round(self.final_rate, 2)
         self.final_value = int(self.final_value)
+
+    def assign_static_values(self):
+        self.adult_age = self.final_adult
+        self.decay_age = self.final_death
