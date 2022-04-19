@@ -12,11 +12,12 @@ class TextBox:
         self.centered = centered
         self.text = text
         self.surface = pygame.Surface(self.size)
+        self.text_colour = BLACK
         self.update_textbox(text, colour)
 
     def update_textbox(self, text, colour=WHITE):
         self.surface.fill(colour)
-        self.text_visual = self.font.render(text, True, BLACK)
+        self.text_visual = self.font.render(text, True, self.text_colour)
         if self.centered:
             self.surface.blit(self.text_visual, (self.size[0]/2 - self.text_visual.get_width()/2,
                                                  self.size[1]/2 - self.text_visual.get_height()/2))
@@ -29,7 +30,7 @@ class TextBox:
         self.surface.fill(colour)
         self.text = text
         for x in range(len(text)):
-            self.text_visual = self.font.render(text[x], True, BLACK)
+            self.text_visual = self.font.render(text[x], True, self.text_colour)
             if self.centered:
                 self.surface.blit(self.text_visual, (self.size[0] / 2 - self.text_visual.get_width() / 2,
                                                      self.size[1] / 2 - self.text_visual.get_height() / 2
