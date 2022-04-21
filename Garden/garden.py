@@ -2,6 +2,8 @@ from useful_functions import *
 from textBox import TextBox
 from button import Button
 from datetime import timedelta
+from Garden.Plants.basePlant import Plant
+from Items.plantItem import PlantItem
 
 
 class GardenSpace:
@@ -116,11 +118,11 @@ class GardenSpace:
 
     def draw_side_garden_info(self):
         self.side_surface.fill(GREEN)
-        if self.game.garden_handler.planting is not None:
+        if isinstance(self.game.garden_handler.planting, PlantItem):
             self.draw_seed_info()
             self.draw_all_stats(self.game.garden_handler.planting)
 
-        elif self.clicked_plot is not None:
+        elif isinstance(self.clicked_plot, Plant):
             self.draw_plant_timer()
             self.draw_plant_info()
             self.draw_all_stats(self.clicked_plot)
