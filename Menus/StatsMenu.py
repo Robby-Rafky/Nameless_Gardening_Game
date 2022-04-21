@@ -44,7 +44,7 @@ class StatsMenu(Menu):
             else:
                 current_tier += 1
                 self.button_collection.append(
-                    Button("Tier " + str(current_tier), (0,  position), (300, 30), (70, 160), True, True, 26, BLACK))
+                    Button("Tier " + str(current_tier), (0, position), (300, 30), (70, 160), True, True, 26, BLACK))
                 self.button_collection[counter + current_tier].text_colour = WHITE
                 self.button_collection[counter + current_tier].update_textbox(str(current_tier), BLACK)
                 self.button_collection.append(Button(item, (0, position + 30), (300, 50), (
@@ -57,28 +57,20 @@ class StatsMenu(Menu):
             if item.button_event(self.game.mouse_pos) and item.text.split()[0] != "Tier":
                 self.clicked_item = plant_species[item.text]
 
+    def construct_type_info(self, switch):
+        a = self.clicked_item
+        return ["Adult age time: " + get_time(a.base_adult[switch]) + "[x" + str(a.mult_adult[switch]) + "]",
+                "Death age time: " + get_time(a.base_death[switch]) + "[x" + str(a.mult_death[switch]) + "]",
+                "Growth rate: x" + str(self.clicked_item.mult_rate[switch]),
+                "Yields: " + str(int(a.base_yield[switch] / 100)) + "[x" + str(a.mult_yield[switch]) + "] seeds",
+                str(a.base_yield[switch] % 100) + "% chance to gain an additional seed",
+                "Seeds sell for: $" + str(a.base_value[switch]) + "[x" + str(a.mult_value[switch]) + "]",
+                "Ability Potency: " + str(a.ability_eff[switch]) + "%"]
+
     def draw_primary_info(self):
         self.primary_desc.update_textbox_multiline(self.clicked_item.primary_desc, MENU_GREY)
 
-        adult_age = str(timedelta(seconds=self.clicked_item.base_adult[0]))
-        adult_mult = str(self.clicked_item.mult_adult[0])
-        death_age = str(timedelta(seconds=self.clicked_item.base_death[0]))
-        death_mult = str(self.clicked_item.mult_death[0])
-        value = str(self.clicked_item.base_value[0])
-        value_mult = str(self.clicked_item.mult_value[0])
-        yield_base = str(int(self.clicked_item.base_yield[0] / 100))
-        yield_add = str(self.clicked_item.base_yield[0] % 100)
-        yield_mult = str(self.clicked_item.mult_yield[0])
-        a_eff = str(self.clicked_item.ability_eff[0])
-
-        self.primary_info.update_textbox_multiline(["Adult age time: " + adult_age + "[x" + adult_mult + "]",
-                                                    "Death age time: " + death_age + "[x" + death_mult + "]",
-                                                    "Growth rate: x" + str(self.clicked_item.mult_rate[0]),
-                                                    "Yields: " + yield_base + "[x" + yield_mult + "] seeds",
-                                                    yield_add + "% chance to gain an additional seed",
-                                                    "Seeds sell for: $" + value + "[x" + value_mult + "]",
-                                                    "Ability Potency: " + a_eff + "%"],
-                                                   MENU_GREY)
+        self.primary_info.update_textbox_multiline(self.construct_type_info(0), MENU_GREY)
 
         self.primary_info.draw_on_surface(self.type_information_surface)
         self.primary_desc.draw_on_surface(self.type_information_surface)
@@ -87,25 +79,7 @@ class StatsMenu(Menu):
     def draw_secondary_info(self):
         self.secondary_desc.update_textbox_multiline(self.clicked_item.secondary_desc, MENU_GREY)
 
-        adult_age = str(timedelta(seconds=self.clicked_item.base_adult[1]))
-        adult_mult = str(self.clicked_item.mult_adult[1])
-        death_age = str(timedelta(seconds=self.clicked_item.base_death[1]))
-        death_mult = str(self.clicked_item.mult_death[1])
-        value = str(self.clicked_item.base_value[1])
-        value_mult = str(self.clicked_item.mult_value[1])
-        yield_base = str(int(self.clicked_item.base_yield[1] / 100))
-        yield_add = str(self.clicked_item.base_yield[1] % 100)
-        yield_mult = str(self.clicked_item.mult_yield[1])
-        a_eff = str(self.clicked_item.ability_eff[1])
-
-        self.secondary_info.update_textbox_multiline(["Adult age time: " + adult_age + "[x" + adult_mult + "]",
-                                                      "Death age time: " + death_age + "[x" + death_mult + "]",
-                                                      "Growth rate: x" + str(self.clicked_item.mult_rate[0]),
-                                                      "Yields: " + yield_base + "[x" + yield_mult + "] seeds",
-                                                      yield_add + "% chance to gain an additional seed",
-                                                      "Seeds sell for: $" + value + "[x" + value_mult + "]",
-                                                      "Ability Potency: " + a_eff + "%"],
-                                                     MENU_GREY)
+        self.secondary_info.update_textbox_multiline(self.construct_type_info(1), MENU_GREY)
 
         self.secondary_info.draw_on_surface(self.type_information_surface)
         self.secondary_desc.draw_on_surface(self.type_information_surface)
@@ -129,7 +103,7 @@ class StatsMenu(Menu):
         pygame.draw.rect(self.type_information_surface, BLACK, (60, 470, 180, 140), 2)
 
     def draw_recipe_info(self):
-        if len(self.clicked_item.recipe) != 0:
+        if self.clicked_item.recipe[0] is not None:
             self.recipe_details.update_textbox_multiline(self.clicked_item.recipe, MENU_GREY)
             self.recipe_title.update_textbox("Recipe", MENU_GREY)
         else:
