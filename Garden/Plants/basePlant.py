@@ -1,11 +1,12 @@
 from useful_functions import *
-from datetime import timedelta
 from Garden.Plants.plantSpecies import plant_species as ps
 from Garden.gardenGlobals import garden_global as gs
 
 
 class Plant:
-    def __init__(self, growth, seed_yield, lifespan, value, x, y, plant_type_1, plant_type_2):
+    def __init__(self, growth, seed_yield, lifespan, value, x, y, plant_type_1, plant_type_2, game):
+        self.game = game
+        pygame.event.post(pygame.event.Event(self.game.planted, message=[(x, y)]))
         self.plant_age = 0
         self.adult_age = None
         self.decay_age = None
@@ -59,6 +60,7 @@ class Plant:
         self.update_final_values()
         self.assign_static_values()
 
+
         # test
         self.colour = ps[plant_type_1].colour
 
@@ -81,14 +83,14 @@ class Plant:
             time = int((self.adult_age - self.plant_age) / self.final_rate)
         else:
             time = int(self.adult_age - self.plant_age)
-        return str(timedelta(seconds=time))
+        return get_time(time)
 
     def get_time_to_death(self, eff=False):
         if eff:
             time = int((self.decay_age - self.plant_age)/self.final_rate)
         else:
             time = int(self.decay_age - self.plant_age)
-        return str(timedelta(seconds=time))
+        return get_time(time)
 
     def calc_static_values(self):
         a = ps[self.type1]
@@ -140,3 +142,4 @@ class Plant:
     def assign_static_values(self):
         self.adult_age = self.final_adult
         self.decay_age = self.final_death
+
