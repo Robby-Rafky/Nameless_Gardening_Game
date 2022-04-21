@@ -6,7 +6,7 @@ from Garden.gardenGlobals import *
 class User:
 
     def __init__(self):
-        self.cash = 10000
+        self.cash = 1000000
 
     def purchase_check(self, cost):
         if self.cash - cost < 0:
