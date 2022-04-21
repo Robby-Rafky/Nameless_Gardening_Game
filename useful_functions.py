@@ -2,6 +2,7 @@
 import math
 import pygame
 from random import randint
+from datetime import timedelta
 
 # Colour definitions
 BLACK = (0, 0, 0)
@@ -36,6 +37,18 @@ def clamp(n, upper, lower):
 
 def chance_to_occur(chance):
     return randint(0, 99) < chance
+
+
+def small_chance_to_occur(chance):
+    chance = chance * 1000
+    return randint(0, 99999) < chance
+
+
+def get_time(time):
+    if time >= 0:
+        return str(timedelta(seconds=time))
+    else:
+        return "Infinite"
 
 
 def construct_title(item):
