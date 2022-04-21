@@ -21,22 +21,19 @@ class InventoryHandler:
     def starting_inventory(self):
         self.inventory.append(PlantItem(0, 0, 0, 0, "Verdant", "Verdant"))
         self.inventory.append(PlantItem(10, 10, 10, 10, "Verdant", "Verdant"))
-        self.inventory.append(PlantItem(20, 20, 20, 20, "Verdant", "Verdant"))
-        self.inventory.append(PlantItem(30, 30, 30, 30, "Verdant", "Verdant"))
-        self.inventory.append(PlantItem(40, 40, 40, 40, "Verdant", "Verdant"))
-        self.inventory.append(PlantItem(50, 50, 50, 50, "Verdant", "Verdant"))
+        self.inventory.append(PlantItem(20, 20, 20, 20, "Programmed", "Verdant"))
+        self.inventory.append(PlantItem(30, 30, 30, 30, "Hollow", "Hollow"))
+        self.inventory.append(PlantItem(40, 40, 40, 40, "Lunar", "Solar"))
+        self.inventory.append(PlantItem(50, 50, 50, 50, "Celestial", "Celestial"))
         self.inventory.append(PlantItem(60, 60, 60, 60, "Verdant", "Verdant"))
         self.inventory.append(PlantItem(70, 70, 70, 70, "Verdant", "Verdant"))
         self.inventory.append(PlantItem(80, 80, 80, 80, "Verdant", "Verdant"))
         self.inventory.append(PlantItem(90, 90, 90, 90, "Verdant", "Verdant"))
         self.inventory.append(PlantItem(100, 100, 100, 100, "Verdant", "Verdant"))
 
-        # self.inventory.append(PlantItem(10, 90, 10, 90, "Crystalline", "Explosive"))
-        # self.inventory.append(PlantItem(17, 12, 12, 12, "Decaying", "Programmed"))
-        # self.inventory.append(PlantItem(100, 100, 100, 100, "Exothermic", "Endothermic"))
-        for _ in range(200):
-            self.inventory.append(PlantItem(0, 0, 0, 0, "Verdant", "Verdant"))
-        pass
+        # for _ in range(200):
+        #     self.inventory.append(PlantItem(0, 0, 0, 0, "Verdant", "Verdant"))
+        # pass
 
     def update_inventory(self):
         self.inventory_size = len(self.inventory)
