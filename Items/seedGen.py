@@ -2,7 +2,7 @@ import pygame
 
 from useful_functions import *
 
-seed_image = pygame.image.load("Items\seed.png")
+seed_image = pygame.image.load("Items/seed.png")
 seed_image = pygame.transform.scale(seed_image, (80, 80))
 
 
