@@ -3,39 +3,6 @@ from useful_functions import *
 
 # [Primary stat, Secondary stat]
 
-PlantType(
-    type_name="Verdant",
-    base_starting_age=[0, 0],
-    base_adult_age=[300, 300],
-    base_death_age=[480, 480],
-    base_mutation_chance=1,
-    base_yield=[3150, 150],
-    base_value=[100, 100],
-    mult_adult_age=[1, 1],
-    mult_death_age=[1, 1],
-    mult_growth_speed=[1, 1],
-    mult_yield=[1, 1],
-    mult_value=[1, 1],
-    ability_eff=[100, 100],
-    resistance=0,
-    resistance_cap=100,
-    tier=0,
-    mutation_recipe=[],
-    colour=GREEN,
-    is_unlocked=False,
-    primary_description=
-    ["Stuff",
-     " There",
-     " Is",
-     " Stuff",
-     "----------------------------------------"],
-    secondary_description=
-    ["Stuff",
-     " I",
-     " Am",
-     " Stuff",
-     "----------------------------------------"]
-),
 
 plant_species = {
     "Verdant": PlantType(
@@ -55,7 +22,7 @@ plant_species = {
         resistance=0,
         resistance_cap=100,
         tier=0,
-        mutation_recipe=[],
+        mutation_recipe=[None],
         colour=LIME_GREEN,
         is_unlocked=True,
         primary_description=
@@ -88,7 +55,7 @@ plant_species = {
         resistance=0,
         resistance_cap=100,
         tier=0,
-        mutation_recipe=[],
+        mutation_recipe=[None],
         colour=GREEN,
         is_unlocked=True,
         primary_description=
@@ -121,7 +88,7 @@ plant_species = {
         resistance=0,
         resistance_cap=100,
         tier=0,
-        mutation_recipe=[],
+        mutation_recipe=[None],
         colour=GREEN,
         is_unlocked=True,
         primary_description=
@@ -154,7 +121,7 @@ plant_species = {
         resistance=0,
         resistance_cap=100,
         tier=0,
-        mutation_recipe=[],
+        mutation_recipe=[None],
         colour=GREEN,
         is_unlocked=True,
         primary_description=
@@ -187,7 +154,7 @@ plant_species = {
         resistance=0,
         resistance_cap=100,
         tier=0,
-        mutation_recipe=[],
+        mutation_recipe=[None],
         colour=GREEN,
         is_unlocked=True,
         primary_description=
@@ -307,7 +274,7 @@ plant_species = {
         base_starting_age=[0, 0],
         base_adult_age=[300, 300],
         base_death_age=[480, 480],
-        base_mutation_chance=1,
+        base_mutation_chance=50,
         base_yield=[150, 150],
         base_value=[100, 100],
         mult_adult_age=[1, 1],
