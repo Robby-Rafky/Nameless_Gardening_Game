@@ -19,6 +19,7 @@ class Game:
         self.scrolling = False
 
         self.drag_y = None
+        self.drag_x = None
         self.DISPLAY_WIDTH, self.DISPLAY_HEIGHT = 1920, 1080
         self.game_space = pygame.Surface((self.DISPLAY_WIDTH, self.DISPLAY_HEIGHT))
         self.game_window = pygame.display.set_mode((self.DISPLAY_WIDTH, self.DISPLAY_HEIGHT))
@@ -27,7 +28,6 @@ class Game:
         self.base_background_colour = GREEN
         self.mouse_pos = [0, 0]
         self.user = User()
-        # all menu references go here.
 
         self.garden_handler = GardenHandler(self)
         self.menu_selector = MenuSwitcher(self)
@@ -35,6 +35,7 @@ class Game:
         self.inventory_handler = InventoryHandler(self)
 
     def testing_stuff(self):
+
         pass
 
     def screen_layering(self):
@@ -56,15 +57,16 @@ class Game:
             if event.type == self.tick_time:
                 self.garden_handler.tick_garden()
 
-            # when any plant in the garden becomes an adult or dies
+            # when any plant in the garden becomes an adult, dies or spawns in
             if event.type == self.plant_state_changed:
                 for item in event.message:
                     self.garden_handler.update_non_plants(item[0], item[1])
 
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if event.button == 1:
-                    self.scrolling = True
                     self.drag_y = self.mouse_pos[1]
+                    self.drag_x = self.mouse_pos[0]
+                    self.scrolling = True
                 if self.menu_handler.current_menu is None:
                     if pygame.mouse.get_pressed()[0] and self.garden_handler.mouse_valid:
                         self.garden_handler.place_on_garden_tile()
@@ -79,11 +81,13 @@ class Game:
             if event.type == pygame.MOUSEMOTION:
                 if self.scrolling:
                     mouse_x, mouse_y = event.pos
-                    self.menu_handler.scroll_menu((mouse_y - self.drag_y)/20)
+                    drag_scroll = (mouse_y - self.drag_y)/20
+                    self.menu_handler.scroll_menu(scroll=drag_scroll, x=self.drag_x, y=self.drag_y)
                     self.drag_y = mouse_y
+                    self.drag_x = mouse_x
 
             if event.type == pygame.MOUSEWHEEL:
-                self.menu_handler.scroll_menu(event.y)
+                self.menu_handler.scroll_menu(scroll=event.y, zoom=event.y)
 
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
@@ -94,7 +98,6 @@ class Game:
 
                 if event.key == pygame.K_SPACE:
                     self.testing_stuff()
-
 
     def game_loop(self):
         self.mouse_pos = pygame.mouse.get_pos()
