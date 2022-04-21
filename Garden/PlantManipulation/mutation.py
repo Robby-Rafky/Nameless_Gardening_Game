@@ -35,9 +35,9 @@ class Mutator:
         surface.blit(self.image, (pos_x, pos_y))
 
     def search_for_plants(self):
-        self.plants_present = []
-        self.can_mutate = []
-        for plant_pos in self.game.garden_handler.targeter.target_area(1, self.x, self.y):
+        self.plants_present.clear()
+        self.can_mutate.clear()
+        for plant_pos in self.game.garden_handler.targeter.target_area(1, self.y, self.x):
             plant = self.game.garden_handler.garden_contents[plant_pos[0]][plant_pos[1]]
             if isinstance(plant, Plant):
                 if plant.is_pure and plant.is_adult:
@@ -49,7 +49,6 @@ class Mutator:
         for plant_type, plant in plant_species.items():
             if self.mutation_search(plant.recipe, self.plants_present):
                 self.can_mutate.append(plant_type)
-        print(str(self.can_mutate))
 
     def mutation_search(self, recipe, plants_present):
         recipe = sorted(recipe)
@@ -60,6 +59,6 @@ class Mutator:
     def trigger_mutation_rolls(self):
         for item in self.can_mutate:
             if small_chance_to_occur(plant_species[item].mutation_chance):
-                self.game.garden_handler.garden_contents[self.x][self.y] = Plant(
+                self.game.garden_handler.garden_contents[self.y][self.x] = Plant(
                     0, 0, 0, 0, self.x, self.y, item, item, self.game)
 
