@@ -131,8 +131,8 @@ class InventoryMenu(Menu):
         self.draw_single_stat("Resistivity", int(self.clicked_item.res), 295, RES_COLOUR)
 
     def draw_seed_data(self):
-        final_adult = "Fully grown in: " + str(timedelta(seconds=self.clicked_item.final_adult))
-        final_death = "Full lifespan: " + str(timedelta(seconds=self.clicked_item.final_death))
+        final_adult = "Fully grown in: " + get_time(self.clicked_item.final_adult)
+        final_death = "Full lifespan: " + get_time(self.clicked_item.final_death)
         if self.clicked_item.final_rate > 1:
             final_rate = "Grows: " + str(self.clicked_item.final_rate) + "x faster"
         elif self.clicked_item.final_rate == 1.0:
