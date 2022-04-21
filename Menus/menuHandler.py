@@ -58,7 +58,7 @@ class MenuHandler:
         if self.current_menu is not None:
             self.game.garden_handler.planting = None
 
-    def scroll_menu(self, scroll):
+    def scroll_menu(self, scroll, zoom=0, x=0, y=0):
         if self.current_menu == "Inventory":
             if 110 <= self.game.mouse_pos[0] <= 1250:
                 if self.game.inventory_handler.inventory_size >= 77:
