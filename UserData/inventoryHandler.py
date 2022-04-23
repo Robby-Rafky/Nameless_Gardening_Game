@@ -29,7 +29,7 @@ class InventoryHandler:
         self.inventory.append(PlantItem(70, 70, 70, 70, "Verdant", "Verdant"))
         self.inventory.append(PlantItem(80, 80, 80, 80, "Verdant", "Verdant"))
         self.inventory.append(PlantItem(90, 90, 90, 90, "Verdant", "Verdant"))
-        self.inventory.append(PlantItem(100, 100, 100, 100, "Verdant", "Verdant"))
+        self.inventory.append(PlantItem(100, 100, 100, 100, "Azure", "Azure"))
 
         # for _ in range(200):
         #     self.inventory.append(PlantItem(0, 0, 0, 0, "Verdant", "Verdant"))

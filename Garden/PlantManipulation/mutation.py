@@ -2,14 +2,16 @@ from useful_functions import *
 from Garden.Plants.basePlant import Plant
 from Garden.Plants.plantSpecies import plant_species
 
-mutator_image = pygame.image.load("Garden/PlantManipulation/mutator_asset.png")
+mutator_image = pygame.image.load("Garden/PlantManipulation/asset_mutator.png")
 
-mutator_colour = {
-    "base": (160, 159, 161),
-    "rare": (35, 68, 219),
-    "epic": (80, 28, 201),
-    "legendary": (217, 168, 9),
-    "mythic": (14, 215, 237)
+mutator_tiers = {
+    1: [(160, 159, 161), 200],
+    2: [(35, 68, 219), 300],
+    3: [(80, 28, 201), 400],
+    4: [(217, 168, 9), 500],
+    5: [(220, 129, 247), 600],
+    6: [(14, 215, 237), 700],
+    7: [(184, 0, 0), None]
 }
 
 
@@ -26,7 +28,7 @@ class Mutator:
     def create_image(self):
         mutator_image_final = mutator_image.copy()
         mutator_coloured = pygame.Surface(mutator_image.get_size())
-        mutator_coloured.fill(mutator_colour[self.tier])
+        mutator_coloured.fill(mutator_tiers[self.tier][0])
         mutator_image_final.blit(mutator_coloured, (0, 0), special_flags=pygame.BLEND_MULT)
 
         return mutator_image_final
@@ -47,7 +49,7 @@ class Mutator:
                     else:
                         self.plants_present.append(plant.type1)
         for plant_type, plant in plant_species.items():
-            if self.mutation_search(plant.recipe, self.plants_present):
+            if self.mutation_search(plant.recipe, self.plants_present) and plant.tier <= self.tier:
                 self.can_mutate.append(plant_type)
 
     def mutation_search(self, recipe, plants_present):
@@ -61,4 +63,8 @@ class Mutator:
             if small_chance_to_occur(plant_species[item].mutation_chance):
                 self.game.garden_handler.garden_contents[self.y][self.x] = Plant(
                     0, 0, 0, 0, self.x, self.y, item, item, self.game)
+                self.game.garden_handler.garden.clicked_plot = None
+
+    def get_price(self):
+        return mutator_tiers[self.tier][1]
 

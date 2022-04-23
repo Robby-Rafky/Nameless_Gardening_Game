@@ -4,6 +4,8 @@ from button import Button
 from datetime import timedelta
 from Garden.Plants.basePlant import Plant
 from Items.plantItem import PlantItem
+from Garden.PlantManipulation.mutation import Mutator
+from UserData.ShopItem import ShopItem
 
 
 class GardenSpace:
@@ -17,7 +19,9 @@ class GardenSpace:
         self.action_box = TextBox(" ", (10, 10), (320, 40), True, True, 20, MENU_GREY)
         self.timers_box = TextBox(" ", (10, 190), (320, 60), True, False, 20, MENU_GREY)
         self.stats_box = TextBox(" ", (10, 420), (320, 120), True, False, 20, MENU_GREY)
+        self.info_box = TextBox(" ", (10, 240), (320, 250), True, False, 20, MENU_GREY)
         self.harvest_button = Button("Growing", (180, 550), (150, 40), (1560, 120), True, True, 26, RED)
+        self.upgrade_button = ShopItem("Upgrade", (10, 190), (320, 40), (1560, 120), 0)
         self.font = pygame.font.Font(PIXEL_FONT, 20)
         self.game = game
         self.side_surface = pygame.Surface((340, 920))
@@ -52,10 +56,16 @@ class GardenSpace:
 
     def garden_button_events(self):
         if self.harvest_button.button_event(self.game.mouse_pos):
-            if self.clicked_plot is not None:
+            if isinstance(self.clicked_plot, Plant):
                 if self.clicked_plot.is_adult:
                     self.game.garden_handler.harvest_plant(self.clicked_plot, self.clicked_plot_index)
                     self.clicked_plot = None
+        if self.upgrade_button.button_event(self.game.mouse_pos):
+            if isinstance(self.clicked_plot, Mutator):
+                if self.clicked_plot.tier < 7:
+                    if self.game.user.purchase_check(self.upgrade_button.price):
+                        self.clicked_plot.tier += 1
+                        self.clicked_plot.image = self.clicked_plot.create_image()
 
     def draw_plant_timer(self):
         if self.clicked_plot.is_adult:
@@ -116,6 +126,28 @@ class GardenSpace:
         self.draw_single_stat("Resistivity", int(item.res), 380, RES_COLOUR)
         pygame.draw.rect(self.side_surface, BLACK, (10, 260, 320, 150), 2)
 
+    def draw_mutator_info(self, item):
+        if item.tier < 7:
+            self.action_box.update_textbox("Mutator "+"[Tier "+str(item.tier)+"]", MENU_GREY)
+        else:
+            self.action_box.update_textbox("Mutator [Max]", MENU_GREY)
+
+        item.draw_mutator(self.side_surface, 120, 70)
+
+        self.upgrade_button.sold_out = False
+        self.upgrade_button.update_price(item.get_price())
+        self.upgrade_button.update_shop(self.game.user.cash)
+
+        text = ["Currently Mutating:"]
+        for outcome in item.can_mutate:
+            text.append(outcome)
+
+        self.info_box.update_textbox_multiline(text, MENU_GREY)
+
+        self.info_box.draw_on_surface(self.side_surface)
+        self.upgrade_button.draw_on_surface(self.side_surface)
+        self.action_box.draw_on_surface(self.side_surface)
+
     def draw_side_garden_info(self):
         self.side_surface.fill(GREEN)
         if isinstance(self.game.garden_handler.planting, PlantItem):
@@ -126,5 +158,8 @@ class GardenSpace:
             self.draw_plant_timer()
             self.draw_plant_info()
             self.draw_all_stats(self.clicked_plot)
+
+        elif isinstance(self.clicked_plot, Mutator):
+            self.draw_mutator_info(self.clicked_plot)
 
         self.game.game_space.blit(self.side_surface, (1560, 120))

@@ -107,8 +107,8 @@ class GardenHandler:
         self.garden_contents[garden_index[1]][garden_index[0]] = None
 
     def draw_plants(self):
-        for x in range(len(self.garden_contents)):
-            for y in range(len(self.garden_contents[0])):
+        for y in range(len(self.garden_contents)):
+            for x in range(len(self.garden_contents[0])):
                 if isinstance(self.garden_contents[y][x], Plant):
                     self.garden_contents[y][x].draw_plant(self.game.game_space, (self.garden.offset_x + x * 100),
                                                           (self.garden.offset_y + y * 100))
