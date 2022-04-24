@@ -86,18 +86,27 @@ class StatsMenu(Menu):
         self.secondary_title.draw_on_surface(self.type_information_surface)
 
     def draw_resistance_info(self):
+        self.res_title.update_textbox("Resistance", tier_colours[self.clicked_item.tier])
         self.res_title.draw_on_surface(self.type_information_surface)
         res_clamp = clamp(self.clicked_item.res, self.clicked_item.res_cap, 0)
         res_info = self.font.render(str(res_clamp) + "/" + str(self.clicked_item.res_cap), True, BLACK)
         pygame.draw.rect(self.type_information_surface, RES_COLOUR,
                          (10, 730, 1450 * res_clamp / self.clicked_item.res_cap, 40))
+        pygame.draw.rect(self.type_information_surface, MENU_GREY, (10, 730, 1450, 40), 0)
         pygame.draw.rect(self.type_information_surface, BLACK, (10, 730, 1450, 40), 2)
         self.type_information_surface.blit(res_info, (735 - res_info.get_width(), 740,
                                                       res_info.get_width(), res_info.get_height()))
 
     def draw_image_info(self):
+        pygame.draw.rect(self.type_information_surface, MENU_GREY, (60, 320, 180, 140), 0)
+        pygame.draw.rect(self.type_information_surface, MENU_GREY, (60, 470, 180, 140), 0)
+
         self.clicked_item.draw_seed(110, 370, self.type_information_surface)
+
+        self.seed_title.update_textbox("Pure Seed", MENU_GREY)
+        self.plant_title.update_textbox("Pure Plant", MENU_GREY)
         self.seed_title.draw_on_surface(self.type_information_surface)
+
         pygame.draw.rect(self.type_information_surface, BLACK, (60, 320, 180, 140), 2)
         self.plant_title.draw_on_surface(self.type_information_surface)
         pygame.draw.rect(self.type_information_surface, BLACK, (60, 470, 180, 140), 2)
@@ -120,6 +129,7 @@ class StatsMenu(Menu):
     def draw_plant_type_info(self):
         self.type_information_surface.fill(MENU_GREY)
         if self.clicked_item is not None:
+            self.type_information_surface.fill(tier_colours[self.clicked_item.tier])
             if self.clicked_item.is_unlocked:
                 self.type_title.update_textbox(self.clicked_item.type_name, MENU_GREY)
                 tier_title = self.font.render("Tier " + str(self.clicked_item.tier), True, BLACK)

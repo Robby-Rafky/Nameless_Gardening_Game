@@ -5,13 +5,13 @@ from Garden.Plants.plantSpecies import plant_species
 mutator_image = pygame.image.load("Garden/PlantManipulation/asset_mutator.png")
 
 mutator_tiers = {
-    1: [(160, 159, 161), 200],
-    2: [(35, 68, 219), 300],
-    3: [(80, 28, 201), 400],
-    4: [(217, 168, 9), 500],
-    5: [(220, 129, 247), 600],
-    6: [(14, 215, 237), 700],
-    7: [(184, 0, 0), None]
+    1: [tier_colours[1], 200],
+    2: [tier_colours[2], 300],
+    3: [tier_colours[3], 400],
+    4: [tier_colours[4], 500],
+    5: [tier_colours[5], 600],
+    6: [tier_colours[6], 700],
+    7: [tier_colours[7], None]
 }
 
 
