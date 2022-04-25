@@ -19,8 +19,8 @@ RED = (117, 13, 13)
 L_ORANGE = (235, 169, 94)
 # Tier colours
 tier_colours = {
-    0: WHITE,
-    1: (160, 159, 161),
+    0: (160, 159, 161),
+    1: GREEN,
     2: (35, 68, 219),
     3: (80, 28, 201),
     4: (217, 168, 9),
@@ -64,11 +64,11 @@ def get_time(time):
 
 
 def construct_title(item):
-    title = item.type1
+    title = item.type1["type_name"]
     if item.is_pure:
         title = "[Pure] " + title
     else:
-        title = title + " " + item.type2
+        title = title + " " + item.type2["type_name"]
     if item.is_max:
         title = title + " [Max]"
     return title

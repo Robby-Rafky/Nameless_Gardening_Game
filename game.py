@@ -2,9 +2,10 @@ from useful_functions import *
 from Garden.gardenHandler import GardenHandler
 from Menus.menuHandler import MenuHandler
 from upperUI import MenuSwitcher
-from UserData.inventoryHandler import InventoryHandler
-from UserData.user import User
+from User.inventoryHandler import InventoryHandler
+from User.user import User
 from Garden.gardenGlobals import *
+from Data.dataHandler import DataHandler
 
 
 class Game:
@@ -28,6 +29,7 @@ class Game:
         self.base_background_colour = GREEN
         self.mouse_pos = [0, 0]
         self.user = User()
+        self.data_handler = DataHandler()
 
         self.garden_handler = GardenHandler(self)
         self.menu_selector = MenuSwitcher(self)

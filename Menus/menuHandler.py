@@ -2,7 +2,7 @@ from useful_functions import *
 from Menus.InventoryMenu import InventoryMenu
 from Menus.ShopMenu import ShopMenu
 from Menus.SkillsMenu import SkillTreeMenu
-from Menus.Menu4 import Menu4
+from Menus.CraftingMenu import Menu4
 from Menus.StatsMenu import StatsMenu
 
 
@@ -25,7 +25,7 @@ class MenuHandler:
             self.shop_menu.shop_menu_events()
         if self.current_menu == "SkillTree":
             self.skill_tree_menu.skill_tree_menu_events()
-        if self.current_menu == "4":
+        if self.current_menu == "Crafting":
             self.menu_4.menu4_menu_events()
         if self.current_menu == "Stats":
             self.stats_menu.stats_menu_events()
@@ -47,7 +47,7 @@ class MenuHandler:
         if self.current_menu == "SkillTree":
             self.skill_tree_menu.surface.fill(self.skill_tree_menu.background_colour)
             self.skill_tree_menu.show_menu()
-        if self.current_menu == "4":
+        if self.current_menu == "Crafting":
             self.menu_4.surface.fill(self.menu_4.background_colour)
             self.menu_4.show_menu()
         if self.current_menu == "Stats":
@@ -73,7 +73,7 @@ class MenuHandler:
             pass
         if self.current_menu == "SkillTree":
             pass
-        if self.current_menu == "4":
+        if self.current_menu == "Crafting":
             pass
         if self.current_menu == "Stats":
             if self.game.mouse_pos[0] <= 370:

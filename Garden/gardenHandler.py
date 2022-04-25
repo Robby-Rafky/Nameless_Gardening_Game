@@ -79,8 +79,8 @@ class GardenHandler:
                 plant_item.stat_value,
                 self.garden.grid_x,
                 self.garden.grid_y,
-                plant_item.type1,
-                plant_item.type2,
+                plant_item.type1["type_name"],
+                plant_item.type2["type_name"],
                 self.game,
             )
             return True
@@ -99,8 +99,9 @@ class GardenHandler:
                 plant.stat_yield,
                 plant.stat_lifespan,
                 plant.stat_value,
-                plant.type1,
-                plant.type2,
+                plant.type1["type_name"],
+                plant.type2["type_name"],
+                self.game
             ))
         pygame.event.post(pygame.event.Event(self.game.plant_state_changed, message=[[garden_index[1],
                                                                                       garden_index[0]]]))

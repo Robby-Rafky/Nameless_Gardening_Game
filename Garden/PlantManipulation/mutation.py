@@ -1,11 +1,10 @@
 from useful_functions import *
 from Garden.Plants.basePlant import Plant
-from Garden.Plants.plantSpecies import plant_species
 
 mutator_image = pygame.image.load("Garden/PlantManipulation/asset_mutator.png")
 
 mutator_tiers = {
-    1: [tier_colours[1], 200],
+    1: [tier_colours[0], 200],
     2: [tier_colours[2], 300],
     3: [tier_colours[3], 400],
     4: [tier_colours[4], 500],
@@ -18,6 +17,7 @@ mutator_tiers = {
 class Mutator:
     def __init__(self, x, y, game, tier):
         self.game = game
+        self.types = self.game.data_handler.plant_types
         self.tier = tier
         self.x = x
         self.y = y
@@ -44,12 +44,12 @@ class Mutator:
             if isinstance(plant, Plant):
                 if plant.is_pure and plant.is_adult:
                     if plant.is_max:
-                        self.plants_present.append(plant.type1 + " [Max]")
-                        self.plants_present.append(plant.type1)
+                        self.plants_present.append(plant.type1["type_name"] + " [Max]")
+                        self.plants_present.append(plant.type1["type_name"])
                     else:
-                        self.plants_present.append(plant.type1)
-        for plant_type, plant in plant_species.items():
-            if self.mutation_search(plant.recipe, self.plants_present) and plant.tier <= self.tier:
+                        self.plants_present.append(plant.type1["type_name"])
+        for plant_type, plant in self.types.items():
+            if self.mutation_search(plant["mutation_recipe"], self.plants_present) and plant["tier"] <= self.tier:
                 self.can_mutate.append(plant_type)
 
     def mutation_search(self, recipe, plants_present):
@@ -60,7 +60,7 @@ class Mutator:
 
     def trigger_mutation_rolls(self):
         for item in self.can_mutate:
-            if small_chance_to_occur(plant_species[item].mutation_chance):
+            if small_chance_to_occur(self.types[item]["mutation_chance"][0]):
                 self.game.garden_handler.garden_contents[self.y][self.x] = Plant(
                     0, 0, 0, 0, self.x, self.y, item, item, self.game)
                 self.game.garden_handler.garden.clicked_plot = None

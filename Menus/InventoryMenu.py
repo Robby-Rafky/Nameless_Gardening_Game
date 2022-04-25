@@ -2,8 +2,6 @@ from Menus.baseMenu import Menu
 from textBox import TextBox
 from button import Button
 from useful_functions import *
-from Garden.Plants.plantSpecies import plant_species as ps
-from datetime import timedelta
 
 
 class InventoryMenu(Menu):
@@ -140,7 +138,7 @@ class InventoryMenu(Menu):
         else:
             final_rate = "Grows: " + str(self.clicked_item.final_rate) + "x slower"
         final_value = str(self.clicked_item.final_value) + " $"
-        final_ability_eff = "Ability Potency: " + str(self.clicked_item.final_ability_eff) + "%"
+        final_ability_eff = "Extractable Essence: " + str(self.clicked_item.final_essence) + " units"
         final_yield = "Yield: " + str(int(self.clicked_item.final_yield / 100)
                                       ) + " seeds +" + str(round(self.clicked_item.final_yield % 100,
                                                                  1)) + "% for 1 extra"

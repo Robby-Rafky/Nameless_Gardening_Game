@@ -5,7 +5,7 @@ from datetime import timedelta
 from Garden.Plants.basePlant import Plant
 from Items.plantItem import PlantItem
 from Garden.PlantManipulation.mutation import Mutator
-from UserData.ShopItem import ShopItem
+from User.ShopItem import ShopItem
 
 
 class GardenSpace:
@@ -97,7 +97,7 @@ class GardenSpace:
         self.stats_box.update_textbox_multiline([
             "Growth Rate: " + str(self.clicked_plot.final_rate) + "x",
             "Sell price: " + str(self.clicked_plot.final_value) + " $",
-            "Ability Potency: " + str(self.clicked_plot.final_ability_eff) + "%",
+            "Essence: " + str(self.clicked_plot.final_essence) + " units",
             "Yields: " + str(int(self.clicked_plot.final_yield / 100)) + " seeds",
             str(self.clicked_plot.final_yield % 100) + "% for an extra seed"], MENU_GREY)
 

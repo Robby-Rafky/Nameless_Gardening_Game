@@ -1,5 +1,5 @@
 from Menus.baseMenu import Menu
-from UserData.ShopItem import ShopItem
+from User.ShopItem import ShopItem
 from textBox import TextBox
 from useful_functions import *
 from Items.plantItem import PlantItem
@@ -18,7 +18,7 @@ class ShopMenu(Menu):
 
         self.seed_shop_text = TextBox("Seeds Shop", (10, 10), (1760, 40), True, True, 26, LIME_GREEN)
         self.buy_verdant_seed = ShopItem("Verdant Seed", (10, 170), (260, 40), (70, 370), 0,
-                                         PlantItem(0, 0, 0, 0, "Verdant", "Verdant"))
+                                         PlantItem(0, 0, 0, 0, "Verdant", "Verdant", self.game))
 
         self.manip_shop_text = TextBox("Plant Manipulation Shop", (10, 10), (860, 40), True, True, 26, L_BLUE)
         self.buy_mutator = ShopItem("Mutator", (60, 60), (350, 40), (970, 160), 100)
