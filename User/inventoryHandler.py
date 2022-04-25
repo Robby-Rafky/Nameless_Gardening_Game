@@ -2,7 +2,7 @@ import random
 
 from useful_functions import *
 from Items.plantItem import PlantItem
-from Garden.Plants.plantSpecies import plant_species
+
 
 
 class InventoryHandler:
@@ -19,20 +19,23 @@ class InventoryHandler:
 
     # test stuff
     def starting_inventory(self):
-        self.inventory.append(PlantItem(0, 0, 0, 0, "Verdant", "Verdant"))
-        self.inventory.append(PlantItem(10, 10, 10, 10, "Verdant", "Verdant"))
-        self.inventory.append(PlantItem(20, 20, 20, 20, "Programmed", "Verdant"))
-        self.inventory.append(PlantItem(30, 30, 30, 30, "Hollow", "Hollow"))
-        self.inventory.append(PlantItem(40, 40, 40, 40, "Lunar", "Solar"))
-        self.inventory.append(PlantItem(50, 50, 50, 50, "Celestial", "Celestial"))
-        self.inventory.append(PlantItem(60, 60, 60, 60, "Verdant", "Verdant"))
-        self.inventory.append(PlantItem(70, 70, 70, 70, "Verdant", "Verdant"))
-        self.inventory.append(PlantItem(80, 80, 80, 80, "Verdant", "Verdant"))
-        self.inventory.append(PlantItem(90, 90, 90, 90, "Verdant", "Verdant"))
-        self.inventory.append(PlantItem(100, 100, 100, 100, "Azure", "Azure"))
+        self.inventory.append(PlantItem(0, 0, 0, 0, "Verdant", "Verdant", self.game))
+        self.inventory.append(PlantItem(10, 10, 10, 10, "Verdant", "Verdant", self.game))
+        self.inventory.append(PlantItem(20, 20, 20, 20, "Verdant", "Verdant", self.game))
+        self.inventory.append(PlantItem(30, 30, 30, 30, "Verdant", "Verdant", self.game))
+        self.inventory.append(PlantItem(40, 40, 40, 40, "Verdant", "Verdant", self.game))
+        self.inventory.append(PlantItem(50, 50, 50, 50, "Verdant", "Verdant", self.game))
+        self.inventory.append(PlantItem(60, 60, 60, 60, "Verdant", "Verdant", self.game))
+        self.inventory.append(PlantItem(70, 70, 70, 70, "Verdant", "Verdant", self.game))
+        self.inventory.append(PlantItem(80, 80, 80, 80, "Verdant", "Verdant", self.game))
+        self.inventory.append(PlantItem(90, 90, 90, 90, "Verdant", "Verdant", self.game))
+        for _ in range(10):
+            self.add_item(PlantItem(100, 100, 100, 100, "Verdant", "Verdant", self.game))
+            self.add_item(PlantItem(100, 100, 100, 100, "Azure", "Azure", self.game))
+            self.add_item(PlantItem(100, 100, 100, 100, "Vermilion", "Vermilion", self.game))
 
         # for _ in range(200):
-        #     self.inventory.append(PlantItem(0, 0, 0, 0, "Verdant", "Verdant"))
+        #     self.inventory.append(PlantItem(0, 0, 0, 0, "Verdant", "Verdant", self.game))
         # pass
 
     def update_inventory(self):
