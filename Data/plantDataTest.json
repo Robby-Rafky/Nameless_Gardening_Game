@@ -1,0 +1,5563 @@
+{
+  "Verdant": {
+    "type_name": "Verdant",
+    "tier": 0,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      null
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Vermilion": {
+    "type_name": "Vermilion",
+    "tier": 0,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      null
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Azure": {
+    "type_name": "Azure",
+    "tier": 0,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      null
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Pale": {
+    "type_name": "Pale",
+    "tier": 0,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      null
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Inked": {
+    "type_name": "Inked",
+    "tier": 0,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      null
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Crimson": {
+    "type_name": "Crimson",
+    "tier": 1,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Vermilion",
+      "Vermilion",
+      "Vermilion",
+      "Vermilion"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Frosty": {
+    "type_name": "Frosty",
+    "tier": 1,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Azure",
+      "Azure",
+      "Pale"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Heated": {
+    "type_name": "Heated",
+    "tier": 1,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Vermilion",
+      "Vermilion",
+      "Inked"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Dirty": {
+    "type_name": "Dirty",
+    "tier": 1,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Verdant",
+      "Verdant",
+      "Verdant",
+      "Verdant"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Aquatic": {
+    "type_name": "Aquatic",
+    "tier": 1,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Azure [Max]",
+      "Azure [Max]",
+      "Azure [Max]",
+      "Azure [Max]"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Inverted": {
+    "type_name": "Inverted",
+    "tier": 1,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Pale",
+      "Pale",
+      "Inked",
+      "Inked"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Spectrum": {
+    "type_name": "Spectrum",
+    "tier": 1,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Vermilion [Max]",
+      "Azure [Max]",
+      "Verdant [Max]",
+      "Pale [Max]",
+      "Inked [Max]"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Deadly": {
+    "type_name": "Deadly",
+    "tier": 2,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Crimson",
+      "Crimson",
+      "Crimson",
+      "Inked"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Rocky": {
+    "type_name": "Rocky",
+    "tier": 2,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Dirty",
+      "Dirty",
+      "Dirty",
+      "Azure [Max]"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Wooden": {
+    "type_name": "Wooden",
+    "tier": 2,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Dirty",
+      "Dirty",
+      "Dirty",
+      "Verdant [Max]"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Shadow": {
+    "type_name": "Shadow",
+    "tier": 2,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Spectrum",
+      "Inked",
+      "Inked",
+      "Inked"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Shining": {
+    "type_name": "Shining",
+    "tier": 2,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Spectrum",
+      "Pale",
+      "Pale",
+      "Pale"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Blizzard": {
+    "type_name": "Blizzard",
+    "tier": 2,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Frosty",
+      "Frosty",
+      "Frosty",
+      "Azure [Max]"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Infernal": {
+    "type_name": "Infernal",
+    "tier": 2,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Heated",
+      "Heated",
+      "Heated",
+      "Vermilion [Max]"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Crystalline": {
+    "type_name": "Crystalline",
+    "tier": 3,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Rocky [Max]",
+      "Shining",
+      "Shining",
+      "Shining"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Spectral": {
+    "type_name": "Spectral",
+    "tier": 3,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Shadow [Max]",
+      "Pale [Max]",
+      "Spectrum [Max]"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Necrotic": {
+    "type_name": "Necrotic",
+    "tier": 3,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Deadly [Max]",
+      "Crimson",
+      "Crimson",
+      "Crimson"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Metallic": {
+    "type_name": "Metallic",
+    "tier": 3,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Rocky [Max]",
+      "Inverted",
+      "Inverted",
+      "Inverted"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Ivory": {
+    "type_name": "Ivory",
+    "tier": 3,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Wooden",
+      "Wooden",
+      "Wooden",
+      "Pale [Max]"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Ebony": {
+    "type_name": "Ebony",
+    "tier": 3,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Wooden",
+      "Wooden",
+      "Wooden",
+      "Inked [Max]"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Vital": {
+    "type_name": "Vital",
+    "tier": 3,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Deadly",
+      "Inverted [Max]"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Magmatic": {
+    "type_name": "Magmatic",
+    "tier": 3,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Infernal [Max]",
+      "Rocky [Max]",
+      "Heated [Max]"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Glacial": {
+    "type_name": "Glacial",
+    "tier": 3,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Blizzard [Max]",
+      "Rocky [Max]",
+      "Frosty [Max]"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Decaying": {
+    "type_name": "Decaying",
+    "tier": 4,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Necrotic [Max]",
+      "Deadly [Max]"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Binary": {
+    "type_name": "Binary",
+    "tier": 4,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Metallic [Max]",
+      "Ivory [Max]",
+      "Ebony [Max]"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Paradoxical": {
+    "type_name": "Paradoxical",
+    "tier": 4,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Magmatic [Max]",
+      "Glacial [Max]",
+      "Ivory [Max]",
+      "Ebony [Max]",
+      "Vital [Max]",
+      "Necrotic [Max]"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Hasted": {
+    "type_name": "Hasted",
+    "tier": 4,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Magmatic [Max]",
+      "Spectral [Max]"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Temporal": {
+    "type_name": "Temporal",
+    "tier": 4,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Glacial [Max]",
+      "Spectral [Max]"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Hollow": {
+    "type_name": "Hollow",
+    "tier": 4,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Shadow [Max]",
+      "Ebony [Max]",
+      "Rocky [Max]"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Endothermic": {
+    "type_name": "Endothermic",
+    "tier": 4,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Glacial",
+      "Blizzard [Max]",
+      "Frosty [Max]",
+      "Azure [Max]"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Exothermic": {
+    "type_name": "Exothermic",
+    "tier": 4,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Magmatic",
+      "Infernal [Max]",
+      "Heated [Max]",
+      "Vermilion [Max]"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Steel": {
+    "type_name": "Steel",
+    "tier": 4,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Metallic [Max]",
+      "Metallic [Max]",
+      "Metallic [Max]",
+      "Metallic [Max]"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Essential": {
+    "type_name": "Essential",
+    "tier": 4,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Crystalline [Max]",
+      "Crystalline [Max]",
+      "Crystalline [Max]",
+      "Vital [Max]"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Malice": {
+    "type_name": "Malice",
+    "tier": 4,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Crystalline [Max]",
+      "Crystalline [Max]",
+      "Crystalline [Max]",
+      "Necrotic [Max]"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Explosive": {
+    "type_name": "Explosive",
+    "tier": 5,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Exothermic [Max]",
+      "Exothermic [Max]",
+      "Exothermic [Max]"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Nocturnal": {
+    "type_name": "Nocturnal",
+    "tier": 5,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Temporal [Max]",
+      "Hasted [Max]",
+      "Endothermic [Max]"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Photonic": {
+    "type_name": "Photonic",
+    "tier": 5,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Temporal [Max]",
+      "Hasted [Max]",
+      "Exothermic [Max]"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Radioactive": {
+    "type_name": "Radioactive",
+    "tier": 5,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Hollow [Max]",
+      "Binary [Max]",
+      "Paradoxical [Max]"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Obscure": {
+    "type_name": "Obscure",
+    "tier": 5,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Temporal [Max]",
+      "Temporal [Max]",
+      "Temporal [Max]",
+      "Temporal [Max]",
+      "Hasted [Max]",
+      "Hasted [Max]",
+      "Hasted [Max]",
+      "Hasted [Max]"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Tungsten": {
+    "type_name": "Tungsten",
+    "tier": 5,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Steel [Max]",
+      "Steel [Max]",
+      "Steel [Max]",
+      "Steel [Max]"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Dull": {
+    "type_name": "Dull",
+    "tier": 5,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Paradoxical [Max]",
+      "Paradoxical [Max]",
+      "Paradoxical [Max]",
+      "Paradoxical [Max]",
+      "Hollow [Max]",
+      "Hollow [Max]",
+      "Hollow [Max]",
+      "Hollow [Max]"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Abyssal": {
+    "type_name": "Abyssal",
+    "tier": 5,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Aquatic [Max]",
+      "Aquatic [Max]",
+      "Aquatic [Max]",
+      "Aquatic [Max]",
+      "Hollow [Max]",
+      "Hollow [Max]",
+      "Hollow [Max]",
+      "Hollow [Max]"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Lunar": {
+    "type_name": "Lunar",
+    "tier": 6,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Obscure [Max]",
+      "Nocturnal [Max]",
+      "Nocturnal [Max]",
+      "Nocturnal [Max]"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Solar": {
+    "type_name": "Solar",
+    "tier": 6,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Obscure [Max]",
+      "Photonic [Max]",
+      "Photonic [Max]",
+      "Photonic [Max]"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Twilight": {
+    "type_name": "Twilight",
+    "tier": 6,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Nocturnal [Max]",
+      "Nocturnal [Max]",
+      "Photonic [Max]",
+      "Photonic [Max]",
+      "Dull [Max]",
+      "Dull [Max]"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Unstable": {
+    "type_name": "Unstable",
+    "tier": 6,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Explosive [Max]",
+      "Explosive [Max]",
+      "Explosive [Max]",
+      "Explosive [Max]"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Synthetic": {
+    "type_name": "Synthetic",
+    "tier": 6,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Explosive [Max]",
+      "Nocturnal [Max]",
+      "Photonic [Max]",
+      "Radioactive [Max]",
+      "Obscure [Max]",
+      "Tungsten [Max]",
+      "Dull [Max]",
+      "Abyssal [Max]"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Corrupted": {
+    "type_name": "Corrupted",
+    "tier": 6,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Malice [Max]",
+      "Malice [Max]",
+      "Malice [Max]",
+      "Malice [Max]",
+      "Obscure [Max]",
+      "Obscure [Max]",
+      "Obscure [Max]",
+      "Obscure [Max]"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Eternal": {
+    "type_name": "Eternal",
+    "tier": 7,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Synthetic [Max]",
+      "Unstable [Max]",
+      "Twilight [Max]",
+      "Obscure [Max]",
+      "Vital [Max]",
+      "Vital [Max]",
+      "Vital [Max]",
+      "Vital [Max]"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Celestial": {
+    "type_name": "Celestial",
+    "tier": 7,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Lunar [Max]",
+      "Lunar [Max]",
+      "Lunar [Max]",
+      "Solar [Max]",
+      "Solar [Max]",
+      "Solar [Max]",
+      "Twilight [Max]",
+      "Twilight [Max]"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Programmed": {
+    "type_name": "Programmed",
+    "tier": 7,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Binary [Max]",
+      "Binary [Max]",
+      "Binary [Max]",
+      "Synthetic [Max]",
+      "Synthetic [Max]",
+      "Synthetic [Max]",
+      "Dull [Max]",
+      "Obscure [Max]"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Nuclear": {
+    "type_name": "Nuclear",
+    "tier": 7,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Radioactive [Max]",
+      "Radioactive [Max]",
+      "Radioactive [Max]",
+      "Radioactive [Max]",
+      "Unstable [Max]",
+      "Unstable [Max]",
+      "Unstable [Max]",
+      "Unstable [Max]"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Malevolent": {
+    "type_name": "Malevolent",
+    "tier": 7,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Corrupted [Max]",
+      "Corrupted [Max]",
+      "Corrupted [Max]",
+      "Corrupted [Max]",
+      "Spectral [Max]",
+      "Spectral [Max]",
+      "Obscure [Max]",
+      "Obscure [Max]"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  },
+  "Blighted": {
+    "type_name": "Blighted",
+    "tier": 7,
+    "colour": [
+      71,
+      3,
+      13
+    ],
+    "is_unlocked": true,
+    "adult_age": [
+      300,
+      300,
+      300,
+      300
+    ],
+    "adult_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "death_age": [
+      480,
+      480,
+      480,
+      480
+    ],
+    "death_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "yield_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "growth_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "value_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "value_mult": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "essence_base": [
+      10,
+      10,
+      10,
+      10
+    ],
+    "resistance": 0,
+    "resistance_cap": 100,
+    "mutation_chance": [
+      1,
+      1
+    ],
+    "mutation_recipe": [
+      "Corrupted [Max]",
+      "Corrupted [Max]",
+      "Corrupted [Max]",
+      "Corrupted [Max]",
+      "Unstable [Max]",
+      "Unstable [Max]",
+      "Obscure [Max]",
+      "Obscure [Max]"
+    ],
+    "primary_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ],
+    "second_desc": [
+      "Stuff",
+      " There",
+      " Is",
+      " Stuff",
+      " Stuff",
+      " Stuff",
+      "----------------------------------------"
+    ]
+  }
+}
