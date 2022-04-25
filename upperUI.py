@@ -7,11 +7,11 @@ class MenuSwitcher:
         self.game = game
         self.surface = None
         self.top_buttons = []
-        self.top_buttons.append(Button("Inventory", (0, 0), (300, 70), (60, 10), True, True, 25, L_ORANGE))
-        self.top_buttons.append(Button("Shop", (375, 0), (300, 70), (60, 10), True, True, 25, L_ORANGE))
-        self.top_buttons.append(Button("Skill Tree", (750, 0), (300, 70), (60, 10), True, True, 25, L_ORANGE))
-        self.top_buttons.append(Button("Crafting", (1125, 0), (300, 70), (60, 10), True, True, 25, L_ORANGE))
-        self.top_buttons.append(Button("Plants", (1500, 0), (300, 70), (60, 10), True, True, 25, L_ORANGE))
+        self.top_buttons.append(Button("Inventory", (0, 0), (300, 50), (60, 10), True, True, 25, L_ORANGE))
+        self.top_buttons.append(Button("Shop", (375, 0), (300, 50), (60, 10), True, True, 25, L_ORANGE))
+        self.top_buttons.append(Button("Skill Tree", (750, 0), (300, 50), (60, 10), True, True, 25, L_ORANGE))
+        self.top_buttons.append(Button("Crafting", (1125, 0), (300, 50), (60, 10), True, True, 25, L_ORANGE))
+        self.top_buttons.append(Button("Plants", (1500, 0), (300, 50), (60, 10), True, True, 25, L_ORANGE))
 
     def draw_buttons(self):
         self.surface = pygame.Surface((1800, 70))
@@ -25,7 +25,7 @@ class MenuSwitcher:
             self.top_buttons[1].update_button(self.top_buttons[1].text, MENU_GREY)
         if self.game.menu_handler.current_menu == "SkillTree":
             self.top_buttons[2].update_button(self.top_buttons[2].text, MENU_GREY)
-        if self.game.menu_handler.current_menu == "4":
+        if self.game.menu_handler.current_menu == "Crafting":
             self.top_buttons[3].update_button(self.top_buttons[3].text, MENU_GREY)
         if self.game.menu_handler.current_menu == "Stats":
             self.top_buttons[4].update_button(self.top_buttons[4].text, MENU_GREY)
@@ -39,7 +39,7 @@ class MenuSwitcher:
         if self.top_buttons[2].button_event(self.game.mouse_pos):
             return "SkillTree"
         if self.top_buttons[3].button_event(self.game.mouse_pos):
-            return "4"
+            return "Crafting"
         if self.top_buttons[4].button_event(self.game.mouse_pos):
             return "Stats"
         if 60 <= self.game.mouse_pos[0] <= 1860:
