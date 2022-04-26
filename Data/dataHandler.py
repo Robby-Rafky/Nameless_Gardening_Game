@@ -23,9 +23,10 @@ class DataHandler:
     def load_plant_types(self):
         with open("Data/plantData.json") as f:
             data = json.load(f)
+        for item in data:
+            self.plant_types[item] = data[item]
         if self.plant_types_new:
             for item in data:
-                self.plant_types[item] = data[item]
                 self.plant_types[item]["adult_age"][0:2] = data[item]["adult_age"][2:4]
                 self.plant_types[item]["adult_mult"][0:2] = data[item]["adult_mult"][2:4]
                 self.plant_types[item]["death_age"][0:2] = data[item]["death_age"][2:4]
@@ -37,16 +38,24 @@ class DataHandler:
                 self.plant_types[item]["essence_base"][0:2] = data[item]["essence_base"][2:4]
                 self.plant_types[item]["mutation_chance"][0:1] = data[item]["mutation_chance"][1:2]
 
-        else:
-            for item in data["plantSpecies"]:
-                type_name = item["type_name"]
-                self.plant_types[type_name] = item
-
     def load_passives(self):
-        pass
+        with open("Data/skillTreeData.json") as f:
+            data = json.load(f)
+        for item in data:
+            self.passives[item] = data[item]
+        if self.passives_new:
+            for item in data:
+                self.passives[item]["allocated"] = False
 
     def load_garden_globals(self):
-        pass
+        with open("Data/gardenGlobals.json") as f:
+            data = json.load(f)
+        for item in data:
+            self.garden_globals[item] = data[item]
+        if self.garden_globals_new:
+            for item in data:
+                for value in data[item]:
+                    self.garden_globals[item][value] = 1
 
     def save_all(self):
         self.save_plant_types()
@@ -58,8 +67,10 @@ class DataHandler:
             w.write(json.dumps(self.plant_types, indent=2))
 
     def save_passives(self):
-        pass
+        with open("Data/skillTreeDataTest.json", "w") as w:
+            w.write(json.dumps(self.passives, indent=2))
 
     def save_garden_globals(self):
-        pass
+        with open("Data/gardenGlobalTest.json", "w") as w:
+            w.write(json.dumps(self.garden_globals, indent=2))
 

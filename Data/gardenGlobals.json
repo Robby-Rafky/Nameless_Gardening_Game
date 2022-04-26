@@ -1,0 +1,35 @@
+{
+  "stat": {
+    "mult": 1
+  },
+  "fertiliser": {
+    "mult": 1
+  },
+  "total": {
+    "adult": 1,
+    "death": 1,
+    "rate": 1,
+    "mutation": 1,
+    "yield": 1,
+    "value": 1,
+    "essence": 1
+  },
+  "skill_tree": {
+    "adult": 1,
+    "death": 1,
+    "rate": 1,
+    "mutation": 1,
+    "yield": 1,
+    "value": 1,
+    "essence": 1
+  },
+  "garden_global": {
+    "adult": 1,
+    "death": 1,
+    "rate": 1,
+    "mutation": 1,
+    "yield": 1,
+    "value": 1,
+    "essence": 1
+  }
+}

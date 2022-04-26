@@ -1,5 +1,4 @@
 from useful_functions import *
-from Garden.gardenGlobals import garden_global as gs
 
 
 class Plant:
@@ -7,6 +6,7 @@ class Plant:
         self.game = game
         self.type1 = self.game.data_handler.plant_types[plant_type_1]
         self.type2 = self.game.data_handler.plant_types[plant_type_2]
+        self.externals = self.game.data_handler.garden_globals
         pygame.event.post(pygame.event.Event(self.game.planted, message=[(x, y)]))
         self.plant_age = 0
         self.adult_age = None
@@ -95,11 +95,11 @@ class Plant:
         self.internal_adult = calc_stats([a["adult_age"][0]], [a["adult_mult"][0]], [b["adult_age"][1]], [b["adult_mult"][1]])
         self.internal_death = calc_stats([a["death_age"][0]], [a["death_mult"][0]], [b["death_age"][1]], [b["death_mult"][1]])
 
-        self.external_adult = gs["total_adult"]
-        self.external_death = gs["total_death"]
+        self.external_adult = self.externals["total"]["adult"]
+        self.external_death = self.externals["total"]["death"]
 
         self.final_adult = self.external_adult * self.internal_adult
-        self.final_death = self.external_death * self.internal_death * (1 + (4 * gs["stat_magnitude"] *
+        self.final_death = self.external_death * self.internal_death * (1 + (4 * self.externals["stat"]["mult"] *
                                                                         self.stat_lifespan/100))
 
         self.final_adult = int(self.final_adult)
@@ -115,19 +115,20 @@ class Plant:
         self.internal_essence = calc_stats([a["essence_base"][0]], [1], [b["essence_base"][1]], [1])
 
     def update_external_info(self):
-        self.external_rate = gs["total_rate"]
-        self.external_yield = gs["total_yield"]
-        self.external_value = gs["total_value"]
-        self.external_essence = gs["total_ability"]
+        self.external_rate = self.externals["total"]["rate"]
+        self.external_yield = self.externals["total"]["yield"]
+        self.external_value = self.externals["total"]["value"]
+        self.external_essence = self.externals["total"]["essence"]
 
     def update_final_values(self):
         self.update_internal_plant()
         self.update_external_info()
-        self.final_rate = self.external_rate * self.internal_rate * (1 + (2 * gs["stat_magnitude"] *
+        stat_mag = self.externals["stat"]["mult"]
+        self.final_rate = self.external_rate * self.internal_rate * (1 + (2 * stat_mag *
                                                                           self.stat_growth/100))
-        self.final_yield = 100 * self.external_yield * self.internal_yield * (1 + (2 * gs["stat_magnitude"] *
+        self.final_yield = 100 * self.external_yield * self.internal_yield * (1 + (2 * stat_mag *
                                                                              self.stat_yield/100))
-        self.final_value = self.external_value * self.internal_value * (1 + (4 * gs["stat_magnitude"] *
+        self.final_value = self.external_value * self.internal_value * (1 + (4 * stat_mag *
                                                                              self.stat_value/100))
         self.final_essence = self.external_essence * self.internal_essence
 
