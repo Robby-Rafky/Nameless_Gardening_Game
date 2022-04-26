@@ -1,6 +1,5 @@
 from useful_functions import *
 from Items.seedGen import create_seed_image
-from Garden.gardenGlobals import garden_global as gs
 
 
 class PlantItem:
@@ -41,18 +40,19 @@ class PlantItem:
     def calc_seed_final(self):
         a = self.type1
         b = self.type2
+        c = self.game.data_handler.garden_globals["stat"]["mult"]
         self.final_adult = calc_stats([a["adult_age"][0]], [a["adult_mult"][0]],
                                       [b["adult_age"][1]], [b["adult_mult"][1]])
         self.final_death = calc_stats([a["death_age"][0]], [a["death_mult"][0]],
                                       [b["death_age"][1]], [b["death_mult"][1]]) * (
-                1+(4 * gs["stat_magnitude"] * self.stat_lifespan / 100))
+                1+(4 * c * self.stat_lifespan / 100))
         self.final_rate = calc_stats([1], [a["growth_mult"][0]], [1], [b["growth_mult"][1]]) * (
-                1 + (2 * gs["stat_magnitude"] * self.stat_growth/100))
+                1 + (2 * c * self.stat_growth/100))
         self.final_yield = 100 * calc_stats([1], [a["yield_mult"][0]], [1], [b["yield_mult"][1]]) * (
-                1+(2 * gs["stat_magnitude"] * self.stat_yield/100))
+                1+(2 * c * self.stat_yield/100))
         self.final_value = calc_stats([a["value_base"][0]], [a["value_mult"][0]],
                                       [b["value_base"][1]], [b["value_mult"][1]]) * (
-                1+(4 * gs["stat_magnitude"] * self.stat_value/100))
+                1+(4 * c * self.stat_value/100))
         self.final_essence = calc_stats([a["essence_base"][0]], [1], [b["essence_base"][1]], [1])
 
         self.final_yield = round(self.final_yield, 1)
