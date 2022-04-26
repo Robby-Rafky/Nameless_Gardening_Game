@@ -46,6 +46,7 @@ class MenuHandler:
             self.shop_menu.show_menu()
         if self.current_menu == "SkillTree":
             self.skill_tree_menu.surface.fill(self.skill_tree_menu.background_colour)
+            self.skill_tree_menu.draw_skill_tree()
             self.skill_tree_menu.show_menu()
         if self.current_menu == "Crafting":
             self.menu_4.surface.fill(self.menu_4.background_colour)

@@ -1,0 +1,65 @@
+{
+  "passive1": {
+    "type": "small",
+    "x": 1000,
+    "y": 2000,
+    "allocated": false,
+    "stat": [],
+    "target": [],
+    "value": [],
+    "required": [
+      "passive2",
+      "passive3"
+    ],
+    "tier": 4,
+    "connections": [
+      "passive2",
+      "passive3"
+    ],
+    "passive_name": "ye",
+    "description": "beans wtf"
+  },
+  "passive2": {
+    "type": "small",
+    "x": 2000,
+    "y": 1000,
+    "allocated": false,
+    "stat": [
+      "adult_mult",
+      "death_age"
+    ],
+    "target": [
+      "Azure",
+      "Azure"
+    ],
+    "value": [
+      0.5,
+      200
+    ],
+    "required": [],
+    "tier": 7,
+    "connections": [],
+    "passive_name": "ye2",
+    "description": "sheesh"
+  },
+  "passive3": {
+    "type": "small",
+    "x": 1500,
+    "y": 500,
+    "allocated": false,
+    "stat": [
+      "yield_mult"
+    ],
+    "target": [
+      "Verdant"
+    ],
+    "value": [
+      0.2
+    ],
+    "required": [],
+    "tier": 0,
+    "connections": [],
+    "passive_name": "ye3",
+    "description": "wowie"
+  }
+}
