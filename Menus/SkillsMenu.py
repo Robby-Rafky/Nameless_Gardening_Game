@@ -49,10 +49,10 @@ class SkillTreeMenu(Menu):
                     colour = GREEN
                 else:
                     colour = GREY
-                pygame.draw.line(self.skill_surface, colour, (pos_x + self.scroll_x * self.zoom_scale,
-                                                             pos_y + self.scroll_y * self.zoom_scale),
-                                 (pos_x2 + self.scroll_x * self.zoom_scale,
-                                  pos_y2 + self.scroll_y * self.zoom_scale),
+                pygame.draw.line(self.skill_surface, colour, (pos_x + self.scroll_x,
+                                                             pos_y + self.scroll_y),
+                                 (pos_x2 + self.scroll_x,
+                                  pos_y2 + self.scroll_y),
                                  int(20 * self.zoom_scale))
 
         for item in self.all_passives:
@@ -60,7 +60,7 @@ class SkillTreeMenu(Menu):
                                item.mouse_over(self.game.mouse_pos), self.zoom_scale * 100)
             item.scaled_x = item.x * self.zoom_scale + 860
             item.scaled_y = item.y * self.zoom_scale + 340
-            item.draw_passive(self.skill_surface, self.scroll_x * self.zoom_scale, self.scroll_y * self.zoom_scale)
+            item.draw_passive(self.skill_surface, self.scroll_x, self.scroll_y)
 
         pygame.draw.rect(self.skill_surface, BLACK, (0, 0, 1720, 680), 2)
         pygame.draw.rect(self.action_surface, BLACK, (0, 0, 1720, 40), 2)
