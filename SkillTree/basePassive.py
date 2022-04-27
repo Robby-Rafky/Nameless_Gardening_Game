@@ -1,34 +1,71 @@
+import pygame
+
 from useful_functions import *
 
 passive_frame = pygame.image.load("SkillTree/Assets/smallPassiveFrame.png")
 passive_inner_frame = pygame.image.load("SkillTree/Assets/smallPassiveInnerFrame.png")
+
+size_data = {
+    "small": [passive_frame, passive_inner_frame, 100, 10, 0.8],
+    "medium": [],
+    "large": []
+}
 
 
 class Passive:
     def __init__(self, passive_type, x, y, passive_id, tier):
         self.passive_type = passive_type
         self.passive_id = passive_id
+        self.rect_offset = size_data[self.passive_type][3]
+        self.size = size_data[self.passive_type][2]
+        self.size_rect = self.size * size_data[self.passive_type][4]
+        self.ratio_offset = size_data[self.passive_type][3]/size_data[self.passive_type][2]
         self.y = y
+        self.scaled_y = y
         self.x = x
+        self.scaled_x = x
+        self.rect_x = self.x + self.rect_offset-self.size/2
+        self.rect_y = self.y + self.rect_offset-self.size/2
         self.tier = tier
-        self.size_x = 100
-        self.size_y = 100
+        self.image = None
+        self.rect = pygame.Rect(self.rect_x + 100, self.rect_y + 190, self.size_rect, self.size_rect)
+        self.construct_image(GREY, 1)
 
-        self.rect = pygame.Rect(x, y, self.size_x, self.size_y)
+    def construct_image(self, colour, scale):
+        frame_image = size_data[self.passive_type][0].copy()
+        inner_image = size_data[self.passive_type][1].copy()
+        frame_image_coloured = pygame.Surface(frame_image.get_size())
+        inner_image_coloured = pygame.Surface(inner_image.get_size())
+        frame_image_coloured.fill(colour)
+        inner_image_coloured.fill(tier_colours[self.tier])
+        frame_image.blit(frame_image_coloured, (0, 0), special_flags=pygame.BLEND_MULT)
+        inner_image.blit(inner_image_coloured, (0, 0), special_flags=pygame.BLEND_MULT)
+        inner_image.blit(frame_image, (0, 0))
+        inner_image = pygame.transform.scale(inner_image, (scale, scale))
+        self.image = inner_image
+        self.size = self.image.get_size()[0]
+        self.size_rect = self.size * size_data[self.passive_type][4]
+
+    def draw_passive(self, surface, x, y):
+        offset = self.ratio_offset * self.size
+        self.rect.update(100 + x+self.scaled_x-self.size/2 + offset, 190 + y+self.scaled_y-self.size/2 + offset, self.size_rect, self.size_rect)
+        surface.blit(self.image, (x+self.scaled_x-self.size/2, y+self.scaled_y-self.size/2))
+
+    def change_colour(self, allocated, hovered, scale):
+        if allocated:
+            self.construct_image(GREEN, scale)
+        elif hovered:
+            self.construct_image(L_ORANGE, scale)
+        else:
+            self.construct_image(GREY, scale)
+
+    def mouse_over(self, mouse_pos):
+        if self.rect.collidepoint(mouse_pos):
+            if 100 <= mouse_pos[0] <= 1820 and 190 <= mouse_pos[1] <= 910:
+                return True
 
     def passive_events(self, mouse_pos):
-        if pygame.mouse.get_pressed()[0]:
-            if self.rect.collidepoint(mouse_pos):
-                return 1
-        elif self.rect.collidepoint(mouse_pos):
-            return 2
-
-    def draw_passive(self, surface):
-        pass
-
-    def move_passive_pos(self, x, y):
-        self.rect = pygame.Rect(x, y, self.size_x, self.size_y)
-
-    def zoom_passive(self, zoom):
-        self.rect = pygame.Rect(x, y, self.size_x * zoom, self.size_y * zoom)
-
+        if self.rect.collidepoint(mouse_pos):
+            if pygame.mouse.get_pressed()[0]:
+                if 100 <= mouse_pos[0] <= 1720 and 190 <= mouse_pos[1] <= 870:
+                    return True
