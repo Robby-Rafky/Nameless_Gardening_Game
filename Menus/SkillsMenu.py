@@ -23,7 +23,7 @@ class SkillTreeMenu(Menu):
         self.all_passives = []
         self.skill_surface = pygame.Surface((1720, 680))
         self.action_surface = pygame.Surface((1720, 40))
-        self.zoom_scale = 0.2
+        self.zoom_scale = 1
         self.scroll_x = 0
         self.scroll_y = 0
         for item in self.passive_data:
@@ -38,7 +38,11 @@ class SkillTreeMenu(Menu):
     def draw_skill_tree(self):
         self.skill_surface.fill(MENU_GREY)
         self.action_surface.fill(MENU_GREY)
+        scaled_scroll_x = self.scroll_x * self.zoom_scale
+        scaled_scroll_y = self.scroll_y * self.zoom_scale
 
+        pygame.draw.rect(self.skill_surface, BLACK, (860, 340, 10, 10), 0)
+        pygame.draw.rect(self.skill_surface, L_BLUE, (self.scroll_x, self.scroll_y, 10, 10), 0)
         for item in self.passive_data:
             for connection in self.passive_data[item]["connections"]:
                 pos_x = self.passive_data[connection]["x"] * self.zoom_scale + 860
@@ -50,7 +54,7 @@ class SkillTreeMenu(Menu):
                 else:
                     colour = GREY
                 pygame.draw.line(self.skill_surface, colour, (pos_x + self.scroll_x,
-                                                             pos_y + self.scroll_y),
+                                                              pos_y + self.scroll_y),
                                  (pos_x2 + self.scroll_x,
                                   pos_y2 + self.scroll_y),
                                  int(20 * self.zoom_scale))
@@ -58,8 +62,9 @@ class SkillTreeMenu(Menu):
         for item in self.all_passives:
             item.change_colour(self.passive_data[item.passive_id]["allocated"],
                                item.mouse_over(self.game.mouse_pos), self.zoom_scale * 100)
-            item.scaled_x = item.x * self.zoom_scale + 860
-            item.scaled_y = item.y * self.zoom_scale + 340
+            item.scaled_x = item.x * self.zoom_scale
+            item.scaled_y = item.y * self.zoom_scale
+            print(self.scroll_x, self.scroll_y)
             item.draw_passive(self.skill_surface, self.scroll_x, self.scroll_y)
 
         pygame.draw.rect(self.skill_surface, BLACK, (0, 0, 1720, 680), 2)
