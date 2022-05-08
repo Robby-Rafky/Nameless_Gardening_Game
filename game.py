@@ -4,7 +4,6 @@ from Menus.menuHandler import MenuHandler
 from upperUI import MenuSwitcher
 from User.inventoryHandler import InventoryHandler
 from User.user import User
-from Garden.gardenGlobals import *
 from Data.dataHandler import DataHandler
 
 
@@ -37,7 +36,7 @@ class Game:
         self.inventory_handler = InventoryHandler(self)
 
     def testing_stuff(self):
-
+        self.menu_handler.skill_tree_menu.change_location(200, 300)
         pass
 
     def screen_layering(self):
@@ -84,7 +83,7 @@ class Game:
                 if self.scrolling:
                     mouse_x, mouse_y = event.pos
                     drag_scroll = (mouse_y - self.drag_y)/20
-                    self.menu_handler.scroll_menu(scroll=drag_scroll, x=self.drag_x, y=self.drag_y)
+                    self.menu_handler.scroll_menu(scroll=drag_scroll, x=self.drag_x-mouse_x, y=self.drag_y-mouse_y)
                     self.drag_y = mouse_y
                     self.drag_x = mouse_x
 

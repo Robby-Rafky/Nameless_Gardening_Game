@@ -74,10 +74,11 @@ class MenuHandler:
             pass
         if self.current_menu == "SkillTree":
             if 100 <= self.game.mouse_pos[0] <= 1820 and 190 <= self.game.mouse_pos[1] <= 910:
-                self.skill_tree_menu.scroll_x -= x
-                self.skill_tree_menu.scroll_y -= y
-                self.skill_tree_menu.zoom_scale += zoom * 0.1
-                self.skill_tree_menu.zoom_scale = clamp(self.skill_tree_menu.zoom_scale, 1, 0.1)
+                a = self.skill_tree_menu
+                a.scroll_x -= 1/a.zoom_scale * x
+                a.scroll_y -= 1/a.zoom_scale * y
+                a.zoom_scale += zoom * 0.05
+                a.zoom_scale = clamp(a.zoom_scale, 2, 0.05)
 
         if self.current_menu == "Crafting":
             pass

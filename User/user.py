@@ -1,6 +1,5 @@
 import pygame
 from useful_functions import *
-from Garden.gardenGlobals import *
 
 
 class User:

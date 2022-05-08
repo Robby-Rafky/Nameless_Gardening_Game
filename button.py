@@ -28,7 +28,6 @@ class Button(TextBox):
         if pygame.mouse.get_pressed()[0]:
             if self.rect.collidepoint(mouse_coordinates):
                 return True
-                pass
             return False
 
 

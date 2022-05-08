@@ -20,15 +20,15 @@ class MenuSwitcher:
             button.draw_on_surface(self.surface)
             button.update_button(button.text, L_ORANGE)
         if self.game.menu_handler.current_menu == "Inventory":
-            self.top_buttons[0].update_button(self.top_buttons[0].text, MENU_GREY)
+            self.top_buttons[0].update_button("[Inventory]", MENU_GREY)
         if self.game.menu_handler.current_menu == "Shop":
-            self.top_buttons[1].update_button(self.top_buttons[1].text, MENU_GREY)
+            self.top_buttons[1].update_button("[Shop]", MENU_GREY)
         if self.game.menu_handler.current_menu == "SkillTree":
-            self.top_buttons[2].update_button(self.top_buttons[2].text, MENU_GREY)
+            self.top_buttons[2].update_button("[Skill Tree]", MENU_GREY)
         if self.game.menu_handler.current_menu == "Crafting":
-            self.top_buttons[3].update_button(self.top_buttons[3].text, MENU_GREY)
+            self.top_buttons[3].update_button("[Crafting]", MENU_GREY)
         if self.game.menu_handler.current_menu == "Stats":
-            self.top_buttons[4].update_button(self.top_buttons[4].text, MENU_GREY)
+            self.top_buttons[4].update_button("[Plants]", MENU_GREY)
         self.game.game_space.blit(self.surface, (60, 10))
 
     def menu_switching(self):
