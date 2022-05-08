@@ -2,18 +2,22 @@ import pygame
 
 from useful_functions import *
 
-passive_frame = pygame.image.load("SkillTree/Assets/smallPassiveFrame.png")
-passive_inner_frame = pygame.image.load("SkillTree/Assets/smallPassiveInnerFrame.png")
+small_frame = pygame.image.load("SkillTree/Assets/smallPassiveFrame.png")
+small_inner_frame = pygame.image.load("SkillTree/Assets/smallPassiveInnerFrame.png")
+medium_frame = pygame.image.load("SkillTree/Assets/mediumPassiveFrame.png")
+medium_inner_frame = pygame.image.load("SkillTree/Assets/mediumPassiveInnerFrame.png")
+large_frame = pygame.image.load("SkillTree/Assets/largePassiveFrame.png")
+large_inner_frame = pygame.image.load("SkillTree/Assets/largePassiveInnerFrame.png")
 
 size_data = {
-    "small": [passive_frame, passive_inner_frame, 100, 10, 0.8],
-    "medium": [],
-    "large": []
+    "small": [small_frame, small_inner_frame, 100, 10, 0.8],
+    "medium": [medium_frame, medium_inner_frame, 150, 10, 0.87],
+    "large": [large_frame, large_inner_frame, 200, 10, 0.9]
 }
 
 
 class Passive:
-    def __init__(self, passive_type, x, y, passive_id, tier):
+    def __init__(self, passive_type, x, y, passive_id, tier, group):
         self.passive_type = passive_type
         self.passive_id = passive_id
         self.rect_offset = size_data[self.passive_type][3]
@@ -29,6 +33,10 @@ class Passive:
         self.tier = tier
         self.image = None
         self.rect = pygame.Rect(self.rect_x + 100, self.rect_y + 190, self.size_rect, self.size_rect)
+        self.group = group
+        self.colour = tier_colours[self.tier]
+        if self.group == "res":
+            self.colour = RES_COLOUR
         self.construct_image(GREY, 1)
 
     def construct_image(self, colour, scale):
@@ -37,11 +45,12 @@ class Passive:
         frame_image_coloured = pygame.Surface(frame_image.get_size())
         inner_image_coloured = pygame.Surface(inner_image.get_size())
         frame_image_coloured.fill(colour)
-        inner_image_coloured.fill(tier_colours[self.tier])
+        inner_image_coloured.fill(self.colour)
         frame_image.blit(frame_image_coloured, (0, 0), special_flags=pygame.BLEND_MULT)
         inner_image.blit(inner_image_coloured, (0, 0), special_flags=pygame.BLEND_MULT)
         inner_image.blit(frame_image, (0, 0))
-        inner_image = pygame.transform.scale(inner_image, (scale, scale))
+        modified_scale = scale * size_data[self.passive_type][2]
+        inner_image = pygame.transform.scale(inner_image, (modified_scale, modified_scale))
         self.image = inner_image
         self.size = self.image.get_size()[0]
         self.size_rect = self.size * size_data[self.passive_type][4]
