@@ -1,10 +1,10 @@
 {
-  "base_passive_1": {
+  "starting_point": {
     "type": "small",
     "group": "",
     "x": 9000,
     "y": 300,
-    "allocated": false,
+    "allocated": true,
     "stat": [],
     "target": [],
     "value": [],
@@ -14,7 +14,7 @@
     "passive_name": "",
     "description": ""
   },
-  "base_passive_2": {
+  "base_passive_1": {
     "type": "small",
     "group": "",
     "x": 9000,
@@ -26,12 +26,13 @@
     "required": [],
     "tier": 0,
     "connections": [
-      "base_passive_1"
+      "starting_point",
+      "base_passive_2"
     ],
     "passive_name": "",
     "description": ""
   },
-  "base_passive_3": {
+  "base_passive_2": {
     "type": "small",
     "group": "",
     "x": 9000,
@@ -43,7 +44,8 @@
     "required": [],
     "tier": 0,
     "connections": [
-      "base_passive_2"
+      "base_passive_1",
+      "base_branch_1.1"
     ],
     "passive_name": "",
     "description": ""
@@ -60,7 +62,8 @@
     "required": [],
     "tier": 0,
     "connections": [
-      "base_passive_3"
+      "base_passive_2",
+      "base_branch_1.2"
     ],
     "passive_name": "",
     "description": ""
@@ -77,7 +80,8 @@
     "required": [],
     "tier": 0,
     "connections": [
-      "base_branch_1.1"
+      "base_branch_1.1",
+      "base_branch_1.3"
     ],
     "passive_name": "",
     "description": ""
@@ -94,7 +98,8 @@
     "required": [],
     "tier": 0,
     "connections": [
-      "base_branch_1.2"
+      "base_branch_1.2",
+      "base_branch_1.4"
     ],
     "passive_name": "",
     "description": ""
@@ -128,7 +133,7 @@
     "required": [],
     "tier": 0,
     "connections": [
-      "base_passive_3"
+      "base_passive_2"
     ],
     "passive_name": "",
     "description": ""
@@ -145,7 +150,7 @@
     "required": [],
     "tier": 0,
     "connections": [
-      "base_passive_3"
+      "base_passive_2"
     ],
     "passive_name": "",
     "description": ""
@@ -162,14 +167,14 @@
     "required": [],
     "tier": 0,
     "connections": [
-      "base_passive_3"
+      "base_passive_2"
     ],
     "passive_name": "",
     "description": ""
   },
   "res_passive_1": {
     "type": "small",
-    "group": "",
+    "group": "res",
     "x": 11900,
     "y": 2400,
     "allocated": false,
@@ -179,14 +184,15 @@
     "required": [],
     "tier": 0,
     "connections": [
-      "base_branch_1.4"
+      "base_branch_1.4",
+      "res_passive_2"
     ],
     "passive_name": "",
     "description": ""
   },
   "res_passive_2": {
     "type": "small",
-    "group": "",
+    "group": "res",
     "x": 12200,
     "y": 2600,
     "allocated": false,
@@ -196,14 +202,15 @@
     "required": [],
     "tier": 0,
     "connections": [
-      "res_passive_1"
+      "res_passive_1",
+      "res_passive_3"
     ],
     "passive_name": "",
     "description": ""
   },
   "res_passive_3": {
     "type": "small",
-    "group": "",
+    "group": "res",
     "x": 12500,
     "y": 2900,
     "allocated": false,
@@ -213,14 +220,15 @@
     "required": [],
     "tier": 0,
     "connections": [
-      "res_passive_2"
+      "res_passive_2",
+      "res_passive_4"
     ],
     "passive_name": "",
     "description": ""
   },
   "res_passive_4": {
     "type": "small",
-    "group": "",
+    "group": "res",
     "x": 12600,
     "y": 3300,
     "allocated": false,
@@ -230,14 +238,15 @@
     "required": [],
     "tier": 0,
     "connections": [
-      "res_passive_3"
+      "res_passive_3",
+      "res_passive_5"
     ],
     "passive_name": "",
     "description": ""
   },
   "res_passive_5": {
     "type": "small",
-    "group": "",
+    "group": "res",
     "x": 12600,
     "y": 3300,
     "allocated": false,
@@ -247,14 +256,16 @@
     "required": [],
     "tier": 0,
     "connections": [
-      "res_passive_4"
+      "res_passive_4",
+      "res_passive_6",
+      "res_notable_1"
     ],
     "passive_name": "",
     "description": ""
   },
   "res_passive_6": {
     "type": "small",
-    "group": "",
+    "group": "res",
     "x": 12600,
     "y": 3800,
     "allocated": false,
@@ -264,14 +275,15 @@
     "required": [],
     "tier": 0,
     "connections": [
-      "res_passive_5"
+      "res_passive_5",
+      "res_passive_7"
     ],
     "passive_name": "",
     "description": ""
   },
   "res_passive_7": {
     "type": "small",
-    "group": "",
+    "group": "res",
     "x": 12600,
     "y": 4300,
     "allocated": false,
@@ -281,14 +293,15 @@
     "required": [],
     "tier": 0,
     "connections": [
-      "res_passive_6"
+      "res_passive_6",
+      "res_passive_8"
     ],
     "passive_name": "",
     "description": ""
   },
   "res_passive_8": {
     "type": "small",
-    "group": "",
+    "group": "res",
     "x": 12600,
     "y": 4700,
     "allocated": false,
@@ -298,14 +311,15 @@
     "required": [],
     "tier": 0,
     "connections": [
-      "res_passive_7"
+      "res_passive_7",
+      "res_passive_9"
     ],
     "passive_name": "",
     "description": ""
   },
   "res_passive_9": {
     "type": "small",
-    "group": "",
+    "group": "res",
     "x": 12300,
     "y": 4500,
     "allocated": false,
@@ -315,14 +329,16 @@
     "required": [],
     "tier": 0,
     "connections": [
-      "res_passive_8"
+      "res_passive_8",
+      "res_passive_10",
+      "res_notable_2"
     ],
     "passive_name": "",
     "description": ""
   },
   "res_passive_10": {
     "type": "small",
-    "group": "",
+    "group": "res",
     "x": 11900,
     "y": 4800,
     "allocated": false,
@@ -332,14 +348,15 @@
     "required": [],
     "tier": 0,
     "connections": [
-      "res_passive_9"
+      "res_passive_9",
+      "res_passive_11"
     ],
     "passive_name": "",
     "description": ""
   },
   "res_passive_11": {
     "type": "small",
-    "group": "",
+    "group": "res",
     "x": 11500,
     "y": 4500,
     "allocated": false,
@@ -349,14 +366,16 @@
     "required": [],
     "tier": 0,
     "connections": [
-      "res_passive_10"
+      "res_passive_10",
+      "res_passive_12",
+      "res_notable_3"
     ],
     "passive_name": "",
     "description": ""
   },
   "res_passive_12": {
     "type": "small",
-    "group": "",
+    "group": "res",
     "x": 11200,
     "y": 4700,
     "allocated": false,
@@ -366,14 +385,15 @@
     "required": [],
     "tier": 0,
     "connections": [
-      "res_passive_11"
+      "res_passive_11",
+      "res_passive_13"
     ],
     "passive_name": "",
     "description": ""
   },
   "res_passive_13": {
     "type": "small",
-    "group": "",
+    "group": "res",
     "x": 11200,
     "y": 4300,
     "allocated": false,
@@ -383,14 +403,15 @@
     "required": [],
     "tier": 0,
     "connections": [
-      "res_passive_12"
+      "res_passive_12",
+      "res_passive_14"
     ],
     "passive_name": "",
     "description": ""
   },
   "res_passive_14": {
     "type": "small",
-    "group": "",
+    "group": "res",
     "x": 11200,
     "y": 3800,
     "allocated": false,
@@ -400,14 +421,15 @@
     "required": [],
     "tier": 0,
     "connections": [
-      "res_passive_13"
+      "res_passive_13",
+      "res_passive_15"
     ],
     "passive_name": "",
     "description": ""
   },
   "res_passive_15": {
     "type": "small",
-    "group": "",
+    "group": "res",
     "x": 11200,
     "y": 3300,
     "allocated": false,
@@ -417,14 +439,16 @@
     "required": [],
     "tier": 0,
     "connections": [
-      "res_passive_14"
+      "res_passive_14",
+      "res_passive_16",
+      "res_notable_4"
     ],
     "passive_name": "",
     "description": ""
   },
   "res_passive_16": {
     "type": "small",
-    "group": "",
+    "group": "res",
     "x": 11300,
     "y": 2900,
     "allocated": false,
@@ -434,14 +458,15 @@
     "required": [],
     "tier": 0,
     "connections": [
-      "res_passive_15"
+      "res_passive_15",
+      "res_passive_17"
     ],
     "passive_name": "",
     "description": ""
   },
   "res_passive_17": {
     "type": "small",
-    "group": "",
+    "group": "res",
     "x": 11600,
     "y": 2600,
     "allocated": false,
@@ -458,8 +483,8 @@
     "description": ""
   },
   "res_notable_1": {
-    "type": "small",
-    "group": "",
+    "type": "medium",
+    "group": "res",
     "x": 12100,
     "y": 3400,
     "allocated": false,
@@ -467,7 +492,7 @@
     "target": [],
     "value": [],
     "required": [],
-    "tier": 2,
+    "tier": 0,
     "connections": [
       "res_passive_5"
     ],
@@ -475,8 +500,8 @@
     "description": ""
   },
   "res_notable_2": {
-    "type": "small",
-    "group": "",
+    "type": "medium",
+    "group": "res",
     "x": 12100,
     "y": 3800,
     "allocated": false,
@@ -484,7 +509,7 @@
     "target": [],
     "value": [],
     "required": [],
-    "tier": 2,
+    "tier": 0,
     "connections": [
       "res_passive_9"
     ],
@@ -492,8 +517,8 @@
     "description": ""
   },
   "res_notable_3": {
-    "type": "small",
-    "group": "",
+    "type": "medium",
+    "group": "res",
     "x": 11700,
     "y": 3800,
     "allocated": false,
@@ -501,7 +526,7 @@
     "target": [],
     "value": [],
     "required": [],
-    "tier": 2,
+    "tier": 0,
     "connections": [
       "res_passive_11"
     ],
@@ -509,8 +534,8 @@
     "description": ""
   },
   "res_notable_4": {
-    "type": "small",
-    "group": "",
+    "type": "medium",
+    "group": "res",
     "x": 11700,
     "y": 3400,
     "allocated": false,
@@ -518,7 +543,7 @@
     "target": [],
     "value": [],
     "required": [],
-    "tier": 2,
+    "tier": 0,
     "connections": [
       "res_passive_15"
     ],
@@ -526,22 +551,22 @@
     "description": ""
   },
   "res_keystone": {
-    "type": "small",
-    "group": "",
+    "type": "large",
+    "group": "res",
     "x": 11900,
-    "y": 3600,
+    "y": 4300,
     "allocated": false,
     "stat": [],
     "target": [],
     "value": [],
-    "required": [],
-    "tier": 5,
-    "connections": [
+    "required": [
       "res_notable_1",
       "res_notable_2",
       "res_notable_3",
       "res_notable_4"
     ],
+    "tier": 6,
+    "connections": [],
     "passive_name": "",
     "description": ""
   }
