@@ -123,7 +123,7 @@ class Plant:
     def update_final_values(self):
         self.update_internal_plant()
         self.update_external_info()
-        stat_mag = self.externals["stat"]["mult"]
+        stat_mag = self.externals["stat"]["stat_magnitude"]
         self.final_rate = self.external_rate * self.internal_rate * (1 + (2 * stat_mag *
                                                                           self.stat_growth/100))
         self.final_yield = 100 * self.external_yield * self.internal_yield * (1 + (2 * stat_mag *

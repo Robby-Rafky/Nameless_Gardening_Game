@@ -60,13 +60,15 @@ class Passive:
         self.rect.update(100 + x+self.scaled_x-self.size/2 + offset, 190 + y+self.scaled_y-self.size/2 + offset, self.size_rect, self.size_rect)
         surface.blit(self.image, (x+self.scaled_x-self.size/2, y+self.scaled_y-self.size/2))
 
-    def change_colour(self, allocated, hovered, scale):
+    def change_colour(self, allocated, available, hovered, scale):
         if allocated:
-            self.construct_image(GREEN, scale)
+            self.construct_image(SKILL_ALLOCATED, scale)
         elif hovered:
-            self.construct_image(L_ORANGE, scale)
+            self.construct_image(SKILL_HOVER, scale)
+        elif available:
+            self.construct_image(SKILL_AVAILABLE, scale)
         else:
-            self.construct_image(GREY, scale)
+            self.construct_image(SKILL_UNAVAILABLE, scale)
 
     def mouse_over(self, mouse_pos):
         if self.rect.collidepoint(mouse_pos):

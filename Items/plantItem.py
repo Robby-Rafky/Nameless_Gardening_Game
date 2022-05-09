@@ -40,7 +40,7 @@ class PlantItem:
     def calc_seed_final(self):
         a = self.type1
         b = self.type2
-        c = self.game.data_handler.garden_globals["stat"]["mult"]
+        c = self.game.data_handler.garden_globals["stat"]["stat_magnitude"]
         self.final_adult = calc_stats([a["adult_age"][0]], [a["adult_mult"][0]],
                                       [b["adult_age"][1]], [b["adult_mult"][1]])
         self.final_death = calc_stats([a["death_age"][0]], [a["death_mult"][0]],

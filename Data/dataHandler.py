@@ -46,7 +46,9 @@ class DataHandler:
         if self.passives_new:
             for item in data:
                 self.passives[item]["allocated"] = False
+                self.passives[item]["available"] = False
             self.passives["starting_point"]["allocated"] = True
+            self.passives["base_passive_1"]["available"] = True
 
     def load_garden_globals(self):
         with open("Data/gardenGlobals.json") as f:
