@@ -99,7 +99,7 @@ class Plant:
         self.external_death = self.externals["total"]["death"]
 
         self.final_adult = self.external_adult * self.internal_adult
-        self.final_death = self.external_death * self.internal_death * (1 + (4 * self.externals["stat"]["mult"] *
+        self.final_death = self.external_death * self.internal_death * (1 + (4 * self.externals["stat"]["stat_magnitude"] *
                                                                         self.stat_lifespan/100))
 
         self.final_adult = int(self.final_adult)

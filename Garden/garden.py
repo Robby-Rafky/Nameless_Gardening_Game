@@ -25,6 +25,7 @@ class GardenSpace:
         self.font = pygame.font.Font(PIXEL_FONT, 20)
         self.game = game
         self.side_surface = pygame.Surface((340, 920))
+        self.mutator_asset = Mutator(0, 0, game, 1, False)
 
     def draw_base_garden(self):
         for x in range(self.size_x):
@@ -48,6 +49,8 @@ class GardenSpace:
                 if self.game.garden_handler.garden_contents[self.grid_y][self.grid_x] is not None:
                     pygame.draw.rect(self.game.game_space, RED, (pos_x, pos_y, 100, 100), 4)
                 else:
+                    if isinstance(self.game.garden_handler.planting, Mutator):
+                        self.mutator_asset.draw_mutator(self.game.game_space, pos_x, pos_y)
                     pygame.draw.rect(self.game.game_space, LIME_GREEN, (pos_x, pos_y, 100, 100), 2)
         if self.clicked_plot_index is not None:
             pygame.draw.rect(self.game.game_space, WHITE, (self.offset_x + self.clicked_plot_index[0] * 100,

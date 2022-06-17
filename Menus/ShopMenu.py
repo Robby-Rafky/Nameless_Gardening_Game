@@ -60,7 +60,7 @@ class ShopMenu(Menu):
         if self.buy_mutator.button_event(self.game.mouse_pos):
             if self.game.user.purchase_check(self.buy_mutator.price):
                 self.game.user.cash += self.buy_mutator.price
-                self.game.garden_handler.planting = Mutator(0, 0, self.game, 1)
+                self.game.garden_handler.planting = Mutator(0, 0, self.game, 1, True)
                 self.game.menu_handler.current_menu = None
 
         if self.buy_genetic_combiner.button_event(self.game.mouse_pos):

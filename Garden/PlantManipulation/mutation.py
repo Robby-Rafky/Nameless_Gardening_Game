@@ -15,7 +15,7 @@ mutator_tiers = {
 
 
 class Mutator:
-    def __init__(self, x, y, game, tier):
+    def __init__(self, x, y, game, tier, actual):
         self.game = game
         self.types = self.game.data_handler.plant_types
         self.tier = tier
@@ -23,7 +23,10 @@ class Mutator:
         self.y = y
         self.plants_present = []
         self.can_mutate = []
-        self.image = self.create_image()
+        if actual:
+            self.image = self.create_image()
+        else:
+            self.image = self.create_translucent()
 
     def create_image(self):
         mutator_image_final = mutator_image.copy()
@@ -32,6 +35,13 @@ class Mutator:
         mutator_image_final.blit(mutator_coloured, (0, 0), special_flags=pygame.BLEND_MULT)
 
         return mutator_image_final
+
+    def create_translucent(self):
+        image = self.create_image()
+        translucent_image = image.convert_alpha()
+        translucent_image.set_alpha(130)
+
+        return translucent_image
 
     def draw_mutator(self, surface, pos_x, pos_y):
         surface.blit(self.image, (pos_x, pos_y))
