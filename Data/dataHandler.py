@@ -3,6 +3,18 @@ import json
 
 class DataHandler:
     def __init__(self):
+        """
+        Initialise the class attributes
+
+        :param self.plant_types: dict
+        :param self.plant_types_new: Bool
+        :param self.passives: dict
+        :param self.passives_new: Bool
+        :param self.garden_globals: dict
+        :param self.garden_globals_new: Bool
+
+        :return: The object itself
+        """
         self.plant_types = dict()
         self.plant_types_new = True
         self.passives = dict()
@@ -13,6 +25,9 @@ class DataHandler:
         self.save_all()
 
     def load_all(self):
+        """
+        initial loading of data
+        """
         self.load_passives()
         self.load_plant_types()
         self.load_garden_globals()
@@ -21,6 +36,10 @@ class DataHandler:
         self.plant_types_new = False
 
     def load_plant_types(self):
+        """
+        Setup of plant type data
+        Reads data from
+        """
         with open("Data/plantData.json") as f:
             data = json.load(f)
         for item in data:
@@ -39,6 +58,9 @@ class DataHandler:
                 self.plant_types[item]["mutation_chance"][0:1] = data[item]["mutation_chance"][1:2]
 
     def load_passives(self):
+        """
+        Setup of skill tree data
+        """
         with open("Data/skillTreeData.json") as f:
             data = json.load(f)
         for item in data:
@@ -51,6 +73,9 @@ class DataHandler:
             self.passives["base_passive_1"]["available"] = True
 
     def load_garden_globals(self):
+        """
+        Setup of garden globals
+        """
         with open("Data/gardenGlobals.json") as f:
             data = json.load(f)
         for item in data:
@@ -61,19 +86,31 @@ class DataHandler:
                     self.garden_globals[item][value] = 1
 
     def save_all(self):
+        """
+        Runs all 3 data saving methods
+        """
         self.save_plant_types()
         self.save_passives()
         self.save_garden_globals()
 
     def save_plant_types(self):
+        """
+        Saves plant data
+        """
         with open("Data/plantDataTest.json", "w") as w:
             w.write(json.dumps(self.plant_types, indent=2))
 
     def save_passives(self):
+        """
+        Saves skill tree data
+        """
         with open("Data/skillTreeDataTest.json", "w") as w:
             w.write(json.dumps(self.passives, indent=2))
 
     def save_garden_globals(self):
+        """
+        Saves garden data
+        """
         with open("Data/gardenGlobalTest.json", "w") as w:
             w.write(json.dumps(self.garden_globals, indent=2))
 

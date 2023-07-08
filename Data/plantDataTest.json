@@ -3,9 +3,9 @@
     "type_name": "Verdant",
     "tier": 0,
     "colour": [
-      71,
-      3,
-      13
+      167,
+      211,
+      168
     ],
     "is_unlocked": true,
     "adult_age": [
@@ -94,9 +94,9 @@
     "type_name": "Vermilion",
     "tier": 0,
     "colour": [
-      71,
-      3,
-      13
+      227,
+      66,
+      52
     ],
     "is_unlocked": true,
     "adult_age": [
@@ -185,9 +185,9 @@
     "type_name": "Azure",
     "tier": 0,
     "colour": [
-      71,
-      3,
-      13
+      0,
+      128,
+      255
     ],
     "is_unlocked": true,
     "adult_age": [
@@ -276,9 +276,9 @@
     "type_name": "Pale",
     "tier": 0,
     "colour": [
-      71,
-      3,
-      13
+      200,
+      200,
+      200
     ],
     "is_unlocked": true,
     "adult_age": [
@@ -367,9 +367,9 @@
     "type_name": "Inked",
     "tier": 0,
     "colour": [
-      71,
-      3,
-      13
+      30,
+      30,
+      30
     ],
     "is_unlocked": true,
     "adult_age": [

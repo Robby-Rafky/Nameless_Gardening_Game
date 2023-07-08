@@ -29,6 +29,10 @@ class Mutator:
             self.image = self.create_translucent()
 
     def create_image(self):
+        """
+
+        :return: mutator_image_final
+        """
         mutator_image_final = mutator_image.copy()
         mutator_coloured = pygame.Surface(mutator_image.get_size())
         mutator_coloured.fill(mutator_tiers[self.tier][0])
