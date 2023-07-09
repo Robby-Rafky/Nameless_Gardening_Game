@@ -7,8 +7,36 @@ from Menus.StatsMenu import StatsMenu
 
 
 class MenuHandler:
+    """Handles menus in the game.
+
+    The MenuHandler class manages the various menus available in the game, including the inventory menu, shop menu,
+    skill tree menu, crafting menu, and stats menu. It provides methods to handle events in the current menu, close
+    the current menu, show the current menu on the game screen, and scroll/zoom the current menu.
+
+    Attributes:
+        game (Game): The game instance.
+        current_menu (str or None): The currently active menu. Can be "Inventory", "Shop", "SkillTree", "Crafting",
+            "Stats", or None if no menu is currently active.
+        inventory_menu (InventoryMenu): The inventory menu instance.
+        shop_menu (ShopMenu): The shop menu instance.
+        skill_tree_menu (SkillTreeMenu): The skill tree menu instance.
+        menu_4 (Menu4): The crafting menu instance.
+        stats_menu (StatsMenu): The stats menu instance.
+
+    Methods:
+        __init__(self, game): Initialize a MenuHandler object.
+        current_menu_event_check(self): Check for events in the current menu and handle them accordingly.
+        close_current_menu(self): Close the current menu.
+        show_current_menu(self): Display the current menu on the game screen.
+        scroll_menu(self, scroll, zoom=0, x=0, y=0): Scroll or zoom the current menu based on the given parameters.
+    """
 
     def __init__(self, game):
+        """Initialize a MenuHandler object.
+
+        Args:
+            game (Game): The game instance.
+        """
         self.game = game
         self.current_menu = None
         self.inventory_menu = InventoryMenu(self.game)
@@ -18,7 +46,7 @@ class MenuHandler:
         self.stats_menu = StatsMenu(self.game)
 
     def current_menu_event_check(self):
-        # event checking in each specific menu
+        """Check for events in the current menu and handle them accordingly."""
         if self.current_menu == "Inventory":
             self.inventory_menu.inv_menu_events()
         if self.current_menu == "Shop":
@@ -31,9 +59,11 @@ class MenuHandler:
             self.stats_menu.stats_menu_events()
 
     def close_current_menu(self):
+        """Close the current menu."""
         self.current_menu = None
 
     def show_current_menu(self):
+        """Display the current menu on the game screen."""
         if self.current_menu == "Inventory":
             self.inventory_menu.surface.fill(self.inventory_menu.background_colour)
             self.inventory_menu.mouse_within_inv_limits()
@@ -60,6 +90,14 @@ class MenuHandler:
             self.game.garden_handler.planting = None
 
     def scroll_menu(self, scroll, zoom=0, x=0, y=0):
+        """Scroll or zoom the current menu based on the given parameters.
+
+        Args:
+            scroll (int): The scroll value (-1 for scrolling up, 1 for scrolling down).
+            zoom (int, optional): The zoom value (-1 for zooming out, 1 for zooming in). Defaults to 0.
+            x (int, optional): The x-coordinate for scrolling or zooming. Defaults to 0.
+            y (int, optional): The y-coordinate for scrolling or zooming. Defaults to 0.
+        """
         if self.current_menu == "Inventory":
             if 110 <= self.game.mouse_pos[0] <= 1250:
                 if self.game.inventory_handler.inventory_size >= 77:

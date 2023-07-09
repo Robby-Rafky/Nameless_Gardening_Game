@@ -48,19 +48,53 @@ PIXEL_FONT = "ModernDOS9x16.ttf"
 
 
 def clamp(n, upper, lower):
+    """Clamps a value between an upper and lower limit.
+
+    Args:
+        n (float): The value to clamp.
+        upper (float): The upper limit.
+        lower (float): The lower limit.
+
+    Returns:
+        float: The clamped value.
+    """
     return max(min(upper, n), lower)
 
 
 def chance_to_occur(chance):
+    """Determines if an event occurs based on a probability.
+
+    Args:
+        chance (float): The probability of the event occurring, range from 0 to 1.
+
+    Returns:
+        bool: True if the event occurs, False otherwise.
+    """
     return randint(0, 99) < chance
 
 
 def small_chance_to_occur(chance):
+    """Determines if an event occurs based on a small probability.
+
+    Args:
+        chance (float): The probability of the event occurring, range from 0 to 1.
+
+    Returns:
+        bool: True if the event occurs, False otherwise.
+    """
     chance = chance * 1000
     return randint(0, 99999) < chance
 
 
 def get_time(time):
+    """Converts a time value to a human-readable format.
+
+    Args:
+        time (int): The time value in seconds.
+
+    Returns:
+        str: The formatted time string.
+    """
     if time >= 0:
         return str(timedelta(seconds=time))
     else:
@@ -68,6 +102,14 @@ def get_time(time):
 
 
 def construct_title(item):
+    """Constructs a title for an item.
+
+    Args:
+        item: The item object.
+
+    Returns:
+        str: The constructed title string.
+    """
     title = item.type1["type_name"]
     if item.is_pure:
         title = "[Pure] " + title
@@ -78,9 +120,18 @@ def construct_title(item):
     return title
 
 
-# Takes a list of values, averages them on a per-value basis, sums the flat values, multiplies the multipliers
-# and returns the product.
 def calc_stats(flat, mult, flat_2, mult_2):
+    """Calculates the stats based on given values.
+
+        Args:
+            flat (list): List of flat values.
+            mult (list): List of multiplier values.
+            flat_2 (list): List of additional flat values.
+            mult_2 (list): List of additional multiplier values.
+
+        Returns:
+            float: The calculated product of the stats.
+        """
     sum_flat = (sum(flat) + sum(flat_2)) / 2
     prod_mult = 1
     for i in range(len(mult)):

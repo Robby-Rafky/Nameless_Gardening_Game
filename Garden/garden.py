@@ -9,8 +9,49 @@ from User.ShopItem import ShopItem
 
 
 class GardenSpace:
+    """
+    A class representing the garden space in the game.
+
+    Attributes:
+        size_x (int): The size of the garden in the x-axis.
+        size_y (int): The size of the garden in the y-axis.
+        offset_x (int): The x-coordinate offset of the garden space.
+        offset_y (int): The y-coordinate offset of the garden space.
+        grid_x (int): The current grid x-coordinate.
+        grid_y (int): The current grid y-coordinate.
+        clicked_plot: The plot that was clicked.
+        clicked_plot_index: The index of the clicked plot.
+        action_box (TextBox): The text box for displaying action-related information.
+        timers_box (TextBox): The text box for displaying timer-related information.
+        stats_box (TextBox): The text box for displaying plant statistics.
+        info_box (TextBox): The text box for displaying information about the selected plant or mutator.
+        harvest_button (Button): The button for harvesting a plant.
+        upgrade_button (ShopItem): The button for upgrading a mutator.
+        font (pygame.font.Font): The font used for rendering text.
+        game (Game): The game instance.
+        side_surface (pygame.Surface): The surface for drawing the side information.
+        mutator_asset (Mutator): The mutator asset used for displaying mutators on the garden grid.
+
+    Methods:
+        __init__(self, game): Initialize the GardenSpace instance.
+        draw_base_garden(self): Draw the base garden grid on the game space.
+        draw_overlay_garden(self): Draw the overlay on the garden grid indicating the selected plot or the placement of a new plant.
+        garden_button_events(self): Handle the button events in the garden space.
+        draw_plant_timer(self): Draw the timer for the selected plant indicating the time to adulthood or decay.
+        draw_seed_info(self): Draw the information related to the seed being placed in the garden.
+        draw_plant_info(self): Draw the information related to the selected plant in the garden.
+        draw_single_stat(self, stat, value, pos_y, colour): Draw a single stat bar with its value on the side surface.
+        draw_all_stats(self, item): Draw all the stats of the item (seed or plant) on the side surface.
+        draw_mutator_info(self, item): Draw the information related to the selected mutator in the garden.
+        draw_side_garden_info(self): Draw the side surface of the garden space with all the relevant information.
+    """
 
     def __init__(self, game):
+        """Initialize the GardenSpace instance.
+
+        Args:
+            game (Game): The game instance.
+        """
         self.size_x, self.size_y = 1, 1
         self.offset_x, self.offset_y = None, None
         self.grid_x, self.grid_y = None, None
@@ -28,6 +69,7 @@ class GardenSpace:
         self.mutator_asset = Mutator(0, 0, game, 1, False)
 
     def draw_base_garden(self):
+        """Draw the base garden grid on the game space."""
         for x in range(self.size_x):
             for y in range(self.size_y):
                 pygame.draw.rect(self.game.game_space, BLACK, (self.offset_x + x * 100,
@@ -36,6 +78,7 @@ class GardenSpace:
         pygame.draw.rect(self.game.game_space, BLACK, (20, 120, 1520, 920), 2)
 
     def draw_overlay_garden(self):
+        """Draw the overlay on the garden grid indicating the selected plot or the placement of a new plant."""
         if self.game.garden_handler.mouse_valid:
             pos_x = self.offset_x + self.grid_x * 100
             pos_y = self.offset_y + self.grid_y * 100
@@ -58,6 +101,7 @@ class GardenSpace:
                                                            100, 100), 3)
 
     def garden_button_events(self):
+        """Handle the button events in the garden space."""
         if self.harvest_button.button_event(self.game.mouse_pos):
             if isinstance(self.clicked_plot, Plant):
                 if self.clicked_plot.is_adult:
@@ -71,6 +115,7 @@ class GardenSpace:
                         self.clicked_plot.image = self.clicked_plot.create_image()
 
     def draw_plant_timer(self):
+        """Draw the timer for the selected plant indicating the time to adulthood or decay."""
         if self.clicked_plot.is_adult:
             self.timers_box.update_textbox_multiline(["       Dies in: " + self.clicked_plot.get_time_to_death(),
                                                       "Effective time: " + self.clicked_plot.get_time_to_death(True)],
@@ -84,6 +129,7 @@ class GardenSpace:
         self.timers_box.draw_on_surface(self.side_surface)
 
     def draw_seed_info(self):
+        """Draw the information related to the seed being placed in the garden."""
         pygame.draw.rect(self.side_surface, BLACK, (0, 0, 340, 920), 2)
         self.game.garden_handler.planting.draw_seed(130, 90, self.side_surface)
         self.action_box.update_textbox(construct_title(self.game.garden_handler.planting), MENU_GREY)
@@ -93,6 +139,7 @@ class GardenSpace:
         self.action_box.draw_on_surface(self.side_surface)
 
     def draw_plant_info(self):
+        """Draw the information related to the selected plant in the garden."""
         self.clicked_plot.draw_plant(self.side_surface, 120, 70)
         pygame.draw.rect(self.side_surface, BLACK, (0, 0, 340, 920), 2)
         self.action_box.update_textbox(construct_title(self.clicked_plot), MENU_GREY)
@@ -109,6 +156,14 @@ class GardenSpace:
         self.action_box.draw_on_surface(self.side_surface)
 
     def draw_single_stat(self, stat, value, pos_y, colour):
+        """Draw a single stat bar with its value on the side surface.
+
+        Args:
+            stat (str): The name of the stat.
+            value (int): The value of the stat.
+            pos_y (int): The y-coordinate position of the stat bar.
+            colour (tuple): The color of the stat bar.
+        """
         pygame.draw.rect(self.side_surface, colour, (10, pos_y, 10 + 310 * value / 100, 30), 0)
         pygame.draw.rect(self.side_surface, BLACK, (10, pos_y, 10 + 310 * value / 100, 30), 1)
         self.side_surface.blit(self.font.render(stat, True, BLACK), (20, pos_y + 5))
@@ -121,6 +176,11 @@ class GardenSpace:
         self.side_surface.blit(value_text, (320 - value_text.get_width(), pos_y + 5))
 
     def draw_all_stats(self, item):
+        """Draw all the stats of the item (seed or plant) on the side surface.
+
+        Args:
+            item (PlantItem or Plant): The item to display the stats for.
+        """
         pygame.draw.rect(self.side_surface, MENU_GREY, (10, 260, 320, 150), 0)
         self.draw_single_stat("Growth", item.stat_growth, 260, GROWTH_COLOUR)
         self.draw_single_stat("Seed Yield", item.stat_yield, 290, YIELD_COLOUR)
@@ -130,6 +190,11 @@ class GardenSpace:
         pygame.draw.rect(self.side_surface, BLACK, (10, 260, 320, 150), 2)
 
     def draw_mutator_info(self, item):
+        """Draw the information related to the selected mutator in the garden.
+
+        Args:
+            item (Mutator): The selected mutator instance.
+        """
         if item.tier < 7:
             self.action_box.update_textbox("Mutator "+"[Tier "+str(item.tier)+"]", MENU_GREY)
         else:
@@ -152,6 +217,7 @@ class GardenSpace:
         self.action_box.draw_on_surface(self.side_surface)
 
     def draw_side_garden_info(self):
+        """Draw the side surface of the garden space with all the relevant information."""
         self.side_surface.fill(GREEN)
         if isinstance(self.game.garden_handler.planting, PlantItem):
             self.draw_seed_info()

@@ -3,7 +3,50 @@ from Items.seedGen import create_seed_image
 
 
 class PlantItem:
+    """
+    A class representing a plant item.
+
+    Attributes:
+        game (Game): The game instance.
+        type1 (dict): The data dictionary for the first plant type.
+        type2 (dict): The data dictionary for the second plant type.
+        colour (tuple): The colour of the plant item.
+        stat_growth (int): The growth stat of the plant item.
+        stat_yield (int): The seed yield stat of the plant item.
+        stat_lifespan (int): The lifespan stat of the plant item.
+        stat_value (int): The value stat of the plant item.
+        tier (int): The tier of the plant item.
+        item_ID (str): The unique ID of the plant item.
+        stack_size (int): The number of items in the stack.
+        is_pure (bool): True if the plant item is a pure type, False otherwise.
+        is_max (bool): True if the plant item has maximum stats, False otherwise.
+        res (float): The resistivity stat of the plant item.
+        final_adult (int): The final adult age of the plant item's seed.
+        final_death (int): The final death age of the plant item's seed.
+        final_rate (float): The final growth rate of the plant item's seed.
+        final_yield (float): The final seed yield of the plant item's seed.
+        final_value (int): The final value of the plant item's seed.
+        final_essence (int): The final essence value of the plant item's seed.
+        seed_image (Surface): The seed image of the plant item.
+
+    Methods:
+        __init__(self, growth, seed_yield, lifespan, value, plant_type_1, plant_type_2, game): Initialize the PlantItem instance.
+        draw_seed(self, pos_x, pos_y, surface): Draw the seed image of the plant item on the specified surface.
+        calc_seed_final(self): Calculate the final stats of the plant item's seed based on its growth, seed yield, lifespan, and value stats.
+    """
+
     def __init__(self, growth, seed_yield, lifespan, value, plant_type_1, plant_type_2, game):
+        """Initialize the PlantItem instance.
+
+        Args:
+            growth (int): The growth stat of the plant item.
+            seed_yield (int): The seed yield stat of the plant item.
+            lifespan (int): The lifespan stat of the plant item.
+            value (int): The value stat of the plant item.
+            plant_type_1 (str): The type name of the first plant type.
+            plant_type_2 (str): The type name of the second plant type.
+            game (Game): The game instance.
+        """
         self.game = game
         self.type1 = self.game.data_handler.plant_types[plant_type_1]
         self.type2 = self.game.data_handler.plant_types[plant_type_2]
@@ -35,9 +78,18 @@ class PlantItem:
         self.seed_image = create_seed_image(self.colour)
 
     def draw_seed(self, pos_x, pos_y, surface):
+        """Draw the seed image of the plant item on the specified surface.
+
+        Args:
+            pos_x (int): The x-coordinate of the position to draw the seed image.
+            pos_y (int): The y-coordinate of the position to draw the seed image.
+            surface (Surface): The surface on which to draw the seed image.
+        """
         surface.blit(self.seed_image, (pos_x, pos_y))
 
     def calc_seed_final(self):
+        """Calculate the final stats of the plant item's seed based on its growth,
+        seed yield, lifespan, and value stats."""
         a = self.type1
         b = self.type2
         c = self.game.data_handler.garden_globals["stat"]["stat_magnitude"]

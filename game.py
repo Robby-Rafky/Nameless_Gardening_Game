@@ -8,8 +8,42 @@ from Data.dataHandler import DataHandler
 
 
 class Game:
+    """Represents the game and its main functionalities.
 
+    Attributes:
+        tick_time (int): The custom event type for game ticks.
+        planted (int): The custom event type for plant state changes.
+        plant_state_changed (int): The custom event type for plant state changes.
+        running (bool): Indicates whether the game is running or not.
+        scrolling (bool): Indicates whether the game window is being scrolled.
+        drag_y (int): The y-coordinate of the drag event.
+        drag_x (int): The x-coordinate of the drag event.
+        DISPLAY_WIDTH (int): The width of the game display.
+        DISPLAY_HEIGHT (int): The height of the game display.
+        game_space (pygame.Surface): The surface for the game space.
+        game_window (pygame.Surface): The game window surface.
+        game_clock (pygame.time.Clock): The clock object for controlling the frame rate.
+        base_background_colour (tuple): The base background colour of the game.
+        mouse_pos (list): The current position of the mouse.
+        user (User): The user object representing the player.
+        data_handler (DataHandler): The data handler object for managing game data.
+        garden_handler (GardenHandler): The garden handler object for managing the garden.
+        menu_selector (MenuSwitcher): The menu switcher object for selecting menus.
+        menu_handler (MenuHandler): The menu handler object for managing menus.
+        inventory_handler (InventoryHandler): The inventory handler object for managing the inventory.
+
+    Methods:
+        testing_stuff():
+            Performs testing-related actions.
+        screen_layering():
+            Draws the game layers on the game space surface.
+        event_checking():
+            Checks and handles events in the game.
+        game_loop():
+            The main game loop for updating and rendering the game.
+    """
     def __init__(self):
+        """Initializes a new instance of the Game class."""
         pygame.init()
         self.tick_time = pygame.USEREVENT
         self.planted = pygame.USEREVENT + 1
@@ -36,10 +70,12 @@ class Game:
         self.inventory_handler = InventoryHandler(self)
 
     def testing_stuff(self):
+        """TEMP FUNCTION FOR TESTING."""
         self.menu_handler.skill_tree_menu.change_location(200, 300)
         pass
 
     def screen_layering(self):
+        """Draws the game layers on the game space surface."""
         self.game_space.fill(GREEN)
 
         self.garden_handler.mouse_within_garden_limits()
@@ -49,6 +85,7 @@ class Game:
         self.menu_handler.show_current_menu()
 
     def event_checking(self):
+        """Checks and handles events in the game."""
         for event in pygame.event.get():
             # when the user quits out of the program
             if event.type == pygame.QUIT:
@@ -101,6 +138,7 @@ class Game:
                     self.testing_stuff()
 
     def game_loop(self):
+        """The main game loop for updating and rendering the game."""
         self.mouse_pos = pygame.mouse.get_pos()
 
         self.event_checking()

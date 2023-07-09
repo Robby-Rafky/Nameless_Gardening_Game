@@ -6,7 +6,58 @@ from useful_functions import *
 
 
 class StatsMenu(Menu):
+    """
+    A class representing the stats menu.
+
+    The StatsMenu class extends the base Menu class and provides functionality for displaying and interacting with the
+    stats menu. It allows the player to view information about plant types, such as primary and secondary stats,
+    resistance, mutation recipe, and images.
+
+    Attributes:
+        game (Game): The game instance.
+        primary_title (TextBox): The text box for displaying the title of the primary stats section.
+        primary_info (TextBox): The text box for displaying the primary stats information.
+        primary_desc (TextBox): The text box for displaying the description of the primary stats.
+        secondary_title (TextBox): The text box for displaying the title of the secondary stats section.
+        secondary_info (TextBox): The text box for displaying the secondary stats information.
+        secondary_desc (TextBox): The text box for displaying the description of the secondary stats.
+        seed_title (TextBox): The text box for displaying the title of the pure seed section.
+        plant_title (TextBox): The text box for displaying the title of the pure plant section.
+        type_title (TextBox): The text box for displaying the title of the plant type.
+        recipe_title (TextBox): The text box for displaying the title of the mutation recipe section.
+        recipe_details (TextBox): The text box for displaying the details of the mutation recipe.
+        error_text (TextBox): The text box for displaying error messages.
+        unlock_details (TextBox): The text box for displaying the details of how to unlock a plant type.
+        mutation_info (TextBox): The text box for displaying the chance to mutate information.
+        res_title (TextBox): The text box for displaying the title of the resistance section.
+        font (Font): The font used for rendering text.
+        scroll_offset (int): The vertical scroll offset for the plant type buttons.
+        button_collection (list): A list of all plant type buttons.
+        type_list_surface (Surface): The surface for rendering the plant type buttons.
+        type_information_surface (Surface): The surface for rendering the plant type information.
+        clicked_item (dict): The currently clicked plant type.
+        types (dict): The data for all plant types.
+
+    Methods:
+        __init__(self, game): Initializes the StatsMenu instance.
+        stats_menu_events(self): Handles the events in the stats menu.
+        construct_type_info(self, switch): Constructs the information for the plant type based on the given switch.
+        draw_primary_info(self): Draws the primary stats information on the stats menu surface.
+        draw_secondary_info(self): Draws the secondary stats information on the stats menu surface.
+        draw_resistance_info(self): Draws the resistance information on the stats menu surface.
+        draw_image_info(self): Draws the image information on the stats menu surface.
+        draw_recipe_info(self): Draws the mutation recipe information on the stats menu surface.
+        draw_plant_type_info(self): Draws the plant type information on the stats menu surface.
+        draw_plant_types(self): Draws the plant type buttons on the stats menu surface.
+    """
+
     def __init__(self, game):
+        """
+        Initialize the StatsMenu instance.
+
+        Args:
+            game (Game): The game instance.
+        """
         Menu.__init__(self, game, MENU_GREY)
         self.primary_title = TextBox("Primary", (300, 60), (1160, 40), True, False, 26)
         self.primary_info = TextBox(" ", (890, 110), (570, 180), True, False, 24)
@@ -52,11 +103,21 @@ class StatsMenu(Menu):
         self.scroll_max = (len(self.button_collection) * 50 - current_tier * 20) - 800
 
     def stats_menu_events(self):
+        """Handle the events in the stats menu."""
         for item in self.button_collection:
             if item.button_event(self.game.mouse_pos) and item.text.split()[0] != "Tier":
                 self.clicked_item = self.types[item.text]
 
     def construct_type_info(self, switch):
+        """
+        Construct the information for the plant type based on the given switch.
+
+        Args:
+            switch (int): The switch value (0 for primary stats, 1 for secondary stats).
+
+        Returns:
+            list: The list of strings containing the plant type information.
+        """
         a = self.clicked_item
         return ["Adult age time: " + get_time(a["adult_age"][switch]) + "[x" + str(a["adult_mult"][switch]) + "]",
                 "Death age time: " + get_time(a["death_age"][switch]) + "[x" + str(a["death_mult"][switch]) + "]",
@@ -67,6 +128,7 @@ class StatsMenu(Menu):
                 "Extractable Essence: " + str(a["essence_base"][switch]) + " units"]
 
     def draw_primary_info(self):
+        """Draw the primary stats information on the stats menu surface."""
         self.primary_desc.update_textbox_multiline(self.clicked_item["primary_desc"], MENU_GREY)
 
         self.primary_info.update_textbox_multiline(self.construct_type_info(0), MENU_GREY)
@@ -76,6 +138,7 @@ class StatsMenu(Menu):
         self.primary_title.draw_on_surface(self.type_information_surface)
 
     def draw_secondary_info(self):
+        """Draw the secondary stats information on the stats menu surface."""
         self.secondary_desc.update_textbox_multiline(self.clicked_item["second_desc"], MENU_GREY)
 
         self.secondary_info.update_textbox_multiline(self.construct_type_info(1), MENU_GREY)
@@ -85,6 +148,7 @@ class StatsMenu(Menu):
         self.secondary_title.draw_on_surface(self.type_information_surface)
 
     def draw_resistance_info(self):
+        """Draw the resistance information on the stats menu surface."""
         self.res_title.update_textbox("Resistance", tier_colours[self.clicked_item["tier"]])
         self.res_title.draw_on_surface(self.type_information_surface)
         res_clamp = clamp(self.clicked_item["resistance"], self.clicked_item["resistance_cap"], 0)
@@ -97,6 +161,7 @@ class StatsMenu(Menu):
                                                       res_info.get_width(), res_info.get_height()))
 
     def draw_image_info(self):
+        """Draw the image information on the stats menu surface."""
         pygame.draw.rect(self.type_information_surface, MENU_GREY, (60, 320, 180, 140), 0)
         pygame.draw.rect(self.type_information_surface, MENU_GREY, (60, 470, 180, 140), 0)
 
@@ -111,6 +176,7 @@ class StatsMenu(Menu):
         pygame.draw.rect(self.type_information_surface, BLACK, (60, 470, 180, 140), 2)
 
     def draw_recipe_info(self):
+        """Draw the mutation recipe information on the stats menu surface."""
         if self.clicked_item["mutation_recipe"][0] is not None:
             self.recipe_details.update_textbox_multiline(self.clicked_item["mutation_recipe"], MENU_GREY)
             self.recipe_title.update_textbox("Recipe", MENU_GREY)
@@ -126,6 +192,7 @@ class StatsMenu(Menu):
         self.recipe_details.draw_on_surface(self.type_information_surface)
 
     def draw_plant_type_info(self):
+        """Draw the plant type information on the stats menu surface."""
         self.type_information_surface.fill(MENU_GREY)
         if self.clicked_item is not None:
             self.type_information_surface.fill(tier_colours[self.clicked_item["tier"]])
@@ -156,6 +223,7 @@ class StatsMenu(Menu):
         self.surface.blit(self.type_information_surface, (320, 10))
 
     def draw_plant_types(self):
+        """Draw the plant type buttons on the stats menu surface."""
         self.type_list_surface.fill(MENU_GREY)
         for item in self.button_collection:
             if item.text.split()[0] == "Tier":

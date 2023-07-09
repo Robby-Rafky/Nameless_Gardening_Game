@@ -17,8 +17,36 @@ from SkillTree.passiveInfo import PassiveInfo
 
 
 class SkillTreeMenu(Menu):
+    """
+    A class representing the skill tree menu.
+
+    The SkillTreeMenu class extends the base Menu class and provides functionality for displaying and handling events in
+    the skill tree menu. It allows the player to allocate passive skills, view skill connections, and see skill details.
+
+    Attributes:
+        game (Game): The game instance.
+        passive_info (PassiveInfo): The instance of the PassiveInfo class for displaying passive skill information.
+        passive_data (dict): The data for all passive skills in the skill tree.
+        all_passives (list): A list of all passive skill instances in the skill tree.
+        skill_surface (Surface): The surface for rendering the skill tree.
+        action_surface (Surface): The surface for rendering the action bar.
+        zoom_scale (float): The current zoom scale of the skill tree.
+        scroll_x (float): The current horizontal scroll position of the skill tree.
+        scroll_y (float): The current vertical scroll position of the skill tree.
+
+    Methods:
+        __init__(self, game): Initialize the SkillTreeMenu instance.
+        skill_tree_menu_events(self): Handle the events in the skill tree menu.
+        draw_skill_tree(self): Draw the skill tree on the skill tree menu surface.
+    """
 
     def __init__(self, game):
+        """
+        Initialize the SkillTreeMenu instance.
+
+        Args:
+            game (Game): The game instance.
+        """
         Menu.__init__(self, game, MENU_GREY)
         self.passive_info = PassiveInfo()
         self.passive_data = self.game.data_handler.passives
@@ -33,6 +61,7 @@ class SkillTreeMenu(Menu):
             self.all_passives.append(Passive(a["type"], a["x"], a["y"], item, a["tier"], a["group"]))
 
     def skill_tree_menu_events(self):
+        """Handle the events in the skill tree menu."""
         for item in self.all_passives:
             if item.passive_events(self.game.mouse_pos):
                 if self.passive_data[item.passive_id]["available"]:
@@ -50,6 +79,7 @@ class SkillTreeMenu(Menu):
                                 self.passive_data[passive]["available"] = True
 
     def draw_skill_tree(self):
+        """Draw the skill tree on the skill tree menu surface."""
         self.skill_surface.fill(D_GREY)
         self.action_surface.fill(MENU_GREY)
         looking_at = [860 - self.scroll_x, 340 - self.scroll_y]

@@ -3,7 +3,27 @@ from button import Button
 
 
 class MenuSwitcher:
+    """
+    Handles the menu switching functionality.
+
+    Attributes:
+        game (Game): The game instance.
+        surface (pygame.Surface): The surface for rendering the top buttons.
+        top_buttons (list): The list of top buttons.
+
+    Methods:
+        draw_buttons():
+            Draws the top buttons on the game surface.
+        menu_switching():
+            Handles the menu switching based on button clicks.
+    """
     def __init__(self, game):
+        """
+        Initializes a new instance of the MenuSwitcher class.
+
+        Args:
+            game (Game): The game instance.
+        """
         self.game = game
         self.surface = None
         self.top_buttons = []
@@ -14,6 +34,7 @@ class MenuSwitcher:
         self.top_buttons.append(Button("Plants", (1500, 0), (300, 50), (60, 10), True, True, 25, L_ORANGE))
 
     def draw_buttons(self):
+        """Draws the top buttons on the game surface."""
         self.surface = pygame.Surface((1800, 70))
         self.surface.fill(GREEN)
         for button in self.top_buttons:
@@ -32,6 +53,12 @@ class MenuSwitcher:
         self.game.game_space.blit(self.surface, (60, 10))
 
     def menu_switching(self):
+        """
+        Handles the menu switching based on button clicks.
+
+        Returns:
+            str or None: The name of the menu to switch to, or None if no switch is required.
+        """
         if self.top_buttons[0].button_event(self.game.mouse_pos):
             return "Inventory"
         if self.top_buttons[1].button_event(self.game.mouse_pos):
