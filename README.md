@@ -1,6 +1,13 @@
 # Nameless_Gardening_Game
 One day i'll have a name for this
 
+To run in container:
+
+docker build -t garden_game
+
+Windows machines don't allow containered GUI applications, build it on linux
+Otherwise see requirements.txt for libraries.
+
 
 Large selection of plants with various stats.
 
